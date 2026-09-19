@@ -11,3 +11,9 @@
 
 # Zotero Integration 下载的二进制小工具（体积大、每台机器不同，不同步）
 .obsidian/plugins/obsidian-zotero-desktop-connector/pdf-utility/
+
+
+
+
+# Ignore Smart Environment folder
+.smart-env
