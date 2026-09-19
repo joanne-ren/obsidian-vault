@@ -1,0 +1,13 @@
+# macOS
+.DS_Store
+
+# Obsidian 工作区/缓存（频繁改动，会造成冲突，不同步）
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/cache
+
+# Obsidian 回收站
+.trash/
+
+# Zotero Integration 下载的二进制小工具（体积大、每台机器不同，不同步）
+.obsidian/plugins/obsidian-zotero-desktop-connector/pdf-utility/
