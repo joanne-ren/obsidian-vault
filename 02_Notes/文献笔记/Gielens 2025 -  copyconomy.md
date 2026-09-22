@@ -32,4 +32,4 @@ tags: [文献笔记]
 - **⑩⑭ 象征价值 / 品牌美学**：look-feel-unboxing 被复制。
 
 ## 相关
-[[注意力经济与注意力公地]] · [[平台渠道权力]] · [[Gielens 2025 - 新购物悖论]] · [[Geyskens Gielens Steenkamp - 生成式AI与品牌信任]] · [[2026-09-20 碎片×Zotero 对应地图]]
+[[注意力经济与注意力公地]] · [[平台渠道权力]] · [[Gielens 2025 - Efficiency and Responsibility]] · [[Geyskens Gielens Steenkamp - 生成式AI与品牌信任]] · [[2026-09-20 碎片×Zotero 对应地图]]

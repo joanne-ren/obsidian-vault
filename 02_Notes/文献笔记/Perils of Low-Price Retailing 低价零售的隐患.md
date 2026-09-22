@@ -22,4 +22,4 @@ tags: [文献笔记]
 - 与你「无形价值/象征」主线关系较弱 → 低命中区，但「支出控制/成瘾式购买」可接 [[反身性零售 reflexive retail]]。
 
 ## 相关
-[[Gielens 2025 - 新购物悖论]] · [[Gielens 2023 - 价格与责任的平衡]] · [[2026-09-20 碎片×Zotero 对应地图]]
+[[Gielens 2025 - Efficiency and Responsibility]] · [[Gielens 2023 - 价格与责任的平衡]] · [[2026-09-20 碎片×Zotero 对应地图]]

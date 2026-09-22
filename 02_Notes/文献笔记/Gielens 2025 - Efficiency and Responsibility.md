@@ -33,4 +33,4 @@ tags: [文献笔记]
 - **⑦friction 与成瘾**：intentional friction 正是你「friction↔非理性决策」的反面（作刹车）。
 
 ## 相关
-[[反身性零售 reflexive retail]] · [[注意力经济与注意力公地]] · [[Gielens 2026 - 我们不再看见的购物者]] · [[Gielens 2025 -  copyconomy]] · [[零售摩擦]] · [[2026-09-20 碎片×Zotero 对应地图]]
+[[反身性零售 reflexive retail]] · [[注意力经济与注意力公地]] · [[Gielens 2026 - Shopper]] · [[Gielens 2025 -  copyconomy]] · [[零售摩擦]] · [[2026-09-20 碎片×Zotero 对应地图]]

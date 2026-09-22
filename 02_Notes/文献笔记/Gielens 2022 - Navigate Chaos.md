@@ -30,4 +30,4 @@ tags: [文献笔记]
 - **⑦环境心理**：ambient atmosphere、体验空间。
 
 ## 相关
-[[Gielens & Roggeveen 2023 - 什么是零售 JR范围]] · [[平台渠道权力]] · [[购物者体验]] · [[Gielens 2026 - 我们不再看见的购物者]] · [[2026-09-20 碎片×Zotero 对应地图]]
+[[Gielens & Roggeveen 2023 - What is retailing]] · [[平台渠道权力]] · [[购物者体验]] · [[Gielens 2026 - Shopper]] · [[2026-09-20 碎片×Zotero 对应地图]]
