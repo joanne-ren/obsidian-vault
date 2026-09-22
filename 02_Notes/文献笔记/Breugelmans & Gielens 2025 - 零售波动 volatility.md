@@ -23,4 +23,4 @@ tags: [文献笔记]
 - **⑤压力→行为**（弱）：危机时 panic/hoard/情绪化购买，但属宏观危机。
 
 ## 相关
-[[Gielens 2023 - 价格与责任的平衡]] · [[Gielens 2025 - 平替经济 copyconomy]] · [[2026-09-20 碎片×Zotero 对应地图]]
+[[Gielens 2023 - 价格与责任的平衡]] · [[Gielens 2025 -  copyconomy]] · [[2026-09-20 碎片×Zotero 对应地图]]

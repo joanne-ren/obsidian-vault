@@ -3,23 +3,14 @@ created: 2026-09-22
 tags: [inbox, 地图]
 ---
 
-# My directions × article directions × relatedness
 
-For each direction I keep returning to, this maps the matching direction in the Zotero editorials and rates how related they are. Relatedness scale: **strong** (the article states it directly), **medium** (the article gives raw material or the same question but not the same answer), **weak / gap** (the library barely touches it).
+## Symbolic / intangible value, with IP / co-branding / fandom as imitation-resistant assets
+- **In the articles**: [[Gielens 2025 -  copyconomy]] argues that symbolic-premium categories are the most vulnerable, and that resistance comes from community, service, ecosystems, trust.
+- **My angle**: symbolic value is hard to copy; IP and fan-driven consumption can resist dupes？
 
-## 1. Symbolic / intangible value, with IP / co-branding / fandom as imitation-resistant assets
-- **My angle**: symbolic value is hard to copy; IP and fan-driven consumption can resist dupes.
-- **In the articles**: [[Gielens 2025 - 平替经济 copyconomy]] argues that symbolic-premium categories are the most vulnerable, and that resistance comes from community, service, ecosystems, trust.
-- **Relatedness: medium (same question, different answer)**. The article treats "what resists imitation" as its core question, but its answer list does **not** include IP / co-branding / fandom. I am filling a slot it left open with a candidate it never named.
-
-## 2. Measuring and pricing intangible value
-- **My angle**: how much is IKEA's "style" worth, an IP license, a game skin. How intangible value gets quantified and priced.
-- **In the articles**: [[Gielens 2025 - 平替经济 copyconomy]] on threatened symbolic premium, [[Gielens 2026 - 零售劳动力作为营销资产]] on brand equity, [[Geyskens Gielens Steenkamp - 生成式AI与品牌信任]] on brand trust.
-- **Relatedness: weak to medium (raw material only)**. All three take symbolic value seriously, but none frames it as a "measurement / pricing" problem. That frame is mine.
-
-## 3. Authenticity / original vs imitation / dupes
+## Authenticity / original vs imitation / dupes
 - **My angle**: how fuzzy-boundary things get defined; how authenticity is judged.
-- **In the articles**: [[Gielens 2025 - 平替经济 copyconomy]] is dead center (superfakes, the original vs imitation line blurred or even irrelevant, the Gen Z authenticity paradox).
+- **In the articles**: [[Gielens 2025 -  copyconomy]] is dead center (superfakes, the original vs imitation line blurred or even irrelevant, the Gen Z authenticity paradox).
 - **Relatedness: strong (direct)**. This is what the whole editorial is about. I can stand directly on it.
 
 ## 4. Co-branding / identity stacking / endorsement
