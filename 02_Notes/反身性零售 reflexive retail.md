@@ -5,7 +5,7 @@ tags: [概念]
 
 # 反身性零售（reflexive retail）
 
-- 出自 [[Gielens 2025 - 新购物悖论]]：一个系统，其中「追求福利的理想本身」会产生**自我否定（self-negating）**的结果——纠偏机制反而变成放大器。
+- 出自 [[Gielens 2025 - 新购物悖论]]：一个系统，其中「追求福利的理想本身」会产生**自我否定（self-negating）的结果——纠偏机制反而变成放大器。
   - A system in which the pursuit of welfare-enhancing ideals generates self-negating outcomes; the corrective becomes an amplifier.
 - **机制**：平台架构（个性化推送、无限滚动、push 通知、社会认同回路、实时激励）把每个消费理念——效率、责任、节俭——都转成 engagement，再把 engagement 转成 consumption。
   - Platform design converts every ideal (efficiency, responsibility, frugality) into engagement, and engagement into consumption.
