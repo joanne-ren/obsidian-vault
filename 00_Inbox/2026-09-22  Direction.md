@@ -9,13 +9,12 @@ tags: [inbox, 地图]
 - **My**: symbolic value is hard to copy; IP and fan-driven consumption can resist dupes？
 	- Co-branding / identity stacking / endorsement
 
-## Newness and the two-sidedness of assortment refresh / frequency
+## Newness; assortment refresh / frequency
 - **My**: newness brings vitality and treasure-hunt feeling, but also habit disruption, exploration cost, choice overload, and dilution of the core image; it depends on category / shopper / format, and has a dynamic dimension (rate of change).
 - **In the articles**: [[Gielens & Roggeveen 2023 - What is retailing]] lists newness as a legitimate topic; [[Gielens 2025 - Efficiency and Responsibility]] on velocity; [[Gielens 2026 - Shopper]] on choice fragmentation; [[Gielens 2022 - Navigate Chaos]] on curation vs endless aisle; trust and variance from Labor / Volatility / GenAI.
-- **Relatedness: medium (parts present, nobody assembles them)**. Every part is findable somewhere, but braiding two-sidedness, structure, moderators, and the dynamic dimension into one umbrella is my integration, which the editorials do not do.
 
-## 6. Attention / stimulation / addiction (including the "over-fishing" commons)
-- **My angle**: high-stimulation marketing carries a hidden cost that returns to the merchant as lost trust; as everyone escalates, they deplete a shared pool of shopper attention and patience, an "over-fishing" problem.
+## Attention / stimulation / addiction ("over-fishing" commons)
+- **My**: high-stimulation marketing carries a hidden cost that returns to the merchant as lost trust; as everyone escalates, they deplete a shared pool of shopper attention and patience, an "over-fishing" problem.
 - **In the articles**: [[Gielens 2025 - Efficiency and Responsibility]] (gamification / push turn every ideal into engagement then consumption, i.e. reflexive retail); [[Gielens 2026 - Shopper]] (what the shopper really surrenders is time and attention).
 - **Relatedness: strong, plus one escalation of mine**. The hidden-cost / long-run-harm point is direct. But treating attention as a **commons** depleted at the industry level is not made by the editorials, which stop at the individual level. That is my overlay, already captured in [[注意力经济与注意力公地]].
 
