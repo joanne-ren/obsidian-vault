@@ -19,4 +19,4 @@ tags: [概念]
 - 你的「高刺激营销的长期损害」= 反身性在时间维度上的展开。
 
 ## 相关
-[[注意力经济与注意力公地]] · [[Gielens 2026 - Shopper]] · [[零售摩擦]] · [[Perils of Low-Price Retailing 低价零售的隐患]] · [[2026-09-20 碎片×Zotero 对应地图]]
+[[注意力经济与注意力公地]] · [[Gielens 2026 - Shopper]] · [[零售摩擦]] · [[Perils of Low-Price Retailing]] · [[2026-09-20 碎片×Zotero 对应地图]]

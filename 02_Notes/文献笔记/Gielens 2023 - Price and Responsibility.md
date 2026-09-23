@@ -22,4 +22,4 @@ tags: [文献笔记]
 - 你几乎不往这条供给/成本侧走 → 属你的**低命中**区（偏好指纹的一部分）。
 
 ## 相关
-[[Breugelmans & Gielens 2025 - 零售波动 volatility]] · [[Gielens 2026 - 零售劳动力作为营销资产]] · [[2026-09-20 碎片×Zotero 对应地图]]
+[[Breugelmans & Gielens 2025 - 零售波动 volatility]] · [[Gielens 2026 - Retail Labor]] · [[2026-09-20 碎片×Zotero 对应地图]]
