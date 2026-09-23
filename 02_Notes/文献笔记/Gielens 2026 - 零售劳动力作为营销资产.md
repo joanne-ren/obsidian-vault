@@ -22,4 +22,4 @@ tags: [文献笔记]
 - 供给/劳动力主线你基本不碰 → 低命中区。
 
 ## 相关
-[[Gielens 2023 - 价格与责任的平衡]] · [[Geyskens Gielens Steenkamp - 生成式AI与品牌信任]] · [[2026-09-20 碎片×Zotero 对应地图]]
+[[Gielens 2023 - 价格与责任的平衡]] · [[Geyskens Gielens Steenkamp - GenAI Brand Trust]] · [[2026-09-20 碎片×Zotero 对应地图]]
