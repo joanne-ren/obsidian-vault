@@ -22,6 +22,8 @@ tags: [inbox, 地图]
 	- Trust in the output: how much do people actually believe an AI-shelf recommendation, and does that trust differ between platform GenAI and retailer GenAI?
 	- Retailer GenAI vs classic recommender: how does brand selection inside retailer GenAI differ from a traditional recommendation algorithm, and is it tied to product availability (in stock) the way ranking algorithms are?
 
+company 
+
 ## Symbolic / intangible value, with IP / co-branding / fandom as imitation-resistant assets
 - **In the articles**: [[Gielens 2025 -  copyconomy]] argues that symbolic-premium categories are the most vulnerable, and that resistance comes from community, service, ecosystems, trust.
 - **My**: symbolic value is hard to copy; IP and fan-driven consumption can resist dupes？
