@@ -62,10 +62,10 @@ tags: [inbox]
 - 提醒：**协议对创新的两点支持**①更广泛地进入监管沙盒（可在临时监管弹性下测试 AI 的受控环境）；②强化 AI Office 的监督角色
   - 原文摘要：broader access to regulatory sandboxes (controlled environments where innovators can test AI technologies under temporary regulatory flexibility), and will reinforce the role of the Commission's AI Office in ensuring coherent oversight.
 
-## Agentic Commerce 报告 €240–320bn（2026-06-10，EuroCommerce×McKinsey）
+## Agentic Commerce（2026-06-10，EuroCommerce×McKinsey）
 
 来源：EuroCommerce & McKinsey, *European retailers face a €240–320 billion AI opportunity as agentic commerce reshapes the industry*, 2026-06-10。[原文链接](https://www.eurocommerce.eu/2026/06/european-retailers-face-a-e240-320-billion-ai-opportunity-as-agentic-commerce-reshapes-the-industry/)
-（机遇口径：未来 5 年营业利润 +4–10pp，折合 €2,400–3,200 亿。）
+
 
 - 提醒：**61% 欧洲消费者已用 AI 做产品发现/评估**（需求侧已就绪，接 AI 货架/信任中介）
   - 原文摘要：61 percent of European consumers already use AI for product discovery and evaluation.
@@ -82,5 +82,7 @@ tags: [inbox]
 - 提醒：**核心挑战 = 把势头转化为持续可衡量的影响**（Christel Delberghe, DG）
   - 原文摘要：The challenge now is to turn this momentum into consistent, measurable impact by scaling AI across organisations, while ensuring that people, skills, and collaboration across the ecosystem evolve alongside these rapid technological advances.
 
+
+![[Pasted image 20260923161644.png|619]]
 ## 相关
 [[Geyskens Gielens Steenkamp - GenAI Brand Trust]]（平台 vs 零售商 GenAI、AI 货架、信任中介，学术版；本篇是产业/政策一手声音）· [[Gielens 2026 - Shopper]] · [[平台渠道权力]]
