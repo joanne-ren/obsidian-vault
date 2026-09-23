@@ -84,7 +84,7 @@ tags: [inbox]
 
 # McKinsey《Rewiring Retail in Europe: The AI imperative》（2026-06）
 
-来源：McKinsey & EuroCommerce, *Rewiring retail in Europe: The AI imperative*, June 2026（48 页完整报告）。
+来源：McKinsey & EuroCommerce, *Rewiring retail in Europe: The AI imperative*, June 2026（48 页完整报告）。[在 Zotero 打开 PDF](zotero://open-pdf/library/items/J5PSN8KB) 
 ![[Pasted image 20260923161644.png|619]]
 ### Gen AI
 
