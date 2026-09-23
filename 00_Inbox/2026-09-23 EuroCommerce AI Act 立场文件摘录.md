@@ -5,8 +5,7 @@ tags: [inbox]
 
 # EuroCommerce《Draft EU AI Act》立场文件摘录（2021.12）
 
-来源：EuroCommerce Position Paper, *Draft EU Artificial Intelligence Act*, December 2021（代表欧洲零售批发业的一手政策立场）。
-只摘与研究相关的部分：**AI × 品牌/消费者信任 × 品牌和零售商如何使用/合作 AI**。
+来源：EuroCommerce Position Paper, *Draft EU Artificial Intelligence Act*, December 2021。[原文链接](https://www.eurocommerce.eu/2021/12/draft-eu-artificial-intelligence-act/)
 
 ## brand & customer trust
 
@@ -52,6 +51,36 @@ tags: [inbox]
 
 - 提醒：**"逻辑/统计方法、贝叶斯估计、搜索与优化"不该算 AI**（零售用了多年）
   - 原文摘要：in Annex I (c) the legislation covers "logic-based and statistical approaches, Bayesian estimation, search and optimisation methods". In most cases statistical approaches and search and optimization methods have been applied for years across the sector and are generally not considered AI. **We believe that statistical approaches should not be included under the scope.**
+
+## Digital Omnibus Welcomes（2026-05-08）
+
+来源：EuroCommerce, *Retail and wholesale sector welcomes step towards legal clarity on AI*, 2026-05-08。[原文链接](https://www.eurocommerce.eu/2026/05/retail-and-wholesale-sector-welcomes-step-towards-legal-clarity-on-ai/)
+
+- 提醒：**零售批发日益依赖 AI**（优化运营、改善体验、保持竞争力）
+  - 原文摘要：Retailers and wholesalers increasingly rely on AI to optimise operations, improve customer experience and remain competitive.
+
+- 提醒：**协议对创新的两点支持**①更广泛地进入监管沙盒（可在临时监管弹性下测试 AI 的受控环境）；②强化 AI Office 的监督角色
+  - 原文摘要：broader access to regulatory sandboxes (controlled environments where innovators can test AI technologies under temporary regulatory flexibility), and will reinforce the role of the Commission's AI Office in ensuring coherent oversight.
+
+## Agentic Commerce 报告 €240–320bn（2026-06-10，EuroCommerce×McKinsey）
+
+来源：EuroCommerce & McKinsey, *European retailers face a €240–320 billion AI opportunity as agentic commerce reshapes the industry*, 2026-06-10。[原文链接](https://www.eurocommerce.eu/2026/06/european-retailers-face-a-e240-320-billion-ai-opportunity-as-agentic-commerce-reshapes-the-industry/)
+（机遇口径：未来 5 年营业利润 +4–10pp，折合 €2,400–3,200 亿。）
+
+- 提醒：**61% 欧洲消费者已用 AI 做产品发现/评估**（需求侧已就绪，接 AI 货架/信任中介）
+  - 原文摘要：61 percent of European consumers already use AI for product discovery and evaluation.
+
+- 提醒：**最高价值用例集中在定价、促销、品类优化、供应商谈判**（但仅 15% 投资于此，机会与花钱错配）
+  - 原文摘要：the highest-value AI use cases are concentrated in pricing, promotions, assortment optimization, and supplier negotiations, yet only 15 percent of retailers focus their investment in these areas.
+
+- 提醒：**AI 转型需要长期投入**（占营收约 1.5%–5%）
+  - 原文摘要：AI transformation requires long-term commitment. Combined capital and operating expenditures typically range from approximately 1.5 percent to 5.0 percent of revenue, depending on company size, maturity, and ambition.
+
+- 提醒：**高达 75% 零售岗位将变化**，人类转向监督、协调、判断和更高价值决策
+  - 原文摘要：Up to 75 percent of retail roles could change as AI becomes embedded throughout the enterprise, shifting human work toward oversight, orchestration, judgment, and higher-value decision-making.
+
+- 提醒：**核心挑战 = 把势头转化为持续可衡量的影响**（Christel Delberghe, DG）
+  - 原文摘要：The challenge now is to turn this momentum into consistent, measurable impact by scaling AI across organisations, while ensuring that people, skills, and collaboration across the ecosystem evolve alongside these rapid technological advances.
 
 ## 相关
 [[Geyskens Gielens Steenkamp - GenAI Brand Trust]]（平台 vs 零售商 GenAI、AI 货架、信任中介，学术版；本篇是产业/政策一手声音）· [[Gielens 2026 - Shopper]] · [[平台渠道权力]]
