@@ -2,7 +2,6 @@
 created: 2026-09-23
 tags: [inbox]
 ---
-
 # EuroCommerce《Draft EU AI Act》立场文件摘录（2021.12）
 
 来源：EuroCommerce Position Paper, *Draft EU Artificial Intelligence Act*, December 2021。[原文链接](https://www.eurocommerce.eu/2021/12/draft-eu-artificial-intelligence-act/)
@@ -52,7 +51,7 @@ tags: [inbox]
 - **"逻辑/统计方法、贝叶斯估计、搜索与优化"不该算 AI**（零售用了多年）
   - 原文摘要：in Annex I (c) the legislation covers "logic-based and statistical approaches, Bayesian estimation, search and optimisation methods". In most cases statistical approaches and search and optimization methods have been applied for years across the sector and are generally not considered AI. **We believe that statistical approaches should not be included under the scope.**
 
-## Digital Omnibus Welcomes（2026-05-08）
+# Digital Omnibus Welcomes（2026-05-08）
 
 来源：EuroCommerce, *Retail and wholesale sector welcomes step towards legal clarity on AI*, 2026-05-08。[原文链接](https://www.eurocommerce.eu/2026/05/retail-and-wholesale-sector-welcomes-step-towards-legal-clarity-on-ai/)
 
@@ -62,7 +61,7 @@ tags: [inbox]
 - **协议对创新的两点支持**①更广泛地进入监管沙盒（可在临时监管弹性下测试 AI 的受控环境）；②强化 AI Office 的监督角色
   - 原文摘要：broader access to regulatory sandboxes (controlled environments where innovators can test AI technologies under temporary regulatory flexibility), and will reinforce the role of the Commission's AI Office in ensuring coherent oversight.
 
-## Agentic Commerce（2026-06-10，EuroCommerce×McKinsey）
+# Agentic Commerce（2026-06-10，EuroCommerce×McKinsey）
 
 来源：EuroCommerce & McKinsey, *European retailers face a €240–320 billion AI opportunity as agentic commerce reshapes the industry*, 2026-06-10。[原文链接](https://www.eurocommerce.eu/2026/06/european-retailers-face-a-e240-320-billion-ai-opportunity-as-agentic-commerce-reshapes-the-industry/)
 
@@ -83,12 +82,10 @@ tags: [inbox]
   - 原文摘要：The challenge now is to turn this momentum into consistent, measurable impact by scaling AI across organisations, while ensuring that people, skills, and collaboration across the ecosystem evolve alongside these rapid technological advances.
 
 
-![[Pasted image 20260923161644.png|619]]
-
-## McKinsey《Rewiring Retail in Europe: The AI imperative》报告（2026-06）
+# McKinsey《Rewiring Retail in Europe: The AI imperative》（2026-06）
 
 来源：McKinsey & EuroCommerce, *Rewiring retail in Europe: The AI imperative*, June 2026（48 页完整报告）。
-
+![[Pasted image 20260923161644.png|619]]
 ### Gen AI
 
 - **gen AI 定位 = 营销与内容的生产力+个性化引擎**（提升生产率、改变零售商与客户互动方式；尤其在营销和内容创作；带来更个性化、更有吸引力、更及时的沟通）
@@ -97,7 +94,7 @@ tags: [inbox]
 - **Zalando 案例**（推荐+gen AI 助手做首页排序/穿搭/尺码 → 贡献约 20% 营收增长、退货↓7%；内容生产 6–8 周→3–4 天，2024Q4 约 70% 编辑内容由 AI 生成）
   - 原文摘要：Zalando has taken personalization to the next level, for example, by combining real-time behavioral data, advanced recommendation models (including graph-based systems), and gen AI assistants to tailor everything from homepage ranking and outfit curation to size recommendations. This has driven about 20 percent of recent revenue growth and reduced return rates by up to 7 percent. In parallel, the company is leveraging gen AI to transform content production, cutting image creation timelines from six to eight weeks to just three to four days; by the fourth quarter of 2024, about 70 percent of Zalando's editorial content was AI-generated.
 
-### Agentic commerce（三波浪潮）
+### Agentic commerce
 
 - **定义 + 规模**（由 gen AI 工具或代替人行动的 AI 代理影响/驱动的购物；AI 影响发现、预判需求、导航选项、决定谈价、乃至执行交易；到 2030 全球可编排 $3–5 万亿）
   - 原文摘要：Agentic commerce—shopping influenced or powered by gen AI tools or AI agents acting on people's behalf—represents a seismic shift in terms of how demand is created and captured. It creates a world in which AI influences discovery, anticipates consumer needs, navigates shopping options, determines how deals are negotiated, and potentially even executes transactions. The stakes are considerable: McKinsey research estimates that agentic commerce could orchestrate $3 trillion to $5 trillion globally by 2030.
@@ -111,7 +108,7 @@ tags: [inbox]
 - **Wave 3 自主商务 + "customer 被重新定义"**（AI 代理获授权像管家一样替消费者/企业自主下单，例：监控家庭库存自动补货；美国 Walmart/Etsy 领先；与零售商数字门店交互的主体越来越是 AI 代理而非人，成败看代理分析目录/理解库存/执行购买的效率）
   - 原文摘要：Autonomous commerce represents the most advanced horizon of agentic commerce, where AI agents are granted the authority to independently execute purchases on behalf of a consumer or business in a concierge-like capacity. A classic example is an intelligent agent that monitors household inventory and automatically reorders groceries when they run low, without requiring user interaction. While European retailers are rapidly adopting the first two waves of AI, the United States is setting the pace in the deployment of full-funnel agentic commerce execution. For retailers, the rise of autonomous commerce fundamentally redefines the concept of a "customer." In this new era, the primary interactor with a retailer's digital storefront is likely to increasingly be a sophisticated AI agent, not a human. Success will no longer be measured by clicks and scrolls but by how efficiently an AI agent can analyze product catalogues, understand inventory availability, and execute purchases.
 
-### 未解问题（对品牌信任/co-branding 最相关）
+## 未解问题
 
 - **代理中介下品牌忠诚如何表达**（商品类风险更高，但忠诚不会消失，可能改由"品牌专属大使代理(ambassador agents)"在机器中介流中解释差异化、谈条件、传达品牌意图）
   - 原文摘要：How does brand loyalty get expressed when decisions are mediated by agents? While commodity goods and services are more at risk, brand loyalty is unlikely to disappear. However, it may be expressed differently, including by the activation of (retailer and consumer) brand-specific ambassador agents explaining differentiation, negotiating terms, and articulating brand intent within machine-mediated flows.
