@@ -84,5 +84,46 @@ tags: [inbox]
 
 
 ![[Pasted image 20260923161644.png|619]]
+
+## McKinsey《Rewiring Retail in Europe: The AI imperative》报告（2026-06）
+
+来源：McKinsey & EuroCommerce, *Rewiring retail in Europe: The AI imperative*, June 2026（48 页完整报告）。
+
+### Gen AI
+
+- 提醒：**gen AI 定位 = 营销与内容的生产力+个性化引擎**（提升生产率、改变零售商与客户互动方式；尤其在营销和内容创作；带来更个性化、更有吸引力、更及时的沟通）
+  - 原文摘要：Generative AI is boosting productivity and changing how retailers interact with customers, especially in marketing and content creation—leading to more personalized, engaging, and timely communication.
+
+- 提醒：**Zalando 案例**（推荐+gen AI 助手做首页排序/穿搭/尺码 → 贡献约 20% 营收增长、退货↓7%；内容生产 6–8 周→3–4 天，2024Q4 约 70% 编辑内容由 AI 生成）
+  - 原文摘要：Zalando has taken personalization to the next level, for example, by combining real-time behavioral data, advanced recommendation models (including graph-based systems), and gen AI assistants to tailor everything from homepage ranking and outfit curation to size recommendations. This has driven about 20 percent of recent revenue growth and reduced return rates by up to 7 percent. In parallel, the company is leveraging gen AI to transform content production, cutting image creation timelines from six to eight weeks to just three to four days; by the fourth quarter of 2024, about 70 percent of Zalando's editorial content was AI-generated.
+
+### Agentic commerce（三波浪潮）
+
+- 提醒：**定义 + 规模**（由 gen AI 工具或代替人行动的 AI 代理影响/驱动的购物；AI 影响发现、预判需求、导航选项、决定谈价、乃至执行交易；到 2030 全球可编排 $3–5 万亿）
+  - 原文摘要：Agentic commerce—shopping influenced or powered by gen AI tools or AI agents acting on people's behalf—represents a seismic shift in terms of how demand is created and captured. It creates a world in which AI influences discovery, anticipates consumer needs, navigates shopping options, determines how deals are negotiated, and potentially even executes transactions. The stakes are considerable: McKinsey research estimates that agentic commerce could orchestrate $3 trillion to $5 trillion globally by 2030.
+
+- 提醒：**Wave 1 GEO**（约半数欧洲消费者已用 AI 了解产品/品类并比较；GEO 类比 SEO，优化产品/内容/**品牌信号**如何被 AI 模型解读和浮现）
+  - 原文摘要：GEO is the foundational layer of agentic commerce and is already here. Around half of Europe's consumers are already using AI to learn about a product or category and comparing options. Comparable to SEO, GEO focuses on optimizing how products, content, and brand signals are interpreted and surfaced by AI models in conversational contexts.
+
+- 提醒：**Wave 2 AI 编排式商务**（用 AI 工具构建品牌原生体验，助消费者搜索/选购/下单/收货；84% 欧洲人日常用 AI、38% 主动用于研究产品和购买决策；约 15% 在零售商网站用过 AI 工具、1–3% 通过 AI 平台购买过；例：John Lewis 把目录推上 AI 平台、Tesco app 内 gen AI 助手生成餐单并动态组篮）
+  - 原文摘要：Orchestrated commerce is the use of AI tools (both in AI platforms and on retail or brand sites) to build brand-native experiences that help consumers search, choose, buy, and receive products. This moves beyond simple discovery and into the active shopping journey. In Europe, the behavioral shift is already underway: 84 percent of consumers now use AI in their daily lives, and 38 percent actively rely on it to research products and inform purchase decisions. For example, John Lewis is investing in AI as part of its £800 million transformation program to push its product catalog onto AI platforms so customers can find John Lewis products while chatting with AI. And Tesco's latest in-app gen AI–powered assistant is a growth initiative, initially tested by about 280,000 employees, that generates personalized meal plans and dynamically builds shopping baskets using customer data. Yet the environment continues to change rapidly. AI is beginning to connect recommendations directly to embedded purchase options, suggesting that conversational commerce may scale before fully autonomous delegation does. About 15 percent of consumers have used AI tools on retailer sites, and 1 to 3 percent have made a purchase through AI platforms, according to McKinsey analysis. The priority for retailers, on top of GEO, is to experiment with on-site AI tools to create a more intelligent and frictionless shopping experience.
+
+- 提醒：**Wave 3 自主商务 + "customer 被重新定义"**（AI 代理获授权像管家一样替消费者/企业自主下单，例：监控家庭库存自动补货；美国 Walmart/Etsy 领先；与零售商数字门店交互的主体越来越是 AI 代理而非人，成败看代理分析目录/理解库存/执行购买的效率）
+  - 原文摘要：Autonomous commerce represents the most advanced horizon of agentic commerce, where AI agents are granted the authority to independently execute purchases on behalf of a consumer or business in a concierge-like capacity. A classic example is an intelligent agent that monitors household inventory and automatically reorders groceries when they run low, without requiring user interaction. While European retailers are rapidly adopting the first two waves of AI, the United States is setting the pace in the deployment of full-funnel agentic commerce execution. For retailers, the rise of autonomous commerce fundamentally redefines the concept of a "customer." In this new era, the primary interactor with a retailer's digital storefront is likely to increasingly be a sophisticated AI agent, not a human. Success will no longer be measured by clicks and scrolls but by how efficiently an AI agent can analyze product catalogues, understand inventory availability, and execute purchases.
+
+### 未解问题（对品牌信任/co-branding 最相关）
+
+- 提醒：**代理中介下品牌忠诚如何表达**（商品类风险更高，但忠诚不会消失，可能改由"品牌专属大使代理(ambassador agents)"在机器中介流中解释差异化、谈条件、传达品牌意图）
+  - 原文摘要：How does brand loyalty get expressed when decisions are mediated by agents? While commodity goods and services are more at risk, brand loyalty is unlikely to disappear. However, it may be expressed differently, including by the activation of (retailer and consumer) brand-specific ambassador agents explaining differentiation, negotiating terms, and articulating brand intent within machine-mediated flows.
+
+- 提醒：**消费者愿授权的三条件**（可逆性、问责性、明确同意；消费者最接受"辅助决策但保留人类最终控制"的 AI）
+  - 原文摘要：Where, when, and for which categories will consumers choose to delegate further? Our data shows consumers are most comfortable with AI that assists decision-making while preserving final human control. This indicates clear conditions under which consumers are willing to delegate: reversibility (the ability to undo actions), accountability (clear responsibility when something goes wrong), and explicit consent (clear boundaries on what the agent is authorized to do).
+
+- 提醒：**为 AI 可见度而非仅注意力竞争 + 从说服转向可解释性**（需机器可读内容/结构化数据/可信第三方信号；给 AI 能解读、比较、传递的"证据支撑的理由"）
+  - 原文摘要：Compete for AI visibility, not just consumer attention. Winning requires machine-readable content—structured data, strong taxonomy, and credible third-party signals—to ensure inclusion in AI-driven journeys. Shift from persuasion to explainability. Retailers must clearly articulate evidence-backed "reasons why" in a structured way that AI can interpret, compare, and carry forward.
+
+- 提醒：**IKEA Parekh 访谈：商务被 agentic 平台截获 vs 导回品牌（co-branding × 信任核心命题）**（15–20 年长期变革，顾客早已在决定去哪里遇见品牌；近 2–3 年搜索份额急剧转向 agentic；品牌"现身"将成必然；未解的是交易最终留在 agentic 平台还是导回品牌，未来 2–5 年见分晓；双方倾向合作而非对立）
+  - 原文摘要：It starts with a longer-term shift that has been under way for 15 to 20 years. There were days when brands decided how they met customers, but customers have been deciding where they meet brands for some time now, and brands have had to choose whether to show up or not. What we are seeing from the past two to three years is that the share of search has shifted drastically from traditional toward agentic search, which tells us customers are embracing the agentic experience. For brands, showing up in those experiences is likely to become necessary. The unresolved question, which mirrors the historical tension between traditional search and brand-owned assets, is whether commerce ultimately gets captured on the agentic platform or redirected back to the brand. That is the play that will unfold over the next two to five years. I would probably be naive to say exactly where it is going, but I believe there is interest on both sides to continue collaborating rather than polarizing one way or the other.
+
 ## 相关
 [[Geyskens Gielens Steenkamp - GenAI Brand Trust]]（平台 vs 零售商 GenAI、AI 货架、信任中介，学术版；本篇是产业/政策一手声音）· [[Gielens 2026 - Shopper]] · [[平台渠道权力]]
