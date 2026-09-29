@@ -7,45 +7,42 @@ tags: [概念]
 
 ---
 
-## 定义：是什么，不是什么（definition）
+## Idea
 
-- **不用防备是一种状态，不是一种品牌情感**：你相信「默认情况就是公平的」，所以不需要比价、不需要算单价、不需要等打折、不需要怀疑「原价」是不是虚标。
-  - Low-guardedness is a state, not a brand emotion: you trust the default is fair, so you need not compare prices, compute unit prices, wait for sales, or suspect the "original price" is inflated.
-
-- **防备成本 = 因为不信任零售商的默认，而长期缴纳的一笔认知与行为税**。
-  - Vigilance cost is the standing cognitive and behavioral tax a shopper pays because they do not trust the retailer's defaults.
+- 相信「默认情况就是公平的」，所以不需要比价、不需要算单价、不需要等打折、不需要怀疑「原价」是不是虚标。
+  - **Low-effort shopping**:  trust the default is fair, so no need to compare prices, compute unit prices, wait for sales, or suspect the "original price" is inflated.
 
 ---
 
-## 硬币的两极（the two poles）
+## The two poles
 
-- **低防备极：不可替代、连贯、可信**。零售商本身就是品牌（宜家、超市自有品牌、Skims），货架收得紧，你信任里面每一件。
-  - Low-guardedness pole: non-substitutable, coherent, trusted. The retailer is itself the brand (IKEA, grocery private label, Skims), assortment tightly curated, each item trusted.
+- **低防备极：不可替代、连贯、可信**。零售商本身就是品牌（宜家、超市自有品牌），货架收得紧，你信任里面每一件。
+  - Low-effort pole: non-substitutable, coherent, trusted. The retailer is itself the brand (IKEA, grocery private label), assortment tightly curated, each item trusted.
 
 - **高防备极：无限、可替代、疲惫**。开放同质货架（多品牌 sale、线上翻衣服、Temu、平替、频繁上新）。
-  - High-guardedness pole: infinite, substitutable, exhausting. The open homogeneous shelf (multi-brand sales, browsing clothes online, Temu, dupes, frequent newness).
+  - High-effort pole: infinite, substitutable, exhausting. The open homogeneous shelf (multi-brand sales, browsing clothes online, Temu, dupes, frequent newness).
 
 - 前两篇笔记正是高防备极的两种机制：[[2026-09-28 寻宝式轮换与新鲜感频率]]（新鲜感速率）与 [[2026-09-28 平替与自有品牌模仿]]（模仿与象征价值侵蚀）。本构念是把它们收到一个屋顶下的母概念。
   - The treasure-hunt note (velocity) and the dupe note (imitation) are two mechanisms of the high-guardedness pole; this construct is their shared roof.
 
 ---
 
-## 你需要防备的 vs 零售商让你不用防备的做法
+## 
 
-| 需要防备的 What you guard against | 降低防备的做法 Retailer practice | 对应缺口 Gap |
-| --- | --- | --- |
-| 价格是否划算、下周会不会更便宜 | 稳定定价（EDLP）、价格保证 | §4 price-realization |
-| 折扣是不是真的 | 可信的参考价、少做高低价促销 | §4 |
-| 缩水通胀（包装变小、价格不变） | 单位价格透明（unit-price transparency） | §4 |
-| 选错、买后悔 | 精简货架、宽松退货 | §5 assortment-usability |
-| 质量参差 | 自营/自有品牌的统一标准 | §5 / trust |
+| 需要防备的 What you guard against | 降低防备的做法 Retailer practice       | 对应缺口 Gap                |
+| ---------------------------- | ------------------------------- | ----------------------- |
+| 价格是否划算、下周会不会更便宜              | 稳定定价（EDLP）、价格保证                 | §4 price-realization    |
+| 折扣是不是真的                      | 可信的参考价、少做高低价促销                  | §4                      |
+| 缩水通胀（包装变小、价格不变）              | 单位价格透明（unit-price transparency） | §4                      |
+| 选错、买后悔                       | 精简货架、宽松退货                       | §5 assortment-usability |
+| 质量参差                         | 自营/自有品牌的统一标准                    | §5 / trust              |
 
 - **理论动作**：论文描述的是零售商实践制造的「缺口（供给侧）」；防备成本是这些缺口强加给购物者的「代价（消费者侧）」。两者是同一现象的两面。
   - The paper describes supply-side gaps created by retailer practices; vigilance cost is the consumer-side price those gaps impose. Two sides of one phenomenon.
 
 ---
 
-## 文献地图（literature map）
+## 文献
 
 **1. 「不用防备」的核心：价格可信、可预测**
 - [[Breugelmans & Gielens 2025 - 零售波动 volatility]] §3.2「Trust in pricing: is fairness the new value proposition?」最直接对应；§1 提到 Trader Joe's、ALDI 把价格稳定当品牌理念。
@@ -82,16 +79,14 @@ tags: [概念]
 
 ---
 
-## 研究问题（My）
+## 研究问题
 
 - 零售商的哪些做法降低了消费者的防备成本？这又如何改变**购买行为与忠诚度**？（用上面的行为指标测消费者这一侧的防备成本）
-  - Which retailer practices lower vigilance cost, and how does that change purchase behavior and loyalty? (measuring the consumer-side cost with the behavioral fingerprints above)
-- 「零售商本身就是品牌」是否是低防备的结构性使能项（因为它掌控质量、拥有默认、亲自书写语料）？
-  - Is "the retailer is itself the brand" the structural enabler of low-guardedness (it controls quality, owns the default, authors the corpus)?
+  - Which retailer practices lower 'effort' cost, and how does that change purchase behavior and loyalty? (measuring the consumer-side cost with the behavioral fingerprints above)
 
 ---
 
-## 我补的两点（open contributions）
+## open contributions
 
 - **spend-vs-fatigue 缺口**：论文 §6.2 关注的结果是「多花钱（预算失控）」，你的体验是「疲惫」。同一机制（寻宝陈列）、两种消费者侧产出（花费 vs 耗竭）→ 这本身可立一个小贡献：防备成本至少有 spending 与 depletion 两个不同产出。
   - Same treasure-hunt mechanism, two distinct consumer-side outcomes: overspending vs fatigue. The construct plausibly has both a spending and a depletion output.
