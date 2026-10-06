@@ -15,7 +15,7 @@ tags: [project]
 
 ---
 
-## 三类结果变量（DV families）
+## 三类结果变量
 
 - **顾客行为至少可拆成三类结果变量**，这是 scanner-data 设计的因变量总结构，下面的行为签名表是它逐项的展开。
   - Customer behavior decomposes into at least three families of outcome variables, the DV backbone of the scanner-data design; the signature table below is its item-level expansion.
