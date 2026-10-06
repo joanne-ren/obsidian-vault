@@ -8,8 +8,8 @@ tags: [project]
 电子价签（ESL）作为「超市可以更随意地调价」的信号，如何侵蚀信任（trust）。走实证路线，数据为 scanner data。核心约束：trust 是潜变量，scanner data 不直接记录它。
   - ESL as a signal that "the store can adjust prices more freely" and how it erodes trust. Empirical route, scanner data. Key constraint: trust is latent and scanner data does not record it directly.
 
-- **测量思路**：不是用 scanner data「测 trust」，而是测 trust 所支配的可观测行为，即价格警惕/防备（vigilance）。trust 在模型里是潜在中介，不是因变量。
-  - Don't measure trust with scanner data; measure the observable behavior trust governs, i.e. price vigilance. Trust is a latent mediator, not the dependent variable.
+- **测量思路**：不是用 scanner data「测 trust」，而是测 trust 所支配的可观测行为，即价格意识（price awareness）。trust 在模型里是潜在中介，不是因变量。
+  - Don't measure trust with scanner data; measure the observable behavior trust governs, i.e. price awareness. Trust is a latent mediator, not the dependent variable.
 - 承接 [[防备成本 low-effort shopping & cost]] 的「行为测量」小节：下表把那组指纹正式化为 ESL→trust 设计的操作化矩阵。
   - Extends the behavioral-fingerprint section of [[防备成本 low-effort shopping & cost]] into an operationalization matrix for the ESL→trust design.
 
@@ -32,7 +32,7 @@ tags: [project]
 
 | 信任侵蚀后的行为签名 | scanner data 代理变量 | 对应的 effort dimension | 预测方向 |
 | --- | --- | --- | --- |
-| 整体价格警惕 | 需求价格弹性（à la Ray 2019） | 比价成本 | 弹性 ↑ |
+| 整体价格意识 | 需求价格弹性（à la Ray 2019） | 比价成本 | 弹性 ↑ |
 | 囤货/提前购买 | 促销时购买量、跨期囤积、购买间隔随促销周期 | 「下周会不会更便宜？」 | 促销囤货 ↑ |
 | 挑便宜货 | cherry-picking 指数（只买促销品的篮子占比） | 比价+等折扣 | ↑ |
 | 退守「安全默认」 | 自有品牌(PL) vs 全国品牌份额、包装/单价最优化 | 算单价 | 方向需论证* |
@@ -41,8 +41,8 @@ tags: [project]
 
 - **\*PL 方向是理论岔口**：PL 恰是 low-effort / trust-the-default 那一极。信任掉了可能退守 PL（守住可信默认），也可能逃离这家店转去 Lidl/Aldi（硬折扣=EDLP 可信极）。两个方向都是可检验的竞争假设。
   - The PL prediction forks. PL is the low-effort / trust-the-default pole. Lost trust may drive retreat into PL (holding a trusted default) or exit to Lidl/Aldi (the EDLP discounter pole). Both are testable competing hypotheses.
-- **promo lift 双向**：若顾客变警惕去抢折扣，promo lift ↑；若开始怀疑折扣真假（参考价不可信），promo lift ↓。到底哪个占上风，本身就是一个发现。
-  - Promo lift cuts both ways: more vigilant deal-hunting pushes lift up, while distrust of discount authenticity pushes it down. Which dominates is itself a finding.
+- **promo lift 双向**：若顾客价格意识变强去抢折扣，promo lift ↑；若开始怀疑折扣真假（参考价不可信），promo lift ↓。到底哪个占上风，本身就是一个发现。
+  - Promo lift cuts both ways: more price-aware deal-hunting pushes lift up, while distrust of discount authenticity pushes it down. Which dominates is itself a finding.
 
 ---
 
@@ -52,8 +52,8 @@ tags: [project]
   - Competence: ESL aligns shelf price with checkout price, reducing the "overcharged at checkout" friction, so trust rises.
   - → 预测：光顾频率、忠诚度上升，长期流失下降。
     - Prediction: trip frequency and loyalty rise, long-run churn falls.
-- **(−) 可变性/正直信任（integrity）**：顾客意识到 ESL 会带来价格变化，因此显得对价格更敏感（警惕被重新激活）。
-  - Integrity: shoppers realize ESL enables price changes, so they appear more price-sensitive (vigilance reactivated).
+- **(−) 可变性/正直信任（integrity）**：顾客意识到 ESL 会带来价格变化，因此显得对价格更敏感（价格意识被重新激活）。
+  - Integrity: shoppers realize ESL enables price changes, so they appear more price-sensitive (price awareness reactivated).
   - → 预测：见上面的信任侵蚀行为签名（弹性 ↑、cherry-picking ↑ 等）。
     - Prediction: the trust-erosion signatures above (elasticity up, cherry-picking up, etc.).
 - **净效应取决于哪个方向占上风**，并被门店定位调节（EDLP/高信任店 vs Hi-Lo 店）。这正是实证要估的东西。
