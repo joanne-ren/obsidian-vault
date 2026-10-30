@@ -1,41 +1,28 @@
 ---
 created: 2026-09-28
-updated: 2026-10-29
+updated: 2026-10-30
 tags: [方法, AI购物, 数据集设计]
 ---
 
 # AI dataset 设计需要考虑的点
 
-设计一个「人用 AI 购物」的数据集前，先回答四个前置问题。下面每个问题后汇总了 vault 里现有笔记能提供的**完整证据**（关键 prompt / 模板 / 原文照录），并标出仍是空白的部分。链接指回出处。
-
 ---
 
 ## 1. 人们用 AI 购物吗，这是一个 trend 吗
 
-**是，且正从试点走向落地（pilot → deployment）。** 证据来自行业会议与厂商数据（注意：多为厂商自报口径，需审慎）。
-
-### 从试点到真实部署
-- Groceryshop 2026 的总趋势判断：AI 购物助手正从 pilot 走向 deployment。[[2026-09-28 Groceryshop 2026]]
 
 ### 厂商自报的使用成效
 - **Anthropic（Claude Commerce Agents）**：在 Claude 上跑购物智能体的零售商，购物车规模最高 **+35%**、完成购买可能性 **+60%**；报告推测这至少部分反映 AI 用户更有目的性（more intentional）。[[2026-10-19 Anthropic 商务智能体蓝图]]
-  - 落地极快：Wix **15 分钟**内跑通一个能接受指令的商务智能体，Fetch **不到一小时**让两个智能体本地跑通；工程团队普遍反映上线周期从**数月压到 1–2 周**。
+  
 - **DoorDash（Ask DoorDash，对话式助手，可上传食谱创意生成购物车）**：上线之初购物车规模 **+35%**、结账速度快 **3×**；后来提升到购物车 **+50%**、结账快 **5×**；用 AI 的顾客订购的**独特 SKU +60%**（说明 AI 扩大发现范围，不只加速复购）。[[2026-09-28 Groceryshop 2026]]
+-
 - **Kroger**：今年年初先给**员工**推 AI 助手，2026-07-28 再推面向**顾客**的购物助手。两个意外发现：[[2026-09-24 克罗格 AI 购物助手]]
   - **普适性**：原以为主要吸引年轻人，实际吸引力是普适的，迅速打破"哪个年龄段更爱用"的固有观念。
   - **产品发现率上升**：购物者获得更精准推荐后反而更多自行探索——"因为简化了一个摩擦点，给了客户时间和信心去拓展到该特定目的之外。"（*it's given time and confidence to the customer to branch out beyond that specific purpose.*）
 - **Albert Heijn（荷兰 Ahold 旗下）**：先推一款主打膳食灵感的助手（建立在 2 万多道菜谱数据库上，解决"晚餐吃什么"），随接受度提高再扩展到客流量更高的购物环节。[[2026-09-28 Groceryshop 2026]]
 - **Migros（瑞士）**：用 AI 把营销内容制作从几天压缩到几分钟。[[2026-09-28 Groceryshop 2026]]
 
-### 为什么是结构性趋势而非单点
-- **多主体同时入场（"谁拥有客户"三方争夺）**：大型 AI 公司、Instacart/DoorDash 等平台、零售商自身都在推 AI 购物工具。杂货商虽握有食品专业知识，却在探索一项并非其核心业务的技术。[[2026-09-28 Groceryshop 2026]]
-- **被推动的痛点**：
-  - 杂货品类"高频 + 高复杂"天然适合 AI（Instacart CEO Chris Rogers）：消费者要反复权衡偏好、饮食需求、预算、促销和家庭需求。
-  - 最常被提及的用例是「晚饭吃什么？」；从"搜 SKU"转向"解决问题"（DoorDash）。
-  - Kroger×Gemini 把切口定在**选择过载（choice overload）**：给的选择/产品/配送选项越多，消费者越难决定，助手正是切入这个痛点。[[2026-09-28 克罗格×谷歌Gemini购物助手]]
-- **下一阶段：从建议转向行动**——个性化膳食计划、预装购物篮（pre-loaded baskets）、对话式偏好更新，以及优惠券激活、改门店等服务型任务。[[2026-09-28 Groceryshop 2026]]
 
-> **空白**：以上是厂商/会议口径，缺独立的**消费者侧渗透率**数据（多少人、多频繁、哪些品类真的在用）。建数据集时这正是要补的一手证据。
 
 ---
 
@@ -107,9 +94,15 @@ Chinese (translation): I am a 25-year-old male programmer with oily acne-prone s
   - 策划儿童生日派对、找齐某道餐的食材、管理饮食限制、在 SNAP（补充营养援助计划）资格限制下购物
 - 趋势：从「搜具体 SKU」转向「解决问题」（DoorDash）；对话式界面让用户提开放式问题，可能比 feed/search 更分散曝光。[[2026-09-24 克罗格 AI 购物助手]]
 
-> **修正（见 §5 清单）**：B 类真实用户 prompt 语料**并非不存在**——已经有一批：ConsumerQ 专门从 LMSYS/WildChat 抽取真人的"求购/选品"请求；WildChat-4.8M、Search Arena 24k、ShareChat、InVivoGPT、荷兰 D3I 捐赠、Global South 捐赠语料里都含真人购物对话；Profound/Scrunch 还有真人 panel 语料。
->
-> **真正的缺口更精确**：① 绝大多数**不是购物专用**，购物子集要靠过滤且规模未知；② 很少有**为"购物 prompt"本身设计**的语料（多是整段对话，没有 prompt 分类体系：带不带预算/饮食/场合约束、是否暴露身份/地域/偏好信号）；③ 真正"真人 prompt + 真人当时看到的回答"两头都真实的，数量有限（见 §5 A）。这才是自建数据集值得切入的角度。
+### C. 哪里能找到真人 prompt（来自数据集清单）
+你原来的判断（"真人 prompt 语料基本不存在"）要**修正**——已经有一批，按能不能拿来用排序：
+
+- **ConsumerQ**（公开，arXiv 2609.18729）：最对口——专门从 LMSYS/WildChat 抽出真人"求购"请求，2,528 条请求里 117 条实物产品 query，**附录带编码手册**（现成的 prompt 分类体系可借）。
+- **真人捐赠的完整历史**（最干净，但要自己招募/过滤）：InVivoGPT（300 用户 / 138K 对话，arXiv 2602.01114）、荷兰 **D3I/Port** 数据捐赠、**Global South 语料**（1,252 用户 / 202,590 对话，印度/巴基斯坦/巴西/尼日利亚）。
+- **公开但需过滤出购物子集**（免费、量大）：WildChat-4.8M（约 275 万对话，标 `purchasable_products`）、Search Arena 24k、ShareChat（142,808 对话，多平台）。
+- **真人用自己措辞提问 + 记录当时看到的回答**：SparkToro × Gumshoe（600 志愿者、12 意图、2,961 回答，公开）。
+
+> **真正的缺口（= 你的切入点）**：① 多数**不是购物专用**，购物子集要靠过滤且规模"待测"；② 几乎没有**为"购物 prompt"本身设计**的语料——即带不带预算/饮食/场合约束、是否暴露身份/地域/偏好信号的 **prompt 分类体系**（只有 ConsumerQ 的编码手册沾边）；③ "真人 prompt + 真人当时看到的回答"两头都真实的仍少。自建数据集应优先补②③。
 
 ---
 
@@ -143,7 +136,7 @@ Anchoring（价格锚定）:
 • Aggressive: "Contains same active ingredient concentrations as $80-120 clinical treatments. 4x value per ml vs competitors."
 ```
 
-> **同一篇论文**：这篇 arXiv 2606.17443 在 §5 清单里就是 **"Incumbent Advantage: Brand Bias and Cognitive Manipulation Dynamics in LLM Recommendation Systems"（Chu & Hou, 2026）**——GEO 偏见实验 = Incumbent Advantage 的数据集。
+> **同一篇论文**：这篇 arXiv 2606.17443 在你整理的数据集清单里就是 **"Incumbent Advantage: Brand Bias and Cognitive Manipulation Dynamics in LLM Recommendation Systems"（Chu & Hou, 2026）**——GEO 偏见实验 = Incumbent Advantage 的数据集。
 
 **主要发现：**
 1. **条件垄断（conditional monopoly）**：所有产品规格相同时，知名品牌 100% 获推荐（IAI = 10.0）；但竞品的星级评分优势一旦小于 0.1 分，垄断就消失。
@@ -160,12 +153,17 @@ Anchoring（价格锚定）:
 - 购后：AI 还塑造"预期"与"归因"，形成品牌信任的**递归更新**；同一品牌属性在不同中介下可能是优势也可能是劣势。[[Gielens 2026 - Shopper]]
 - 另一侧补充：AI 暴露弱品牌——AI 系统不轻信企业一面之词，而是从评论、零售商、媒体、专家、社群、分析师、监管文件、第三方数据库等更广泛市场搜集信息；品牌不能再单方面宣称立场，必须有外部佐证。[[2026-10-26 GEO偏见与AI购物prompts]]
 
-### 学界实证论文一览（来自 §5 清单，可直接当 CS 侧综述骨架）
+### 学界实证论文一览（从数据集清单里筛出的研究论文，可当 CS 侧综述骨架）
+**一支：品牌推荐偏见 / 审计**
 - **Incumbent Advantage / GEO**（Chu & Hou 2026, arXiv 2606.17443）：真实 + 虚构品牌混合、属性固定/变动，测品牌偏见与操纵——结论见上（条件垄断、权威语言、社会困境）。
-- **Evaluating Brand Retrieval and Ranking in LLM Recommendations**（Malthouse et al. 2026, arXiv 2609.16304）：把 LLM 推荐当作**随机的检索-排序过程**，6 个 LLM × 5 品类重复采样，测品牌出现概率与平均倒数排名（MRR）。
+- **Evaluating Brand Retrieval and Ranking in LLM Recommendations**（Malthouse et al. 2026, arXiv 2609.16304）：把 LLM 推荐当作**随机的检索-排序过程**，6 个 LLM × 5 品类重复采样，测品牌出现概率与平均倒数排名（MRR）——发现推荐高度不稳定。
 - **ChoiceEval**（Oxford × Stupid Human 2026）：按 VALS 式心理画像聚类生成问题，每问新开 session 取 top-5，追问来源——测**心理画像**对推荐的影响。
 - **"Global is Good, Local is Bad?"**（Kamruzzaman, Nguyen & Kim, EMNLP 2024）：15 国各 3 全球 + 3 本地品牌，构造 SAI/ASA 选择题与送礼任务——测 LLM 的**全球 vs 本地品牌偏见**（直接对应 §4 区域问题）。
-- **ConsumerQ**（Maastricht, Uberti-Bona Marin et al. 2026, arXiv 2609.18729）：从真人语料抽取求购请求再重跑，测消费者 UI vs API 的推荐差异。
+- **ConsumerQ**（Maastricht 2026, arXiv 2609.18729）：从真人语料抽取求购请求再重跑，测**消费者 UI vs API** 推荐是否一致。
+
+**另一支：购物对话 agent 的（合成）数据集**（偏 NLP/agent，不是真人 prompt）
+- **Wizard of Shopping**（Amazon, ACL 2025, arXiv 2502.00969）：两个 LLM 扮顾客/助手、按决策树展开、锚定真实商品目录，3,600 段对话。
+- **ShopDial**（arXiv 2504.14375）：先生成产品 QA 再缝合成对话，6 品类 × 1,000 段。
 
 > **空白**：以上多为 2024–2026 的 arXiv/会议预印本，少数已过同行评审（EMNLP 2024、ACL 2025）。做正式综述前仍应系统补检 "LLM/agent + recommendation bias / brand bias / shopping agent / GEO"。
 
@@ -190,7 +188,7 @@ Anchoring（价格锚定）:
   - **Trust in the output**：人们到底多相信 AI 货架的推荐？platform GenAI 与 retailer GenAI 之间这种信任是否不同？
   - **Retailer GenAI vs classic recommender**：retailer GenAI 里的品牌选择与传统推荐算法有何不同，是否像排名算法一样绑定库存（in stock）？
 
-### 可借鉴的现成设计（来自 §5 清单）
+### 可借鉴的现成设计（从数据集清单里筛出）
 - **隔离历史 / 独立性**：Incumbent Advantage 用**筛选过的虚构品牌 + 固定 rating/价格/评论数/成分**来剥离参数记忆；ChoiceEval 也用 screened fictional 选项。→ 虚构品牌 + 属性固定是业内标准做法。
 - **区域合理**：Global South 捐赠语料本身就按 India/Pakistan/Brazil/Nigeria 分区；"Global is Good, Local is Bad?" 覆盖 15 国的全球/本地品牌；ChoiceEval 用 Swedish IP + English 混合——都说明**区域要作为显式变量并记录 IP/语言**。
 - **重跑一致性问题**：多数数据集是"事后重跑（re-run）"而非"真人当时看到的回答"，而 SparkToro/Malthouse 都发现 LLM 推荐**高度不一致（stochastic）**→ 自建数据集必须**重复采样**并记录模型版本/日期，否则无法区分效应与噪声。
