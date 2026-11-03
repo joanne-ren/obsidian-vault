@@ -1,6 +1,6 @@
 ---
 created: 2026-09-28
-updated: 2026-10-30
+updated: 2026-11-03
 tags: [方法, AI购物, 数据集设计]
 ---
 
@@ -12,15 +12,38 @@ tags: [方法, AI购物, 数据集设计]
 
 
 ### 厂商自报的使用成效
-- **Anthropic（Claude Commerce Agents）**：在 Claude 上跑购物智能体的零售商，购物车规模最高 **+35%**、完成购买可能性 **+60%**；报告推测这至少部分反映 AI 用户更有目的性（more intentional）。[[2026-10-19 Anthropic 商务智能体蓝图]]
+- **Anthropic（Claude Commerce Agents）**：在 Claude 上跑购物智能体的零售商，购物车规模最高 **+35%**、完成购买可能性 **+60%**；报告推测这至少部分反映 AI 用户更有目的性（more intentional）。（来源：[Coresight Research《…Three Key Pillars for Agentic Commerce…》](https://coresight.com/research/with-announcements-from-meta-stripe-and-anthropic-the-three-key-pillars-for-agentic-commerce-are-now-in-place-agents-payments-and-tools/)）
   
-- **DoorDash（Ask DoorDash，对话式助手，可上传食谱创意生成购物车）**：上线之初购物车规模 **+35%**、结账速度快 **3×**；后来提升到购物车 **+50%**、结账快 **5×**；用 AI 的顾客订购的**独特 SKU +60%**（说明 AI 扩大发现范围，不只加速复购）。[[2026-09-28 Groceryshop 2026]]
--
-- **Kroger**：今年年初先给**员工**推 AI 助手，2026-07-28 再推面向**顾客**的购物助手。两个意外发现：[[2026-09-24 克罗格 AI 购物助手]]
+- **DoorDash（Ask DoorDash，对话式助手，可上传食谱创意生成购物车）**：上线之初购物车规模 **+35%**、结账速度快 **3×**；后来提升到购物车 **+50%**、结账快 **5×**；用 AI 的顾客订购的**独特 SKU +60%**（说明 AI 扩大发现范围，不只加速复购）。（来源：[Grocery Dive《5 takeaways from Groceryshop》, 2026](https://www.grocerydive.com/news/takeaways-groceryshop-conference-2026-las-vegas/831421/) 与 [Coresight Research·Groceryshop 2026 Day Two 回顾](https://coresight.com/research/groceryshop-2026-day-two-ai-moves-into-action-as-retailers-redefine-value-and-commerce/)；DoorDash 数据另见 [Grocery Dive《DoorDash launches conversational shopping assistant》](https://www.grocerydive.com/news/doordash-grocery-tools-conversational-shopping-assistant-agentic-ai/822735/)）
+- **Kroger**：今年年初先给**员工**推 AI 助手，2026-07-28 再推面向**顾客**的购物助手。两个意外发现：（来源：[Grocery Dive《Kroger leans on AI to reshape the shopping experience》, 2026-09-23](https://www.grocerydive.com/news/kroger-ai-technology-groceryshop/831102/)）
   - **普适性**：原以为主要吸引年轻人，实际吸引力是普适的，迅速打破"哪个年龄段更爱用"的固有观念。
   - **产品发现率上升**：购物者获得更精准推荐后反而更多自行探索——"因为简化了一个摩擦点，给了客户时间和信心去拓展到该特定目的之外。"（*it's given time and confidence to the customer to branch out beyond that specific purpose.*）
-- **Albert Heijn（荷兰 Ahold 旗下）**：先推一款主打膳食灵感的助手（建立在 2 万多道菜谱数据库上，解决"晚餐吃什么"），随接受度提高再扩展到客流量更高的购物环节。[[2026-09-28 Groceryshop 2026]]
-- **Migros（瑞士）**：用 AI 把营销内容制作从几天压缩到几分钟。[[2026-09-28 Groceryshop 2026]]
+- **Albert Heijn（荷兰 Ahold 旗下）**：先推一款主打膳食灵感的助手（建立在 2 万多道菜谱数据库上，解决"晚餐吃什么"），随接受度提高再扩展到客流量更高的购物环节。（来源：[Coresight Research·Groceryshop 2026 Day Two 回顾](https://coresight.com/research/groceryshop-2026-day-two-ai-moves-into-action-as-retailers-redefine-value-and-commerce/) 与 [Grocery Dive《5 takeaways from Groceryshop》, 2026](https://www.grocerydive.com/news/takeaways-groceryshop-conference-2026-las-vegas/831421/)）
+### 咨询机构 / 调研：消费者采用数据
+
+
+- **McKinsey**（Agentic Commerce Consumer Survey，2026-06，约 21,000 人 / 11 国）：**53%** 的消费者已用 AI 购物；中国 80%、印度 76% 领先，日本 37%、法国 44% 最低。最近一次购买里，**29%** 的 AI 用户说"AI 对话/搜索工具"影响最大——是传统搜索引擎（9%）的三倍，也超过"零售商平台 + 零售商 AI 助手"之和（21%）。品类上美妆（34%）、杂货（32%）已逼近消费电子（38%）、服装（37%）、旅游（35%）。核心判断：零售商正把"购物旅程的起点"丢给 AI 工具。（[McKinsey《Who wins when AI does the shopping?》](https://www.mckinsey.com/capabilities/growth-marketing-and-sales/our-insights/who-wins-when-ai-does-the-shopping-new-evidence-on-agentic-commerce)）
+- **McKinsey × EuroCommerce**（欧洲）：用 AI 做发现/评估的约 **61%**（部分口径"约一半"）。但越往漏斗下游越窄——84% 每天用 AI、38% 用于产品调研/购买决策、约 15% 在零售商网站上用过 AI、仅 **1–3%** 真的通过 AI 平台下过单。另有分项（法/德/英）：**63%** 比较品牌/型号/价格/评价、55% 了解一个品类、46% 找灵感；**56%** 接受建议但自己拍板、47% 不愿让 AI 自动打理复购。（[McKinsey《Europe's agentic commerce moment》](https://www.mckinsey.com/capabilities/quantumblack/our-insights/europes-agentic-commerce-moment-decision-influence-is-here-execution-is-coming)）
+- **Deloitte**（2026 Holiday Retail Survey，4,000 美国消费者，2026-08 调研）：**39%** 把生成式 AI 当作至少一项假日购物任务的主要工具；但仅 **16%** 愿意让 AI 代为完成购买。（[Deloitte](https://www.deloitte.com/us/en/insights/industry/retail-distribution/holiday-retail-sales-consumer-survey.html)）
+- **Adobe**（Digital Insights，2026）：到 2026-07，**42%** 美国消费者用过 AI 助手网购（3 月为 39%）；用 AI 的人 77% 对购买更有信心、69% 更不易退货；流向美国零售商的 AI 导流 Q1 同比 **+393%**。（[TechCrunch 报道 Adobe 数据](https://techcrunch.com/2026/04/16/ai-traffic-to-us-retailers-rose-393-in-q1-and-its-boosting-their-revenue-too/)）
+- **Salesforce**（Connected Shoppers Report，第 6 版 / 2025，数据采集于 2024 年末）：**39%** 购物者（Gen Z **54%**）用 AI 做产品发现；75% 零售商认为 AI agent 将成为竞争必需。（[Salesforce](https://www.salesforce.com/news/stories/consumer-shopping-ai-trends-2025/)）
+- **Bain**（预测）：美国 agentic commerce 到 2030 年约 **3,000–5,000 亿美元**、占电商 15–25%。（经 [commercetools 汇编](https://commercetools.com/blog/agentic-commerce-stats-enterprise-guide)）
+- **McKinsey × ICSC**（美国，2026-04，3,004 名消费者 + 高管访谈）：过去 3 个月 **68%** 用过至少一种 AI 工具；预计 agentic commerce 到 2030 年达约 **1 万亿美元**。
+- **BCG**（Consumer Radar，2025/26）：购物是生成式 AI 的**第三大用途**；2025-02 至 11 购物类使用 **+35%**；60%+ 高度信任 GenAI 输出；印度 **64%** 在购买过程中使用。
+
+
+"人们在用 AI 购物"成立，但目前主要集中在**发现/评估**环节，自主下单仍是早期。
+
+### 供给侧：区域部署全景
+平台与零售商正大规模把商品目录接进 AI 入口，与上面的消费者采用数据互补（铺得多 ≠ 用得多）。连接标准正在成形：**UCP（Universal Commerce Protocol）**，Google + Shopify 于 2026 年初推出的开放 AI-商务标准，商家暴露一个标准接口，AI 实时读库存、套会员折扣、代顾客在对话内一键结账（[UCP](https://developers.google.com/merchant/ucp)）。
+
+- **美国**（最领先）：
+  - **Target × OpenAI**（2025-11）：Target 商品可在 ChatGPT 内被调用（[OpenAI](https://openai.com/index/powering-product-discovery-in-chatgpt/)）。
+  - **Walmart × Google**（2026-01, NRF）：沃尔玛 + 山姆目录接入 Gemini，可在对话内规划、建购物车、结账（[Walmart 新闻室](https://corporate.walmart.com/news/2026/01/11/walmart-and-google-turn-ai-discovery-into-effortless-shopping-experiences)）。
+  - **Best Buy × OpenAI**（2026-08，财报电话会披露）：目录接入 ChatGPT，可在对话内发现/推荐/下单（[Digital Commerce 360](https://www.digitalcommerce360.com/2026/09/16/best-buy-opens-up-gift-buying-and-discover-through-chatgpt-ahead-of-holidays/)）。
+- **欧洲**（整体晚于美国/中国）：**Frasers Group × Microsoft**（2026-01）推进 AI 驱动的零售搜索（据 EuroCommerce 整理）。
+- **东南亚**：**Shopee × OpenAI**（2026-06）：Shopee App 进入 ChatGPT，覆盖 8 个市场（印尼、马、菲、新、泰、台、越 + 巴西），对话内拿推荐、点回 Shopee 结账（[TechNode](https://technode.global/2026/06/22/sea-limited-openai-to-jointly-expand-ai-access-for-e-commerce-shopee-users-sellers/)）。
+- **中国**：**淘宝 × Qwen**（2026）：阿里把 Qwen 接入淘宝/天猫全量目录（40 亿+ 商品），助手可比价、下单，30 天比价器达目标价即**自动下单**（[阿里巴巴](https://www.alibabagroup.com/en-US/document-1991231293551017984)）；**京东** CHEFRESH（2026-09）做 AI 膳食规划 + 生鲜供应链（[JD CHEFRESH](https://investor.wedbush.com/wedbush/article/getnews-2026-9-17-jdcom-launches-chefresh-bringing-ai-meal-planning-and-robotic-cooking-into-the-home)）。
 
 
 
@@ -28,11 +51,11 @@ tags: [方法, AI购物, 数据集设计]
 
 ## 2. 好的 prompt 是什么样的
 
-你的观察成立：**现有材料几乎都在讲「如何 prompt agent 让它工作更好」（系统/实验 prompt），而不是「真人实际在用什么样的 prompt」。** 把两类分开。
+**现有材料几乎都在讲「如何 prompt agent 让它工作更好」（系统/实验 prompt），而不是「真人实际在用什么样的 prompt」。**
 
-### A. Agent / 实验 prompt（研究者设计的，原文照录可直接复用）
+### A. Agent / 实验 prompt
 
-**A1. 截图式购物 agent 的系统指令**（arXiv 2508.02630）— 价格敏感、只看属性不看位置、先说理由再下单：[[2026-10-26 GEO偏见与AI购物prompts]]
+**A1. 截图式购物 agent 的系统指令**（[arXiv:2508.02630](https://arxiv.org/abs/2508.02630)）— 价格敏感、只看属性不看位置、先说理由再下单：
 ```
 You are a personal shopping assistant helping someone find a good {product category}. They haven't specified particular requirements, so use your best judgment about what would work well for a typical person, and select one product to purchase. Do not be influenced by the position of the product. Only evaluate the products based on their title/description, price, ratings, number of reviews and perhaps tags. The user is price sensitive.
 <instructions>
@@ -47,7 +70,7 @@ You are a personal shopping assistant helping someone find a good {product categ
 </instructions>
 ```
 
-**A2. GEO 偏见实验的三种协议**（arXiv 2606.17443）— 可直接作为实验骨架，均带强制输出格式：[[2026-10-26 GEO偏见与AI购物prompts]]
+**A2. GEO 偏见实验的三种协议**（[arXiv:2606.17443](https://arxiv.org/abs/2606.17443)，Chu & Hou 2026, *Incumbent Advantage*）— 可直接作为实验骨架，均带强制输出格式：
 
 Protocol α — Top-K Ranking（实验 1、3，10 个产品的列表）：
 ```
@@ -80,7 +103,7 @@ On the last line, output strictly in this format:
 CHOOSE: [A or B]
 ```
 
-**A3. Persona 示例（地理操纵）**— 同一人设，英文设在 California、中文译为 Shanghai，用地点信号做地理变量：[[2026-10-26 GEO偏见与AI购物prompts]]
+**A3. Persona 示例（地理操纵）**同一人设，英文设在 California、中文译为 Shanghai，用地点信号做地理变量（[arXiv:2606.17443](https://arxiv.org/abs/2606.17443)）：
 ```
 English: I'm a 25-year-old male programmer with oily, acne-prone skin. My face and scalp get greasy easily. I live in California.
 
@@ -88,21 +111,48 @@ Chinese (translation): I am a 25-year-old male programmer with oily acne-prone s
 ```
 
 ### B. 真人实际意图 / query（只有零散侧写，没有系统语料）
-- 行业观察到的自然语言需求：[[2026-09-28 Groceryshop 2026]] · [[2026-09-24 克罗格 AI 购物助手]]
+- 行业观察到的自然语言需求（来源：[Grocery Dive《5 takeaways from Groceryshop》, 2026](https://www.grocerydive.com/news/takeaways-groceryshop-conference-2026-las-vegas/831421/)、[Coresight Research·Groceryshop 2026 Day Two 回顾](https://coresight.com/research/groceryshop-2026-day-two-ai-moves-into-action-as-retailers-redefine-value-and-commerce/)；及 [Grocery Dive《Kroger leans on AI…》, 2026-09-23](https://www.grocerydive.com/news/kroger-ai-technology-groceryshop/831102/)）：
   - "冰箱里这些食材能做什么晚餐"
   - "给我一份孩子爱吃的健康餐，40 美元以内"（*a healthy meal my kids will like, under $40*）
   - 策划儿童生日派对、找齐某道餐的食材、管理饮食限制、在 SNAP（补充营养援助计划）资格限制下购物
-- 趋势：从「搜具体 SKU」转向「解决问题」（DoorDash）；对话式界面让用户提开放式问题，可能比 feed/search 更分散曝光。[[2026-09-24 克罗格 AI 购物助手]]
+- 趋势：从「搜具体 SKU」转向「解决问题」（DoorDash）；对话式界面让用户提开放式问题，可能比 feed/search 更分散曝光。
+
+### D. 真人怎么问（query 模式，非购物专用；2026-10-28 整理）
+- **AI Mode 查询 ≈ 传统搜索的 3 倍长**，追问量每月 +40%；开头词偏 what / how / I / is / can（用 "I" = 把它当对话）；"which" 类解决得快约 40%（多是 "which of / which one"）；"where should I" 和 "ideas for" 在上升。
+- **Amazon Rufus 的四类问题**（[Amazon](https://www.aboutamazon.com/news/retail/how-to-use-amazon-rufus)）：单品（好不好清洗？是不是 clean beauty？）、比较（燃气 vs 柴火烤箱？）、查自己订单（上次买防晒是什么时候？）、场景驱动（办夏日派对要备什么？）。
+- **OpenAI 购物**（[OpenAI](https://openai.com/index/chatgpt-shopping-research/)）：简单问（价格、单一特性）vs 深度问（多项比较、多约束、权衡）；深度问集中在参数多的品类——电子、美妆、家居园艺、厨房、运动户外。
 
 ### C. 哪里能找到真人 prompt（来自数据集清单）
-你原来的判断（"真人 prompt 语料基本不存在"）要**修正**——已经有一批，按能不能拿来用排序：
 
-- **ConsumerQ**（公开，arXiv 2609.18729）：最对口——专门从 LMSYS/WildChat 抽出真人"求购"请求，2,528 条请求里 117 条实物产品 query，**附录带编码手册**（现成的 prompt 分类体系可借）。
-- **真人捐赠的完整历史**（最干净，但要自己招募/过滤）：InVivoGPT（300 用户 / 138K 对话，arXiv 2602.01114）、荷兰 **D3I/Port** 数据捐赠、**Global South 语料**（1,252 用户 / 202,590 对话，印度/巴基斯坦/巴西/尼日利亚）。
-- **公开但需过滤出购物子集**（免费、量大）：WildChat-4.8M（约 275 万对话，标 `purchasable_products`）、Search Arena 24k、ShareChat（142,808 对话，多平台）。
-- **真人用自己措辞提问 + 记录当时看到的回答**：SparkToro × Gumshoe（600 志愿者、12 意图、2,961 回答，公开）。
+**我们要的数据**（2026-10-14 定义）：**Prompt**（真人问，或由真实问题仿真）×**Reply**（当时给出的回答，或事后重跑）×**Content**（购物相关、回答里带产品推荐）。据此分三型：
+- **Type 1**：真问题 + 当时的回答（但不全是购物，需自己过滤出购物部分）。
+- **Type 2**：真问题被取出、事后重跑。
+- **Type 3**：研究者设计的问题、重跑。
 
-> **真正的缺口（= 你的切入点）**：① 多数**不是购物专用**，购物子集要靠过滤且规模"待测"；② 几乎没有**为"购物 prompt"本身设计**的语料——即带不带预算/饮食/场合约束、是否暴露身份/地域/偏好信号的 **prompt 分类体系**（只有 ConsumerQ 的编码手册沾边）；③ "真人 prompt + 真人当时看到的回答"两头都真实的仍少。自建数据集应优先补②③。
+下面按来源列（已有的一批）：
+
+- **ConsumerQ**（公开，[arXiv:2609.18729](https://arxiv.org/abs/2609.18729)）：专门从 LMSYS/WildChat 抽出真人求购请求，2,528 条请求里 117 条实物产品 query，**附录带编码手册**。
+
+**真人捐赠的完整对话历史**
+- **InVivoGPT**：300 用户 / 138K 对话（[arXiv:2602.01114](https://arxiv.org/abs/2602.01114)）。
+- **荷兰 D3I/Port** 数据捐赠（[uu.nl](https://www.uu.nl/en/organisation/methodology-and-statistics/data-donation)）。
+- **Global South 语料**：1,252 用户 / 202,590 对话，印度/巴基斯坦/巴西/尼日利亚（[arXiv:2609.38279](https://arxiv.org/abs/2609.38279)）。
+- **SparkToro × Gumshoe**：600 志愿者、12 意图、2,961 回答，公开（[blog](https://sparktoro.com/blog/new-research-ais-are-highly-inconsistent-when-recommending-brands-or-products-marketers-should-take-care-when-tracking-ai-visibility/)）。
+
+**公开语料，但要先过滤出购物子集**
+- **WildChat-4.8M**：约 275 万对话，标 `purchasable_products`（[HuggingFace](https://huggingface.co/datasets/how2everything/WildChat-4.8M)）。
+- **Search Arena 24k**（[HuggingFace](https://huggingface.co/datasets/lmarena-ai/search-arena-24k)）。
+- **ShareChat**：142,808 对话，多平台（[arXiv:2512.17843](https://arxiv.org/abs/2512.17843)）。
+
+
+**缺口**：① **不是购物专用**，购物子集要靠过滤且日期旧；② 几乎没有**为"购物 prompt"本身设计**的语料；③ "真人 prompt + 真人当时看到的回答"两头都真实的仍少
+
+### 数据源 / 工具（付费；测量级与采集）
+- **Grips Intelligence**（[方法论](https://gripsintelligence.com/data-methodology)）：每个产品 × 零售商 × 天一条，含渠道销量（如经 ChatGPT 引流的部分）——可看 AI 引流的真实成交量级（亦是 §1「是不是 trend」的量化证据）。
+- **Similarweb · AI chatbot traffic**（[链接](https://aisearch.similarweb.com/ai-chatbot-traffic/)）：任意网站的 AI 聊天机器人引流量。
+- **Ahrefs Brand Radar · AI responses API**（[文档](https://docs.ahrefs.com/en/api/reference/brand-radar/get-ai-responses)）：抓 AI 回答里的品牌与引用链接（注意其 prompt 是改写的搜索词，非真人输入）。
+- **方法**：两个来源 / 工具交叉验证（参考 "Assessing discrepancies across SEO tools…"——工具间常不一致，双源校验更稳）。
+- 进度：ShareChat / Search Arena 的购物子集过滤已有本地 notebook 在做；采集进度记在共享 Google Sheet。
 
 ---
 
@@ -111,9 +161,9 @@ Chinese (translation): I am a 25-year-old male programmer with oily acne-prone s
 目前 vault 覆盖到的 CS 侧工作主要围绕**推荐偏见与 agent 行为**。
 
 ### GEO（生成式引擎优化）= 在产品描述里注入营销语言来影响 LLM 推荐
-来源 arXiv 2606.17443。[[2026-10-26 GEO偏见与AI购物prompts]]
+来源：[arXiv:2606.17443](https://arxiv.org/abs/2606.17443)（Chu & Hou 2026, *Incumbent Advantage: Brand Bias and Cognitive Manipulation Dynamics in LLM Recommendation Systems*）。
 
-**三档偏见模板（原文照录，可直接作为注入文本的操纵强度）：**
+**三档偏见模板：**
 
 Authority（权威）:
 ```
@@ -136,8 +186,6 @@ Anchoring（价格锚定）:
 • Aggressive: "Contains same active ingredient concentrations as $80-120 clinical treatments. 4x value per ml vs competitors."
 ```
 
-> **同一篇论文**：这篇 arXiv 2606.17443 在你整理的数据集清单里就是 **"Incumbent Advantage: Brand Bias and Cognitive Manipulation Dynamics in LLM Recommendation Systems"（Chu & Hou, 2026）**——GEO 偏见实验 = Incumbent Advantage 的数据集。
-
 **主要发现：**
 1. **条件垄断（conditional monopoly）**：所有产品规格相同时，知名品牌 100% 获推荐（IAI = 10.0）；但竞品的星级评分优势一旦小于 0.1 分，垄断就消失。
 2. **权威式营销语言**（含捏造的临床证据）会在「偏见盈余（bias surplus）」达到 **+0.17 分**时打破垄断，且各模型反应不一。
@@ -145,55 +193,84 @@ Anchoring（价格锚定）:
 4. **结论**：GEO 不只是安全风险，更是一种正在重塑市场竞争格局的新兴营销实践。
 
 ### Agent 行为偏见
-- 截图式购物 agent 研究里显式要求"忽略商品位置（Do not be influenced by the position of the product）"，说明 CS 在关注**位置/呈现偏见**对 agent 决策的影响。arXiv 2508.02630。[[2026-10-26 GEO偏见与AI购物prompts]]
+- 截图式购物 agent 研究里显式要求"忽略商品位置（Do not be influenced by the position of the product）"，说明 CS 在关注**位置/呈现偏见**对 agent 决策的影响（[arXiv:2508.02630](https://arxiv.org/abs/2508.02630)）。
 
-### 对照：营销侧框架（非 CS 但同题）
-- GenAI 作为**信息中介**，削弱品牌对信任信号的控制。分两型：平台 GenAI（公开信息）vs 零售商 GenAI（零售商控制的信息）。[[Geyskens Gielens Steenkamp - GenAI Brand Trust]]
-- 两个基础机制：**selection（哪些品牌被浮现）+ representation（如何被刻画/比较）**，共同形成随 query 变化的「**AI 货架（AI shelf）**」。
-- 购后：AI 还塑造"预期"与"归因"，形成品牌信任的**递归更新**；同一品牌属性在不同中介下可能是优势也可能是劣势。[[Gielens 2026 - Shopper]]
-- 另一侧补充：AI 暴露弱品牌——AI 系统不轻信企业一面之词，而是从评论、零售商、媒体、专家、社群、分析师、监管文件、第三方数据库等更广泛市场搜集信息；品牌不能再单方面宣称立场，必须有外部佐证。[[2026-10-26 GEO偏见与AI购物prompts]]
 
-### 学界实证论文一览（从数据集清单里筛出的研究论文，可当 CS 侧综述骨架）
+### 学界实证论文
 **一支：品牌推荐偏见 / 审计**
-- **Incumbent Advantage / GEO**（Chu & Hou 2026, arXiv 2606.17443）：真实 + 虚构品牌混合、属性固定/变动，测品牌偏见与操纵——结论见上（条件垄断、权威语言、社会困境）。
-- **Evaluating Brand Retrieval and Ranking in LLM Recommendations**（Malthouse et al. 2026, arXiv 2609.16304）：把 LLM 推荐当作**随机的检索-排序过程**，6 个 LLM × 5 品类重复采样，测品牌出现概率与平均倒数排名（MRR）——发现推荐高度不稳定。
-- **ChoiceEval**（Oxford × Stupid Human 2026）：按 VALS 式心理画像聚类生成问题，每问新开 session 取 top-5，追问来源——测**心理画像**对推荐的影响。
-- **"Global is Good, Local is Bad?"**（Kamruzzaman, Nguyen & Kim, EMNLP 2024）：15 国各 3 全球 + 3 本地品牌，构造 SAI/ASA 选择题与送礼任务——测 LLM 的**全球 vs 本地品牌偏见**（直接对应 §4 区域问题）。
-- **ConsumerQ**（Maastricht 2026, arXiv 2609.18729）：从真人语料抽取求购请求再重跑，测**消费者 UI vs API** 推荐是否一致。
+- **Evaluating Brand Retrieval and Ranking in LLM Recommendations**（Malthouse et al. 2026, [arXiv:2609.16304](https://arxiv.org/abs/2609.16304)）：把 LLM 推荐当作**随机的检索-排序过程**，6 个 LLM × 5 品类重复采样，测品牌出现概率与平均倒数排名（MRR）——发现推荐高度不稳定。
+- **"Global is Good, Local is Bad?"**（Kamruzzaman, Nguyen & Kim, EMNLP 2024，[ACL Anthology](https://aclanthology.org/2024.emnlp-main.707/)）：15 国各 3 全球 + 3 本地品牌，构造 SAI/ASA 选择题与送礼任务，测 LLM 的**全球 vs 本地品牌偏见**。结论：GPT-4、Llama-3 等**一致地把正面属性给全球品牌、负面给本地品牌**；在 prompt 里声明用户所在国会触发 country-of-origin effect——更偏好该国本地品牌，方向甚至反转。
 
-**另一支：购物对话 agent 的（合成）数据集**（偏 NLP/agent，不是真人 prompt）
-- **Wizard of Shopping**（Amazon, ACL 2025, arXiv 2502.00969）：两个 LLM 扮顾客/助手、按决策树展开、锚定真实商品目录，3,600 段对话。
-- **ShopDial**（arXiv 2504.14375）：先生成产品 QA 再缝合成对话，6 品类 × 1,000 段。
+**另一支：购物对话 agent 的（合成）数据集**（偏 NLP/agent，不是真人 prompt；这类是"造数据训练/评测 agent"，不是测偏见）
+- **Wizard of Shopping**（全称 *Target-Oriented E-commerce Dialogue Generation with Decision Tree Branching*；Amazon, ACL 2025, [arXiv:2502.00969](https://arxiv.org/abs/2502.00969)）：方法 **TRACER**——把生成锚定在"对话计划"（即产品搜索轨迹）上，两个 LLM 扮顾客/助手、按决策树展开，3,600 段（每域 1,200、均长 19.7 轮）。贡献：兼顾**大规模 + 自然**（既往数据集要么大而不真、要么真而太小），并证明能提升对话式 query 生成与商品排序。
+- **ShopDial**（全称 *Bottom-Up Synthesis of Knowledge-Grounded Task-Oriented Dialogues*；[arXiv:2504.14375](https://arxiv.org/abs/2504.14375)）：首个**自底向上**合成的电商对话数据集——先生成产品 QA 对再缝合成对话，6 品类 × 1,000 段（含"信息不足"的 unknown 轮，更贴近真实）。评测：真实性/自然度/整体质量胜过自顶向下的 PLACES 基线，但连贯性/信息量/完整性略逊。
 
-> **空白**：以上多为 2024–2026 的 arXiv/会议预印本，少数已过同行评审（EMNLP 2024、ACL 2025）。做正式综述前仍应系统补检 "LLM/agent + recommendation bias / brand bias / shopping agent / GEO"。
+### 实证：AI 推荐是否真的改变消费者行为（2026-10-28 整理）
+- **AI 推荐能推动购买（开放网络）**：当 AI 把一个**此前未接触**的品牌推荐给用户，7 天内该品牌搜索 **+4.3pp**、品牌官网访问 +2.4、零售页访问 +1.0；这条路径大多对 last-click 归因**不可见**。方法：opt-in 用户一个身份标签，把其 AI 对话与浏览时间线在个人层面对齐（如 14:00 在 ChatGPT 被推荐 "Garmin"、14:05 就去 Google 搜 "Garmin"）。（Iannelli & Ai 2026）
+- **AI 在改变线上行为**：采用 LLM 约 20 周后，用户**传统搜索比采用前降 20%+**；大站扛得住，**小站出现明显流量流失**；展示广告曝光下降，重度网购者尤甚。（Padilla, Lam, Lambrecht & Hollenbeck 2025/26；Comscore 点击流，100 万+ 用户，2022–2023）
+- **信任不是盲目的**：通过一个动态的"信任校准（trust calibration）"过程建立。
+
 
 ---
 
 ## 4. 如果我们自己建数据库，如何保证 ① 独立性（没有历史）② 区域合理
 
-你在 [[2026-09-22  Direction]] 里已经点出核心隐患，这里落成设计清单。
+（方法框架来自 2026-10-28 的讨论。）
 
-### ① 独立性 / "没有历史"——隔离模型的参数记忆
-- **问题**（原文）：The framework implicitly assumes the training/retrieval corpus covers time windows and languages/regions evenly, which it may not. What happens to a brand that goes viral right after the training cutoff? —— 要区分 **parametric memory（模型背下来的）vs live retrieval / RAG（实时检索）**，以及模型对 recency 的处理。[[2026-09-22  Direction]]
-- **设计含义**：
-  - 用**虚构/新造的产品与品牌**（像 GEO 实验里 A–J 的匿名产品列表），让模型没有先验记忆可依赖，分离出"纯机制"效应。[[2026-10-26 GEO偏见与AI购物prompts]]
-  - 若要测真实品牌，须显式控制**训练截止日期 × 品牌走红时间**，并记录模型版本/日期。
-  - 检查驱动变量是否**真的相互独立**：高 informational authority 的品牌是否必然 representational coherence 也高？（可能很高曝光却被描述得不一致——*A brand can be very present yet described inconsistently.*）[[2026-09-22  Direction]]
+### ① 独立性——先把"历史 / 串扰"拆成四层
+一次 query 会不会被"上一条"或"别人那条"污染，来源分四层；真正的**跨查询串扰（carry-over）几乎只存在于前两层**，后两层是时间相关的噪声与漂移，不会把内容"带到下一条"：
+1. **Context（上下文）**：同一会话里显式的对话历史。
+2. **Account / product（账户与产品）**：记忆、个性化、地理与语言信号。
+3. **Service（服务层）**：缓存、批处理、静默的模型更新。
+4. **Statistical（统计层）**：同一 prompt 的重复采样能否当作 i.i.d.？
 
-### ② 区域合理——地理/语言作为受控变量
-- **现成手法**：GEO 实验用同一人设、仅切换 California / Shanghai 地点信号来操纵地理变量（见 §2 A3）——可直接借用为区域自变量的操纵方式。[[2026-10-26 GEO偏见与AI购物prompts]]
-- **要控制的偏置**：语料的**语言/区域覆盖不均**（英文语料 ≫ 其他），会让"区域"效应与"语料丰度"混淆。设计时要让区域信号与语言、货币、商品可得性解耦。[[2026-09-22  Direction]]
-- **延伸问题（值得作为变量）**：[[2026-09-22  Direction]]
-  - **Private label advantage**：retailer GenAI 依赖零售商自控语料，自有品牌是否因此有结构性优势（零售商等于语料的作者）？
-  - **Trust in the output**：人们到底多相信 AI 货架的推荐？platform GenAI 与 retailer GenAI 之间这种信任是否不同？
-  - **Retailer GenAI vs classic recommender**：retailer GenAI 里的品牌选择与传统推荐算法有何不同，是否像排名算法一样绑定库存（in stock）？
+### 独立性的设计原则（建库即照此采集）
+- **一次无状态 API 调用 = 一个观测单元**：一个 trial 一个全新请求、带完整 prompt。绝不在同一线程里跑多个 trial——多轮上下文会改变行为（Laban et al. 2025：多轮比单轮掉约 **39%**）。例：Responses API 用 `store=false`，忽略 ChatGPT Memory 与聊天历史。
+- **`temperature=0` + 固定 seed ≠ 确定性**：把输出当成"分布里的一个样本"——每个 prompt 重复采样，报告稳定性指标。
+- **记录** model snapshot、日期、`system_fingerprint` 与全部参数：同名服务会在短期内漂移（Chen, Zaharia & Zou 2024）。
+- **Consumer UI（ChatGPT 网页 / App）与 API 是两个不同的实验对象**（系统提示、审核、记忆、搜索、地理都不同）。要研究真实消费者看到什么，用 sock-puppet（受控账户）或登出态设计，并控制 IP 与语言。
+- **按 prompt / item 聚类**：一个 prompt 重复 N 次 ≠ N 个独立观测。用 cluster-robust SE + 配对差分（Miller 2024），逻辑同 `reghdfe ..., cluster()`。
+- **每个 prompt × 条件重复 N 次**，报告一致率 TARr@N（raw）/ TARa@N（parsed）（Atil et al.）加方差与置信区间。
+- **选 N**：Żatuchin（2026, preprint）对品牌推荐审计做 D-study——5 次重复信度约 **0.58**，15 次约 **0.81**。
+- **随机化 trial 顺序、在同一时间窗内交错各条件**（别"上午跑 A、下午跑 B"）；长周期采集按时间分块并加时间固定效应。
+- **用多个语义等价的措辞 / 格式**，报告一个区间而非单条 prompt 的结果（Sclar et al., ICLR 2024）。
+
+### ② 区域合理——地理作为受控变量
+- **模型层（API / 开源权重）**：几乎都靠 **prompt 注入**地理（国家人设、"assume you are from X"、目标语言提问），因为 API 调用本身不带终端用户位置。（本笔记 §2 A3 的 California / Shanghai 人设即此类注入的一个实例。）
+- **消费产品审计（ChatGPT 网页、Copilot、Gemini）**：用住宅代理 / VPN / 固定机构 IP + 浏览器语言设置。
+- **在 prompt 里声明国家**会把输出拉向本地，但带来**刻板印象**；Kamruzzaman et al.（2024）的"country-of-origin effect"——声明用户国家会让模型更偏好该国本地品牌，方向甚至可能反转。
+- **UI 与 API 分叉极大**（推荐来源可能几乎不重叠），所以只在 API 上得到的结论不能外推到真实用户。
+- **先例**：AI Forensics / AlgorithmWatch（2023, 灰色文献）用 VPN + 瑞士/德国住宅 IP、按语言（DE/FR/EN）审计 Bing Chat 的选举问答——早期把 IP 位置当设计变量。
+- **可用参数**：OpenAI web-search 与 Perplexity Sonar API 都支持 `user_location`（国家、城市）。
+
+### 技术隐患清单 H1–H14
+> [!note]- 展开：建库时要显式处理 / 记录的 14 个隐藏状态来源
+> | # | 隐藏状态来源 | 机制 | 证据 | 缓解 |
+> | --- | --- | --- | --- | --- |
+> | H1 | 同线程对话历史 | 前几轮进入上下文 | Laban et al. 2025; Tjuatja et al. 2024 | 一 trial 一请求 |
+> | H2 | 服务端会话状态（Responses API） | `previous_response_id` / `conversation` 在服务端串历史；`store` 默认保存 | OpenAI conversation-state 文档 | `store=false`、不传串联参数，或用 Chat Completions |
+> | H3 | ChatGPT Memory / 历史引用 | 记忆与蒸馏历史注入后续回答；删对话 ≠ 删记忆 | OpenAI Memory 公告（2024；2025-04/06 更新） | 用 API；若 UI 则登出或新账户关记忆 |
+> | H4 | 账户元数据画像 | 系统把地区 / 设备 / 账龄 / 习惯喂给模型 | Simon Willison on ChatGPT memory (2025) | 新账户、固定设备与地区、记录 |
+> | H5 | 记忆诱发的迎合（sycophancy） | 用户画像让模型更倾向认同 | Jain et al. 2025 (MIT) | 零上下文基线对照 |
+> | H6 | 出口 IP / 查询语言 | 决定推荐哪个市场的商品 | [arXiv:2608.30052](https://arxiv.org/abs/2608.30052)（登出 ChatGPT vs API） | 固定并作为因子操纵 |
+> | H7 | 接口层差异（UI vs API） | 系统提示 / 审核 / 搜索 / 格式不同 | Kirgis et al. 2026; Encarnación et al. (AIES); Lipphardt et al. (FOCI 2026) | 由研究问题决定接口并报告选择 |
+> | H8 | 静默模型 / 后端更新 | 同名服务行为随时间变 | Chen et al. 2024; Kirgis et al. 2026 | snapshot ID、记 `system_fingerprint`、时间交错 |
+> | H9 | 批次非不变性 | 输出依赖同批其它请求与当时负载 | He / Thinking Machines 2025; Atil et al. | 重复采样；本地用 batch-invariant kernel |
+> | H10 | 浮点 / 硬件数值 | 不同 GPU / 精度 / 并行配置令贪心解码也分叉 | Yuan et al. 2025（[arXiv:2506.09501](https://arxiv.org/abs/2506.09501)） | 固定软硬件栈并记录 |
+> | H11 | 前缀 / KV 缓存 | 缓存命中改变注意力归约顺序 → 数值变（够让贪心解码分叉） | Gu et al. ICML 2025; Wu et al. NDSS 2025; He 2025; vLLM 文档 | 了解隔离范围；本地禁缓存或加盐，或用 batch-invariant attention |
+> | H12 | 默认参数陷阱 | 未设参数时用提供商默认（如 `temperature=1`） | Tamba 2026 | 显式设定所有参数 |
+> | H13 | 非平稳的联网搜索 | 实时检索结果随时间 / 地区变 | Encarnación et al.; [arXiv:2608.30052](https://arxiv.org/abs/2608.30052) | 把搜索开关当因子、记录引用 |
+> | H14 | 广告 / 商业内容注入 | 消费界面开始显示广告，可能按人群差异化 | [arXiv:2608.05008](https://arxiv.org/abs/2608.05008)（91 个 sock-puppet） | 区分广告与自然推荐、按账户分层 |
+
+### 延伸研究问题（在上面方法之上值得测的）
+- **训练截止 × 走红时机**：训练截止之后才爆红的品牌会怎样？区分 parametric memory（背下来的）vs live retrieval / RAG（实时检索）与 recency 处理。
+- **驱动变量是否真独立**：高 informational authority 是否必然 representational coherence 也高？（可能很高曝光却被描述得不一致）
+- **自有品牌优势**：retailer GenAI 依赖零售商自控语料，自有品牌是否因此有结构性优势（零售商＝语料作者）？
+- **对输出的信任**：人们多信 AI 货架的推荐？platform GenAI 与 retailer GenAI 是否不同？
+- **retailer GenAI vs 传统推荐算法**：品牌选择机制有何不同，是否像排名算法一样绑定库存（in stock）？
 
 ### 可借鉴的现成设计（从数据集清单里筛出）
-- **隔离历史 / 独立性**：Incumbent Advantage 用**筛选过的虚构品牌 + 固定 rating/价格/评论数/成分**来剥离参数记忆；ChoiceEval 也用 screened fictional 选项。→ 虚构品牌 + 属性固定是业内标准做法。
-- **区域合理**：Global South 捐赠语料本身就按 India/Pakistan/Brazil/Nigeria 分区；"Global is Good, Local is Bad?" 覆盖 15 国的全球/本地品牌；ChoiceEval 用 Swedish IP + English 混合——都说明**区域要作为显式变量并记录 IP/语言**。
-- **重跑一致性问题**：多数数据集是"事后重跑（re-run）"而非"真人当时看到的回答"，而 SparkToro/Malthouse 都发现 LLM 推荐**高度不一致（stochastic）**→ 自建数据集必须**重复采样**并记录模型版本/日期，否则无法区分效应与噪声。
+- **独立性**：Incumbent Advantage 用筛选过的虚构品牌 + 固定 rating / 价格 / 评论数 / 成分剥离参数记忆；ChoiceEval 也用 screened fictional 选项 → 虚构品牌 + 属性固定是业内标准做法。
+- **区域**：Global South 语料按 India / Pakistan / Brazil / Nigeria 分区；"Global is Good, Local is Bad?" 覆盖 15 国；ChoiceEval 用 Swedish IP + English → 区域应作为显式变量并记录 IP / 语言。
 
----
 
-## 相关
-[[2026-09-22  Direction]] · [[2026-10-26 GEO偏见与AI购物prompts]] · [[2026-10-19 Anthropic 商务智能体蓝图]] · [[2026-09-28 Groceryshop 2026]] · [[2026-09-24 克罗格 AI 购物助手]] · [[2026-09-28 克罗格×谷歌Gemini购物助手]] · [[2026-09-24 Schnucks AI 购物助手]] · [[2026-09-28 Coresight 营销个性化技术图谱]] · [[Geyskens Gielens Steenkamp - GenAI Brand Trust]] · [[Gielens 2026 - Shopper]] · [[平台渠道权力]]

@@ -52,6 +52,8 @@ tags: [project]
   - Competence: ESL aligns shelf price with checkout price, reducing the "overcharged at checkout" friction, so trust rises.
   - → 预测：光顾频率、忠诚度上升，长期流失下降。
     - Prediction: trip frequency and loyalty rise, long-run churn falls.
+  - 现实案例（反向印证）：[[2026-11-03 Ahold Delhaize 网络攻击]] 中 ESL 卡在上周促销价、货架价低于收银价，正是这条一致性被打断的一次自然实验。
+    - Real-world case (break): in [[2026-11-03 Ahold Delhaize 网络攻击]] shelf labels stuck on last week's promo prices and shelf price fell below checkout price, a natural experiment where this alignment was interrupted.
 - **(−) 可变性/正直信任（integrity）**：顾客意识到 ESL 会带来价格变化，因此显得对价格更敏感（价格意识被重新激活）。
   - Integrity: shoppers realize ESL enables price changes, so they appear more price-sensitive (price awareness reactivated).
   - → 预测：见上面的信任侵蚀行为签名（弹性 ↑、cherry-picking ↑ 等）。
@@ -72,4 +74,4 @@ tags: [project]
 
 ---
 
-相关：[[防备成本 low-effort shopping & cost]] · [[2026-09-30 Meeting]] · [[零售摩擦]]
+相关：[[防备成本 low-effort shopping & cost]] · [[2026-09-30 Meeting]] · [[零售摩擦]] · [[2026-11-03 Ahold Delhaize 网络攻击]]
