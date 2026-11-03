@@ -10,22 +10,11 @@ My mom is really talented at math, and I like to think I inherited a little of t
   
 Those words stayed with me. For our parents’ generation, a chance like this was rare, and for women it was even harder. It wasn’t that long ago that women were first allowed into universities at all. Even now, women in research often have to work harder to be taken seriously, and their work is more easily overlooked. I’m standing here because of women who kept going anyway. To the women researchers who came before us, and to those in this room: thank you. Because you are here, more girls like me have the confidence to choose a life in research.
 
-  
 
-We also had a lot of help along the way, from people who were here with us almost every day.  So I’d like to say thank you, for myself and on behalf of my cohort. Thank you to the administrative staff, for always being reachable, even when we were being a bit annoying. You took the time to understand each of our situations, and each of us always got the help we needed. Thank you to Bas and Francesca, for taking on an enormous workload and responsibility, and for fighting to get us the best resources. Thank you to our professors and supervisors, for sharing their knowledge and for expecting so much of us. It pushed us to keep moving forward.
+We also had a lot of help along the way, from people who are here with us almost every day.  So I’d like to say thank you, for myself and on behalf of my cohort. Thank you to the administrative staff, for always being reachable, even when we were being a bit annoying. Thank you to Bas and Francesca, for taking on an enormous workload and responsibility, and for fighting to get us the best resources. Thank you to our professors and supervisors, for sharing your knowledge and for expecting so much of us. It pushed us to keep moving forward.  
 
-  
+And to my cohort: thank you for getting each other through BDS. When someone had been stuck for too long, we’d drag each other out for a coffee. We needed each other, because research is hard. You’re never sure you’re right, and the value of your work often shows only much later, so you learn to care about the process, not just the result. Many of us also wondered whether there was still a place for us in academia. Some of us decided to stay, others chose different paths, and both choices took courage. Looking around this room, I see a lot of people who will keep going. 
 
-  
-
-And to my cohort: thank you for getting each other through these two years. What meant the most wasn’t how many problems we solved together. It was that when someone had been stuck for too long, we’d drag them out for a coffee. We needed each other, because research is hard. You’re never sure you’re right, and the value of your work often shows only much later, so you learn to care about the process, not just the result. Many of us also wondered whether there was still a place for us in academia. Some of us decided to stay, others chose different paths, and both choices took courage. Looking around this room, I see a lot of people who chose to keep going. 
-
-  
-
-For the past two years, we stayed up late working through questions in front of the same whiteboard. From now on, we’ll be in front of different whiteboards, in different places. 
-
-  
-
-As for what comes next, I truly believe there are so many possibilities ahead of us. We’ll keep walking beside each other in the future.
+For the past two years, we stayed up late working through questions in front of the same whiteboard. From now on, we’ll be in front of different whiteboards, in different offices. As for what comes next, I truly believe there are so many possibilities ahead of us. We’ll keep walking beside each other in the future.
 
 Congratulations, everyone.
