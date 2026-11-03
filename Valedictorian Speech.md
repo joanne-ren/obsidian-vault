@@ -8,7 +8,7 @@ For me, one of those people is my mom, who couldn’t travel here today. Through
 
 My mom is really talented at math, and I like to think I inherited a little of that from her. But honestly, she loves numbers even more than I do, and she’s smarter and more creative, too.  I sometimes think that, if she had the chance to study here at my age, she would have made even more of it than I have, and been a much better PhD student than I am. One day I told her this. I thought she might agree. Instead, she told me not to feel sorry for her. She said, back then, many people far smarter than her never had a chance like mine.
 
-  
+
 Those words stayed with me. For our parents’ generation, a chance like this was rare, and for women it was even harder. It wasn’t that long ago that women were first allowed into universities at all. Even now, women in research often have to work harder to be taken seriously, and their work is more easily overlooked. I’m standing here because of women who kept going anyway. To the women researchers who came before us, and to those in this room: thank you. Because you are here, more girls like me have the confidence to choose a life in research.
 
 
