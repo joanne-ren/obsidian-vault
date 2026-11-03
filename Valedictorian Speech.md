@@ -1,3 +1,4 @@
+
 Hi I am Joanne from BDS.
 
 I would like to begin by thanking our families and friends, both those who are here today and those watching online. I know that living with a BDS student is not always easy. We spend too much time studying, and even more time overthinking. Thank you for your patience and your love. Whether our research was going well or not, we always knew someone was standing behind us.
