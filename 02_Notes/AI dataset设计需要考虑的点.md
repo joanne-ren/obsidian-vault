@@ -30,6 +30,7 @@ tags: [方法, AI购物, 数据集设计]
 - **Bain**（预测）：美国 agentic commerce 到 2030 年约 **3,000–5,000 亿美元**、占电商 15–25%。（经 [commercetools 汇编](https://commercetools.com/blog/agentic-commerce-stats-enterprise-guide)）
 - **McKinsey × ICSC**（美国，2026-04，3,004 名消费者 + 高管访谈）：过去 3 个月 **68%** 用过至少一种 AI 工具；预计 agentic commerce 到 2030 年达约 **1 万亿美元**。
 - **BCG**（Consumer Radar，2025/26）：购物是生成式 AI 的**第三大用途**；2025-02 至 11 购物类使用 **+35%**；60%+ 高度信任 GenAI 输出；印度 **64%** 在购买过程中使用。
+- **在旅程中的角色**（*Shopping with a Platform AI Assistant*）：AI 对话与传统搜索在同一阶段**互换使用**，AI 是**补充而非替代**搜索；约 **42%** 的请求是探索型（attraction / destination 类）。
 
 
 "人们在用 AI 购物"成立，但目前主要集中在**发现/评估**环节，自主下单仍是早期。
@@ -215,8 +216,6 @@ Anchoring（价格锚定）:
 
 ## 4. 如果我们自己建数据库，如何保证 ① 独立性（没有历史）② 区域合理
 
-（方法框架来自 2026-10-28 的讨论。）
-
 ### ① 独立性——先把"历史 / 串扰"拆成四层
 一次 query 会不会被"上一条"或"别人那条"污染，来源分四层；真正的**跨查询串扰（carry-over）几乎只存在于前两层**，后两层是时间相关的噪声与漂移，不会把内容"带到下一条"：
 1. **Context（上下文）**：同一会话里显式的对话历史。
@@ -225,52 +224,34 @@ Anchoring（价格锚定）:
 4. **Statistical（统计层）**：同一 prompt 的重复采样能否当作 i.i.d.？
 
 ### 独立性的设计原则（建库即照此采集）
-- **一次无状态 API 调用 = 一个观测单元**：一个 trial 一个全新请求、带完整 prompt。绝不在同一线程里跑多个 trial——多轮上下文会改变行为（Laban et al. 2025：多轮比单轮掉约 **39%**）。例：Responses API 用 `store=false`，忽略 ChatGPT Memory 与聊天历史。
+- **一次无状态 API 调用 = 一个观测单元**：一个 trial 一个全新请求、带完整 prompt。绝不在同一线程里跑多个 trial——多轮上下文会改变行为（Laban et al. 2025, *LLMs Get Lost In Multi-Turn Conversation*, [arXiv:2505.06120](https://arxiv.org/abs/2505.06120)：多轮比单轮掉约 **39%**）。例：Responses API 用 `store=false`，忽略 ChatGPT Memory 与聊天历史。
 - **`temperature=0` + 固定 seed ≠ 确定性**：把输出当成"分布里的一个样本"——每个 prompt 重复采样，报告稳定性指标。
-- **记录** model snapshot、日期、`system_fingerprint` 与全部参数：同名服务会在短期内漂移（Chen, Zaharia & Zou 2024）。
+- **记录** model snapshot、日期、`system_fingerprint` 与全部参数：同名服务会在短期内漂移（Chen, Zaharia & Zou, *How is ChatGPT's behavior changing over time?*, [arXiv:2307.09009](https://arxiv.org/abs/2307.09009)）。
 - **Consumer UI（ChatGPT 网页 / App）与 API 是两个不同的实验对象**（系统提示、审核、记忆、搜索、地理都不同）。要研究真实消费者看到什么，用 sock-puppet（受控账户）或登出态设计，并控制 IP 与语言。
 - **按 prompt / item 聚类**：一个 prompt 重复 N 次 ≠ N 个独立观测。用 cluster-robust SE + 配对差分（Miller 2024），逻辑同 `reghdfe ..., cluster()`。
 - **每个 prompt × 条件重复 N 次**，报告一致率 TARr@N（raw）/ TARa@N（parsed）（Atil et al.）加方差与置信区间。
 - **选 N**：Żatuchin（2026, preprint）对品牌推荐审计做 D-study——5 次重复信度约 **0.58**，15 次约 **0.81**。
 - **随机化 trial 顺序、在同一时间窗内交错各条件**（别"上午跑 A、下午跑 B"）；长周期采集按时间分块并加时间固定效应。
-- **用多个语义等价的措辞 / 格式**，报告一个区间而非单条 prompt 的结果（Sclar et al., ICLR 2024）。
+- **用多个语义等价的措辞 / 格式**，报告一个区间而非单条 prompt 的结果（Sclar et al., ICLR 2024, [arXiv:2310.11324](https://arxiv.org/abs/2310.11324)）。
 
 ### ② 区域合理——地理作为受控变量
-- **模型层（API / 开源权重）**：几乎都靠 **prompt 注入**地理（国家人设、"assume you are from X"、目标语言提问），因为 API 调用本身不带终端用户位置。（本笔记 §2 A3 的 California / Shanghai 人设即此类注入的一个实例。）
+- **模型层（API / 开源权重）**：几乎都靠 **prompt 注入**地理（国家人设、"assume you are from X"、目标语言提问），因为 API 调用本身不带终端用户位置。
 - **消费产品审计（ChatGPT 网页、Copilot、Gemini）**：用住宅代理 / VPN / 固定机构 IP + 浏览器语言设置。
 - **在 prompt 里声明国家**会把输出拉向本地，但带来**刻板印象**；Kamruzzaman et al.（2024）的"country-of-origin effect"——声明用户国家会让模型更偏好该国本地品牌，方向甚至可能反转。
 - **UI 与 API 分叉极大**（推荐来源可能几乎不重叠），所以只在 API 上得到的结论不能外推到真实用户。
 - **先例**：AI Forensics / AlgorithmWatch（2023, 灰色文献）用 VPN + 瑞士/德国住宅 IP、按语言（DE/FR/EN）审计 Bing Chat 的选举问答——早期把 IP 位置当设计变量。
 - **可用参数**：OpenAI web-search 与 Perplexity Sonar API 都支持 `user_location`（国家、城市）。
 
-### 技术隐患清单 H1–H14
-> [!note]- 展开：建库时要显式处理 / 记录的 14 个隐藏状态来源
+### 技术隐患清单 H1–H7
+> [!note]- 展开：建库时要显式处理 / 记录的 7 个隐藏状态来源
 > | # | 隐藏状态来源 | 机制 | 证据 | 缓解 |
 > | --- | --- | --- | --- | --- |
-> | H1 | 同线程对话历史 | 前几轮进入上下文 | Laban et al. 2025; Tjuatja et al. 2024 | 一 trial 一请求 |
+> | H1 | 同线程对话历史 | 前几轮进入上下文 | Laban et al. 2025（[arXiv:2505.06120](https://arxiv.org/abs/2505.06120)）; Tjuatja et al. 2024 | 一 trial 一请求 |
 > | H2 | 服务端会话状态（Responses API） | `previous_response_id` / `conversation` 在服务端串历史；`store` 默认保存 | OpenAI conversation-state 文档 | `store=false`、不传串联参数，或用 Chat Completions |
 > | H3 | ChatGPT Memory / 历史引用 | 记忆与蒸馏历史注入后续回答；删对话 ≠ 删记忆 | OpenAI Memory 公告（2024；2025-04/06 更新） | 用 API；若 UI 则登出或新账户关记忆 |
 > | H4 | 账户元数据画像 | 系统把地区 / 设备 / 账龄 / 习惯喂给模型 | Simon Willison on ChatGPT memory (2025) | 新账户、固定设备与地区、记录 |
 > | H5 | 记忆诱发的迎合（sycophancy） | 用户画像让模型更倾向认同 | Jain et al. 2025 (MIT) | 零上下文基线对照 |
 > | H6 | 出口 IP / 查询语言 | 决定推荐哪个市场的商品 | [arXiv:2608.30052](https://arxiv.org/abs/2608.30052)（登出 ChatGPT vs API） | 固定并作为因子操纵 |
 > | H7 | 接口层差异（UI vs API） | 系统提示 / 审核 / 搜索 / 格式不同 | Kirgis et al. 2026; Encarnación et al. (AIES); Lipphardt et al. (FOCI 2026) | 由研究问题决定接口并报告选择 |
-> | H8 | 静默模型 / 后端更新 | 同名服务行为随时间变 | Chen et al. 2024; Kirgis et al. 2026 | snapshot ID、记 `system_fingerprint`、时间交错 |
-> | H9 | 批次非不变性 | 输出依赖同批其它请求与当时负载 | He / Thinking Machines 2025; Atil et al. | 重复采样；本地用 batch-invariant kernel |
-> | H10 | 浮点 / 硬件数值 | 不同 GPU / 精度 / 并行配置令贪心解码也分叉 | Yuan et al. 2025（[arXiv:2506.09501](https://arxiv.org/abs/2506.09501)） | 固定软硬件栈并记录 |
-> | H11 | 前缀 / KV 缓存 | 缓存命中改变注意力归约顺序 → 数值变（够让贪心解码分叉） | Gu et al. ICML 2025; Wu et al. NDSS 2025; He 2025; vLLM 文档 | 了解隔离范围；本地禁缓存或加盐，或用 batch-invariant attention |
-> | H12 | 默认参数陷阱 | 未设参数时用提供商默认（如 `temperature=1`） | Tamba 2026 | 显式设定所有参数 |
-> | H13 | 非平稳的联网搜索 | 实时检索结果随时间 / 地区变 | Encarnación et al.; [arXiv:2608.30052](https://arxiv.org/abs/2608.30052) | 把搜索开关当因子、记录引用 |
-> | H14 | 广告 / 商业内容注入 | 消费界面开始显示广告，可能按人群差异化 | [arXiv:2608.05008](https://arxiv.org/abs/2608.05008)（91 个 sock-puppet） | 区分广告与自然推荐、按账户分层 |
-
-### 延伸研究问题（在上面方法之上值得测的）
-- **训练截止 × 走红时机**：训练截止之后才爆红的品牌会怎样？区分 parametric memory（背下来的）vs live retrieval / RAG（实时检索）与 recency 处理。
-- **驱动变量是否真独立**：高 informational authority 是否必然 representational coherence 也高？（可能很高曝光却被描述得不一致）
-- **自有品牌优势**：retailer GenAI 依赖零售商自控语料，自有品牌是否因此有结构性优势（零售商＝语料作者）？
-- **对输出的信任**：人们多信 AI 货架的推荐？platform GenAI 与 retailer GenAI 是否不同？
-- **retailer GenAI vs 传统推荐算法**：品牌选择机制有何不同，是否像排名算法一样绑定库存（in stock）？
-
-### 可借鉴的现成设计（从数据集清单里筛出）
-- **独立性**：Incumbent Advantage 用筛选过的虚构品牌 + 固定 rating / 价格 / 评论数 / 成分剥离参数记忆；ChoiceEval 也用 screened fictional 选项 → 虚构品牌 + 属性固定是业内标准做法。
-- **区域**：Global South 语料按 India / Pakistan / Brazil / Nigeria 分区；"Global is Good, Local is Bad?" 覆盖 15 国；ChoiceEval 用 Swedish IP + English → 区域应作为显式变量并记录 IP / 语言。
 
 
