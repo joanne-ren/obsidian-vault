@@ -125,3 +125,86 @@ tags: [inbox, AI购物, 品牌, 完整摘录]
 16. Sangeet Paul Choudary, *How Agents Unlock New Markets*（Part 2 of *Agents, and Their Better Half*）, 2026-10-11 — https://platforms.substack.com/p/how-agents-unlock-new-markets
 17. Erich Joachimsthaler, *The Interaction Field: The Revolutionary New Way to Create Shared Value for Businesses, Customers, and Society*, PublicAffairs, 2020.（书）
 18. Rolls-Royce, *The Trent 1000 XE with TotalCare: Engineered for More*, 2026 — https://www.rolls-royce.com/media/our-stories/discover/2026/the-trent-1000-xe-with-totalcare-engineered-for-more.aspx ；Rolls-Royce, TotalCare agreement with T'way Air, 2022-06-22 — https://www.rolls-royce.com/media/press-releases/2022/22-06-2022-poweroftrent-rr-signs-totalcare-agreement-with-south-korean-airline-tway.aspx
+
+---
+
+## 链接完整摘录（逐条抓取）
+
+### [note 8] AIVO Journal — *Appeared in 96% of Journeys, Chosen in 13%*（2026-09-28）
+- 语料：**25,000+ 多轮 probes、250+ 品牌**，基于 **20 亿+ 真实用户 prompt**。隔离分析 **1,427 条 journey**。
+- **品牌在早期答案出现 95.7%，最终被推荐仅 12.7%。**
+- 核心命题："Appearance and recommendation are separate states in an AI-mediated decision."——可见度(96%)与真实推荐(13%)的落差说明行业在测**错的结果变量**。
+- 结论：早期排名对购买决策的预测力不足；品牌要测的是**在多轮对话里（买家需求累积、可行选项被重塑）能否存活**。
+- 方法：AIVO "AI Win-Rate Methodology v1.0"（Zenodo DOI: 10.5281/zenodo.22280231）。
+- 背景数据：Profound Series D **1.8 亿美元 @ 18 亿估值**、1,000+ 企业客户（含 1/3 财富 100）。
+
+### [note 9] AIVO Journal — *Profoundly Wrong: Why AEO (and GEO) Are Not the Answer*（2026-10-15）
+- **95.8%**：相同 prompt 重复 3 次时**被引用来源**变化率（1,800 个品牌级分组、各跑 3 次）。
+- **14.6%**：相同条件下**最终推荐品牌**变化率。**85.4%**：三次结果完全一致的分组占比。
+- **87.3%**：AI 在到达推荐前**丢弃此前已引用品牌**的比例。（20,000+ probes、200+ 品牌）
+- 论点：AEO/GEO 的前提（引用频率可靠预测 AI 推荐）不成立——"citation frequency is not a stable or reliable enough proxy for recommendation behaviour to manage a brand against."
+- 判据金句："If a metric changes when nothing has changed, it cannot measure improvement." + "A brand present in the opening response was usually gone by the time the AI system made its choice."
+- 替代方案：**AI Win-Rate**（多轮、重复跑、对照既定客户标准测推荐频率）。方法 v2.0：Zenodo records/22663407。
+
+### [note 6] Allouah, Besbes, Figueroa, Kanoria & Kumar — *What Is Your AI Agent Buying?*（arXiv:2508.02630；2025-08 提交、2025-12 修订）
+- 框架 **ACES**（provider-agnostic，审计 agent 决策）。摘要要点：
+  - **选择同质化 / 需求集中**：agent 常把需求堆到少数"modal"产品上、完全忽略其它。
+  - **偏好不稳定**：模型更新会剧烈重排市场份额。
+  - **位置偏见强**：随 provider 与版本变化，连纯文本 "headless" 界面也存在——"top rank"无普适意义。
+  - **一致地惩罚"赞助(sponsored)"标签、奖励"平台背书(platform endorsements)"**；对价格/评分/评论的敏感度各模型差异大。
+  - **卖方可反制**：seller-side agent 做简单的、随 query 条件变化的描述微调，就能显著拉高市场份额。
+  - 结论：agentic 市场**波动大、与以人为中心的商务根本不同**，需持续审计；对平台设计/卖方策略/监管提出新问题。
+
+### [note 12] Ivinco — *Amazon's Walled Garden and AI Shopping*（2026）
+- **Amazon（封闭）**：Rufus 2025 年 **3 亿+** 用户用过、带来近 **120 亿美元**增量年化销售、假日期转化率 **3.5×**、互动同比 **+210%**；GMV **8,300 亿**、广告收入 **686 亿**（Q4 单季 213 亿、+23%）。封锁 ChatGPT-User / OAI-SearchBot（2025-11）与 Google agent；2025-08 曾令 ChatGPT 导流 Amazon **环比 -18%**。Shop Direct（1 亿+ 商品 / 40 万商家）、Buy for Me（外站自动结账）；180+ 商家称被未经授权上架。Alexa+ 2026-02-04 全美上线（Prime 免费 / 单售 $19.99/月、可无确认自动下单）。
+- **Walmart（开放）**：Sparky 用户下单比非用户**大 ~35%**、约 **50%** app 用户试过；加入 UCP，与 OpenAI、Google 合作（可在 ChatGPT/Gemini 买沃尔玛商品）。
+- **法律先例 Perplexity v. Amazon**：2026-03-09 联邦法官 Maxine Chesney 依 CFAA 禁 Perplexity 的 Comet 访问 Amazon（"强证据"表明未授权访问，裁定需**平台授权**、用户许可不够）；**2026-10 第九巡回法院撤销该禁令**。
+- **经济解释**：AI agent **绕过赞助位**，威胁零售媒体搜索广告（~**380 亿**市场）；Amazon 686 亿广告收入形成"排斥外部 agent"的结构性动机，Walmart 广告小故能开放。Jassy（Q4 2025 财报电话）："a lot of customers are ultimately going to choose to use a great shopping agent from that retailer."
+
+### [note 14] Sangeet Paul Choudary — *Agents and Their Better Half*（Part 1，2026-10-04）
+- **agentic participants**（用智能在既有市场机制内代表委托人）vs **agentic markets**（多方都用 agent 表达目标 → 决定"报价本身如何被做出"，而非只从既有报价里选）。
+- 金句："Markets are relationships between economic actors, while most agents today represent only one actor in that relationship."
+- **不对称问题**：消费侧 agent（如 Muse）对买方偏好理解丰富，却只能通过静态目录/feed/API 接触供给侧 → "lopsided agent economy"，导航变好但市场机制没变。
+- 双方都有 agent 时：从"买方在预制报价里选"→"双方共同**构造可执行的报价**"。三例：招聘（两套目标与约束的互动）、旅行（represented 双方谈判产定制方案）、B2B 采购（供应商 agent 分析产能与利润→自适应响应）。
+- 框架：Agentic AI Observatory（reshufflebook.com/agentic-ai-observatory/）。
+
+### [note 16] Sangeet Paul Choudary — *How Agents Unlock New Markets*（Part 2，2026-10-11）
+- 核心：agent 的主要价值不是让既有交易更高效，而是**让原本不会发生的交易变得经济可行**——"Commercial arrangements that were previously too expensive to negotiate became economically worthwhile."
+- **三个必要条件**：① **操作授权**（agent 要能真的预留产能/承诺交期，不只解释选项；买方 agent 要能授权可接受的取舍）；② **理解底层需求**而非表面规格（"What buyers ask for and what sellers offer are often simplified versions of what they actually need and what they could provide."）；③ **跨组织协调机制**（互相发现、交换提案、验证、达成双方可执行的协议）。
+- **真实案例（规模）**：Walmart 用 AI 对 **10 万+ 供应商**逐一谈标准化条款（过去不划算）；Honeywell **2,500+ 自主谈判、覆盖 5 亿美元**支出；Circle Logistics **18%** 货运订舱无人工完成；Anthropic *Project Deal* **69 名员工的 agent 谈成 186 份真实协议、价值 4,000 美元+**。
+- **三种市场扩张机制**：解锁潜在需求（为稀缺技能组合重设岗位）、解锁潜在供给（酒店按运营弹性提供非标房/服务组合）、跨供应商再打包。
+- 一句话区分："An agentic participant becomes more effective … within an existing market. An agentic market can … expand the opportunities that become available for exchange in the first place."
+
+### [note 3] Skift × McKinsey 旅行研究（经 newkerala/ANI 转述；McKinsey.de 原稿抓取超时）
+- 旅行触点：**2026 年 65 个 vs 2018 年 45 个**；**71%** 旅客愿用 AI 找灵感；**86%** 未来会考虑 AI 预订；60% 把社媒列入前三灵感源；样本 1,000+ 美国旅客 + 旅行日记。
+- **相同 query 给 5 个 AI/OTA 工具，没有一家酒店出现在全部 5 个答案里**；**约一半**旅客在订房后又因发现更好选项而改订。
+- 金句："Always-on inspiration creates more entry points, but trust determines which ideas gain momentum." → 订房确认不再是客户关系的终点。
+
+### [note 15a] UCP / AP2（Efficiently Connected，Google I/O 2026）
+- **UCP（Universal Commerce Protocol）**：开源标准，支持 agent 跨"发现→验库存→结账→售后追踪"的 agent-to-agent 通信。
+- **AP2（Agent Payments Protocol）**：加密、代币化的护栏——"tamper-proof token bound to a specific SKU, merchant, and spending cap"，在用户设定的策略参数内自主执行支付。
+- Tech Council（本文列）：Amazon、Meta、Microsoft、Salesforce、Stripe。**Universal Cart** 进入 Google Search 与 Gemini app，接 Google Wallet。
+- ⚠️ 与 Joachimsthaler 原文小出入：原文说 UCP"1 月随 Walmart/Shopify/Target 推出"，此文归为"Google I/O 2026 发布"且未把 Walmart/Shopify/Target 列入 Tech Council——时间线/成员表两处口径不一，引用时注明。
+
+### [note 15b] Nuvei — *OpenAI tried to check out. It couldn't*
+- OpenAI Instant Checkout：**2025-09 上线**（Stripe 支撑，2026-01 曝出对成交收 **4%** 费），**2026-03 关停**/弱化原生 in-chat 结账。官方："We are evolving our commerce strategy within ChatGPT to better meet merchants and users where they are."
+- 数据：familiar 用户里**仅 8%** 真用它买过；Forrester——**10%** 在线成年人用过 AI agent 购买、**61%** 不愿用 AI agent 买、**33%** 过去三个月用 AI agent 找/比产品；ChatGPT 周活 **9 亿**（2026 初）。Shopify 的 AI 导流自 2025-01 **×7**、AI 归因订单 **×11**。
+- 失败归因（四层基建没人同时搞定）：实时产品 feed、授权时可验证的同意、针对 agent 行为的反欺诈、端到端税务/合规/争议处理。
+- ⚠️ 注意：Joachimsthaler 原文的"agent 仅涉 3% 商家交易、28% 商家愿开放"来自 FinTech Weekly（PYMNTS/Checkout.com），与本文 Nuvei 的 8%/10% 口径不同，分别标注。
+
+### [note 12b] ActuIA — *Walmart sets the rules for AI shopping agents*（2026-10-21）
+- Walmart 对在 Walmart.com / Sam's Club 购物的 agent 定三件套：**Agent Profiles**（账户内每个授权 agent 独立档案、可见订单与审批）、**Walmart Agent Gateway**（技术入口，走 **MCP**）、**Terms of Use**。
+- 规则：花费上限可选"逐单审批"或 **$50 / $100 / $200** 封顶；**数据最小化**（数据留在零售商，只给任务所需）；**定价**——"We set the price of products, not of people."（agent 看到与人相同的价）；**默认需审批**，即便在额度内 Walmart 也保留追加验证的权利；**不合规的 agent 直接封禁**。Gateway 现为邀请制 early beta、可随时暂停。
+
+### [note 13] Brian Chesky 访谈（TechCrunch，Ivan Mehta，2026-10-01）
+- 真实链接：https://techcrunch.com/2026/10/01/brian-chesky-interview-ai-agents-need-their-own-operating-system/
+- 观点：行业缺真正为 AI 建的 OS（当前只是在 iOS/macOS/Windows 上做 AI app）——"no one is developing a full operating system software developer kit"；主张 AI 在 kernel 层、组件可互操作。
+- "the Airbnb app as one day becoming an agent … interoperable with MCP"；争当 "quarterback"（凡事都经过的主 agent）。
+- 坦诚："I've used Airbnb on Muse and Instinct … doesn't work very well … even hotels don't work that well."
+
+### 其余链接（工具 / 融资 / 营销 / 付费墙页；要点已在正文内联，未逐页深抓）
+- note 2 TechCrunch Adobe 393%、note 5 arXiv:2606.17443、note 7 Pew（8% vs 15%）——均已在本项目 dataset 笔记完整收录。
+- note 10 融资/工具：Dealroom（GEO 创业公司、~5 亿美元）、Sacra（Profound 档案）、Similarweb / Semrush / Ahrefs（AI 可见度工具）、Ahrefs 新闻稿（Custom AI Prompt Tracking）。
+- note 11 工具：OH-SO RAIDAR.GEO、ARA（araco.ai）。
+- note 4 WARC（*Reinventing Brand Strategy*，付费墙）、note 17 书（*The Interaction Field*, 2020）、note 18 Rolls-Royce TotalCare（营销页，要点见正文案例）、note 1 HBR 1997（无在线版）。
+- 需要我把以上任意一条也逐页深抓的话再说。

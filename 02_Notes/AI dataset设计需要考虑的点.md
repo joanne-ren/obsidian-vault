@@ -25,12 +25,12 @@ tags: [方法, AI购物, 数据集设计]
 - **McKinsey**（Agentic Commerce Consumer Survey，2026-06，约 21,000 人 / 11 国）：**53%** 的消费者已用 AI 购物；中国 80%、印度 76% 领先，日本 37%、法国 44% 最低。最近一次购买里，**29%** 的 AI 用户说"AI 对话/搜索工具"影响最大——是传统搜索引擎（9%）的三倍，也超过"零售商平台 + 零售商 AI 助手"之和（21%）。品类上美妆（34%）、杂货（32%）已逼近消费电子（38%）、服装（37%）、旅游（35%）。核心判断：零售商正把"购物旅程的起点"丢给 AI 工具。（[McKinsey《Who wins when AI does the shopping?》](https://www.mckinsey.com/capabilities/growth-marketing-and-sales/our-insights/who-wins-when-ai-does-the-shopping-new-evidence-on-agentic-commerce)）
 - **McKinsey × EuroCommerce**（欧洲）：用 AI 做发现/评估的约 **61%**（部分口径"约一半"）。但越往漏斗下游越窄——84% 每天用 AI、38% 用于产品调研/购买决策、约 15% 在零售商网站上用过 AI、仅 **1–3%** 真的通过 AI 平台下过单。另有分项（法/德/英）：**63%** 比较品牌/型号/价格/评价、55% 了解一个品类、46% 找灵感；**56%** 接受建议但自己拍板、47% 不愿让 AI 自动打理复购。（[McKinsey《Europe's agentic commerce moment》](https://www.mckinsey.com/capabilities/quantumblack/our-insights/europes-agentic-commerce-moment-decision-influence-is-here-execution-is-coming)）
 - **Deloitte**（2026 Holiday Retail Survey，4,000 美国消费者，2026-08 调研）：**39%** 把生成式 AI 当作至少一项假日购物任务的主要工具；但仅 **16%** 愿意让 AI 代为完成购买。（[Deloitte](https://www.deloitte.com/us/en/insights/industry/retail-distribution/holiday-retail-sales-consumer-survey.html)）
-- **Adobe**（Digital Insights，2026）：到 2026-07，**42%** 美国消费者用过 AI 助手网购（3 月为 39%）；用 AI 的人 77% 对购买更有信心、69% 更不易退货；流向美国零售商的 AI 导流 Q1 同比 **+393%**。（[TechCrunch 报道 Adobe 数据](https://techcrunch.com/2026/04/16/ai-traffic-to-us-retailers-rose-393-in-q1-and-its-boosting-their-revenue-too/)）
+- **Adobe**（Digital Insights，2026）：到 2026-07，**42%** 美国消费者用过 AI 助手网购（3 月为 39%）；用 AI 的人 77% 对购买更有信心；流向美国零售商的 AI 导流 Q1 同比 **+393%**。（[TechCrunch 报道 Adobe 数据](https://techcrunch.com/2026/04/16/ai-traffic-to-us-retailers-rose-393-in-q1-and-its-boosting-their-revenue-too/)）
 - **Salesforce**（Connected Shoppers Report，第 6 版 / 2025，数据采集于 2024 年末）：**39%** 购物者（Gen Z **54%**）用 AI 做产品发现；75% 零售商认为 AI agent 将成为竞争必需。（[Salesforce](https://www.salesforce.com/news/stories/consumer-shopping-ai-trends-2025/)）
 - **Bain**（预测）：美国 agentic commerce 到 2030 年约 **3,000–5,000 亿美元**、占电商 15–25%。（经 [commercetools 汇编](https://commercetools.com/blog/agentic-commerce-stats-enterprise-guide)）
 - **McKinsey × ICSC**（美国，2026-04，3,004 名消费者 + 高管访谈）：过去 3 个月 **68%** 用过至少一种 AI 工具；预计 agentic commerce 到 2030 年达约 **1 万亿美元**。
 - **BCG**（Consumer Radar，2025/26）：购物是生成式 AI 的**第三大用途**；2025-02 至 11 购物类使用 **+35%**；60%+ 高度信任 GenAI 输出；印度 **64%** 在购买过程中使用。
-- **在旅程中的角色**（*Shopping with a Platform AI Assistant*）：AI 对话与传统搜索在同一阶段**互换使用**，AI 是**补充而非替代**搜索；约 **42%** 的请求是探索型（attraction / destination 类）。
+- **在旅程中的角色**（*Shopping with a Platform AI Assistant*）：AI 对话与传统搜索在同一阶段**互换使用、彼此补充**；约 **42%** 的请求是探索型（attraction / destination 类）。
 
 
 "人们在用 AI 购物"成立，但目前主要集中在**发现/评估**环节，自主下单仍是早期。
@@ -44,7 +44,7 @@ tags: [方法, AI购物, 数据集设计]
   - **Best Buy × OpenAI**（2026-08，财报电话会披露）：目录接入 ChatGPT，可在对话内发现/推荐/下单（[Digital Commerce 360](https://www.digitalcommerce360.com/2026/09/16/best-buy-opens-up-gift-buying-and-discover-through-chatgpt-ahead-of-holidays/)）。
 - **欧洲**（整体晚于美国/中国）：**Frasers Group × Microsoft**（2026-01）推进 AI 驱动的零售搜索（据 EuroCommerce 整理）。
 - **东南亚**：**Shopee × OpenAI**（2026-06）：Shopee App 进入 ChatGPT，覆盖 8 个市场（印尼、马、菲、新、泰、台、越 + 巴西），对话内拿推荐、点回 Shopee 结账（[TechNode](https://technode.global/2026/06/22/sea-limited-openai-to-jointly-expand-ai-access-for-e-commerce-shopee-users-sellers/)）。
-- **中国**：**淘宝 × Qwen**（2026）：阿里把 Qwen 接入淘宝/天猫全量目录（40 亿+ 商品），助手可比价、下单，30 天比价器达目标价即**自动下单**（[阿里巴巴](https://www.alibabagroup.com/en-US/document-1991231293551017984)）；**京东** CHEFRESH（2026-09）做 AI 膳食规划 + 生鲜供应链（[JD CHEFRESH](https://investor.wedbush.com/wedbush/article/getnews-2026-9-17-jdcom-launches-chefresh-bringing-ai-meal-planning-and-robotic-cooking-into-the-home)）。
+- **中国**：**淘宝 × Qwen**（2026）：阿里把 Qwen 接入淘宝/天猫全量目录（40 亿+ 商品），助手可比价、下单，30 天比价器达目标价即**自动下单**（[阿里巴巴](https://www.alibabagroup.com/en-US/document-1991231293551017984)）。
 
 
 
@@ -191,7 +191,7 @@ Anchoring（价格锚定）:
 1. **条件垄断（conditional monopoly）**：所有产品规格相同时，知名品牌 100% 获推荐（IAI = 10.0）；但竞品的星级评分优势一旦小于 0.1 分，垄断就消失。
 2. **权威式营销语言**（含捏造的临床证据）会在「偏见盈余（bias surplus）」达到 **+0.17 分**时打破垄断，且各模型反应不一。
 3. **多品牌 GEO 竞争的社会困境（social dilemma）**：所有品牌采用相同优化策略时，按收益代理指标，单个品牌收益从 **+0.802 跌到 +0.007**；未参与的品牌在测试中拿不到任何推荐。
-4. **结论**：GEO 不只是安全风险，更是一种正在重塑市场竞争格局的新兴营销实践。
+4. **结论**：GEO 是一种正在重塑市场竞争格局的新兴营销实践。
 
 ### Agent 行为偏见
 - 截图式购物 agent 研究里显式要求"忽略商品位置（Do not be influenced by the position of the product）"，说明 CS 在关注**位置/呈现偏见**对 agent 决策的影响（[arXiv:2508.02630](https://arxiv.org/abs/2508.02630)）。
@@ -209,7 +209,7 @@ Anchoring（价格锚定）:
 ### 实证：AI 推荐是否真的改变消费者行为（2026-10-28 整理）
 - **AI 推荐能推动购买（开放网络）**：当 AI 把一个**此前未接触**的品牌推荐给用户，7 天内该品牌搜索 **+4.3pp**、品牌官网访问 +2.4、零售页访问 +1.0；这条路径大多对 last-click 归因**不可见**。方法：opt-in 用户一个身份标签，把其 AI 对话与浏览时间线在个人层面对齐（如 14:00 在 ChatGPT 被推荐 "Garmin"、14:05 就去 Google 搜 "Garmin"）。（Iannelli & Ai 2026）
 - **AI 在改变线上行为**：采用 LLM 约 20 周后，用户**传统搜索比采用前降 20%+**；大站扛得住，**小站出现明显流量流失**；展示广告曝光下降，重度网购者尤甚。（Padilla, Lam, Lambrecht & Hollenbeck 2025/26；Comscore 点击流，100 万+ 用户，2022–2023）
-- **信任不是盲目的**：通过一个动态的"信任校准（trust calibration）"过程建立。
+- **信任是逐步建立的**：通过一个动态的"信任校准（trust calibration）"过程建立。
 
 
 ---
@@ -245,11 +245,11 @@ Anchoring（价格锚定）:
 > | # | 隐藏状态来源 | 机制 | 证据 | 缓解 |
 > | --- | --- | --- | --- | --- |
 > | H1 | 同线程对话历史 | 前几轮进入上下文 | Laban et al. 2025（[arXiv:2505.06120](https://arxiv.org/abs/2505.06120)）; Tjuatja et al. 2024（[arXiv:2311.04076](https://arxiv.org/abs/2311.04076)） | 一 trial 一请求 |
-> | H2 | 服务端会话状态（Responses API） | `previous_response_id` / `conversation` 在服务端串历史；`store` 默认保存 | OpenAI conversation-state 文档 | `store=false`、不传串联参数，或用 Chat Completions |
-> | H3 | ChatGPT Memory / 历史引用 | 记忆与蒸馏历史注入后续回答；删对话 ≠ 删记忆 | OpenAI Memory 公告（2024；2025-04/06 更新） | 用 API；若 UI 则登出或新账户关记忆 |
+> | H2 | 服务端会话状态（Responses API） | `previous_response_id` / `conversation` 在服务端串历史；`store` 默认保存 | [OpenAI conversation-state 文档](https://developers.openai.com/api/docs/guides/conversation-state) | `store=false`、不传串联参数，或用 Chat Completions |
+> | H3 | ChatGPT Memory / 历史引用 | 记忆与蒸馏历史注入后续回答；删对话 ≠ 删记忆 | [OpenAI Memory 公告](https://openai.com/index/memory-and-new-controls-for-chatgpt/)（2024；2025-04/06 更新） | 用 API；若 UI 则登出或新账户关记忆 |
 > | H4 | 账户元数据画像 | 系统把地区 / 设备 / 账龄 / 习惯喂给模型 | Simon Willison, *ChatGPT's new memory dossier* (2025)（[链接](https://simonwillison.net/2025/May/21/chatgpt-new-memory/)） | 新账户、固定设备与地区、记录 |
 > | H5 | 记忆诱发的迎合（sycophancy） | 用户画像让模型更倾向认同 | Jain et al. 2025（MIT, [arXiv:2509.12517](https://arxiv.org/abs/2509.12517)） | 零上下文基线对照 |
 > | H6 | 出口 IP / 查询语言 | 决定推荐哪个市场的商品 | [arXiv:2608.30052](https://arxiv.org/abs/2608.30052)（登出 ChatGPT vs API） | 固定并作为因子操纵 |
-> | H7 | 接口层差异（UI vs API） | 系统提示 / 审核 / 搜索 / 格式不同 | Kirgis et al. 2026; Encarnación et al. (AIES); Lipphardt et al. (FOCI 2026) | 由研究问题决定接口并报告选择 |
+> | H7 | 接口层差异（UI vs API） | 系统提示 / 审核 / 搜索 / 格式不同 | Kirgis et al. 2026（*LLM Spirals of Delusion*, [arXiv:2604.06188](https://arxiv.org/abs/2604.06188)）; Encarnación et al.（AIES, [arXiv:2608.06202](https://arxiv.org/abs/2608.06202)）; Lipphardt et al.（FOCI 2026, [Dual Standards](https://petsymposium.org/foci/2026/foci-2026-0004.php)） | 由研究问题决定接口并报告选择 |
 
 
