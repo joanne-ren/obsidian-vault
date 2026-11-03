@@ -216,7 +216,7 @@ Anchoring（价格锚定）:
 
 ## 4. 如果我们自己建数据库，如何保证 ① 独立性（没有历史）② 区域合理
 
-### ① 独立性——先把"历史 / 串扰"拆成四层
+### ① 独立性
 一次 query 会不会被"上一条"或"别人那条"污染，来源分四层；真正的**跨查询串扰（carry-over）几乎只存在于前两层**，后两层是时间相关的噪声与漂移，不会把内容"带到下一条"：
 1. **Context（上下文）**：同一会话里显式的对话历史。
 2. **Account / product（账户与产品）**：记忆、个性化、地理与语言信号。
@@ -228,29 +228,27 @@ Anchoring（价格锚定）:
 - **`temperature=0` + 固定 seed ≠ 确定性**：把输出当成"分布里的一个样本"——每个 prompt 重复采样，报告稳定性指标。
 - **记录** model snapshot、日期、`system_fingerprint` 与全部参数：同名服务会在短期内漂移（Chen, Zaharia & Zou, *How is ChatGPT's behavior changing over time?*, [arXiv:2307.09009](https://arxiv.org/abs/2307.09009)）。
 - **Consumer UI（ChatGPT 网页 / App）与 API 是两个不同的实验对象**（系统提示、审核、记忆、搜索、地理都不同）。要研究真实消费者看到什么，用 sock-puppet（受控账户）或登出态设计，并控制 IP 与语言。
-- **按 prompt / item 聚类**：一个 prompt 重复 N 次 ≠ N 个独立观测。用 cluster-robust SE + 配对差分（Miller 2024），逻辑同 `reghdfe ..., cluster()`。
-- **每个 prompt × 条件重复 N 次**，报告一致率 TARr@N（raw）/ TARa@N（parsed）（Atil et al.）加方差与置信区间。
-- **选 N**：Żatuchin（2026, preprint）对品牌推荐审计做 D-study——5 次重复信度约 **0.58**，15 次约 **0.81**。
+- **按 prompt / item 聚类**：一个 prompt 重复 N 次 ≠ N 个独立观测。用 cluster-robust SE + 配对差分（Miller 2024, *Adding Error Bars to Evals*, [arXiv:2411.00640](https://arxiv.org/abs/2411.00640)；naive SE 可能低估不确定性 3 倍以上），逻辑同 `reghdfe ..., cluster()`。
+- **每个 prompt × 条件重复 N 次**，报告一致率 TARr@N（raw）/ TARa@N（parsed）（Atil et al., *Non-Determinism of "Deterministic" LLM Settings*, [arXiv:2408.04667](https://arxiv.org/abs/2408.04667)）加方差与置信区间。
 - **随机化 trial 顺序、在同一时间窗内交错各条件**（别"上午跑 A、下午跑 B"）；长周期采集按时间分块并加时间固定效应。
 - **用多个语义等价的措辞 / 格式**，报告一个区间而非单条 prompt 的结果（Sclar et al., ICLR 2024, [arXiv:2310.11324](https://arxiv.org/abs/2310.11324)）。
 
 ### ② 区域合理——地理作为受控变量
 - **模型层（API / 开源权重）**：几乎都靠 **prompt 注入**地理（国家人设、"assume you are from X"、目标语言提问），因为 API 调用本身不带终端用户位置。
 - **消费产品审计（ChatGPT 网页、Copilot、Gemini）**：用住宅代理 / VPN / 固定机构 IP + 浏览器语言设置。
-- **在 prompt 里声明国家**会把输出拉向本地，但带来**刻板印象**；Kamruzzaman et al.（2024）的"country-of-origin effect"——声明用户国家会让模型更偏好该国本地品牌，方向甚至可能反转。
+- **在 prompt 里声明国家**会把输出拉向本地，但带来**刻板印象**；Kamruzzaman et al.（2024, [ACL](https://aclanthology.org/2024.emnlp-main.707/)）的"country-of-origin effect"——声明用户国家会让模型更偏好该国本地品牌，方向甚至可能反转。
 - **UI 与 API 分叉极大**（推荐来源可能几乎不重叠），所以只在 API 上得到的结论不能外推到真实用户。
-- **先例**：AI Forensics / AlgorithmWatch（2023, 灰色文献）用 VPN + 瑞士/德国住宅 IP、按语言（DE/FR/EN）审计 Bing Chat 的选举问答——早期把 IP 位置当设计变量。
-- **可用参数**：OpenAI web-search 与 Perplexity Sonar API 都支持 `user_location`（国家、城市）。
+- **可用参数**：OpenAI web-search 与 Perplexity Sonar API 都支持 `user_location`（国家、城市）
 
 ### 技术隐患清单 H1–H7
 > [!note]- 展开：建库时要显式处理 / 记录的 7 个隐藏状态来源
 > | # | 隐藏状态来源 | 机制 | 证据 | 缓解 |
 > | --- | --- | --- | --- | --- |
-> | H1 | 同线程对话历史 | 前几轮进入上下文 | Laban et al. 2025（[arXiv:2505.06120](https://arxiv.org/abs/2505.06120)）; Tjuatja et al. 2024 | 一 trial 一请求 |
+> | H1 | 同线程对话历史 | 前几轮进入上下文 | Laban et al. 2025（[arXiv:2505.06120](https://arxiv.org/abs/2505.06120)）; Tjuatja et al. 2024（[arXiv:2311.04076](https://arxiv.org/abs/2311.04076)） | 一 trial 一请求 |
 > | H2 | 服务端会话状态（Responses API） | `previous_response_id` / `conversation` 在服务端串历史；`store` 默认保存 | OpenAI conversation-state 文档 | `store=false`、不传串联参数，或用 Chat Completions |
 > | H3 | ChatGPT Memory / 历史引用 | 记忆与蒸馏历史注入后续回答；删对话 ≠ 删记忆 | OpenAI Memory 公告（2024；2025-04/06 更新） | 用 API；若 UI 则登出或新账户关记忆 |
-> | H4 | 账户元数据画像 | 系统把地区 / 设备 / 账龄 / 习惯喂给模型 | Simon Willison on ChatGPT memory (2025) | 新账户、固定设备与地区、记录 |
-> | H5 | 记忆诱发的迎合（sycophancy） | 用户画像让模型更倾向认同 | Jain et al. 2025 (MIT) | 零上下文基线对照 |
+> | H4 | 账户元数据画像 | 系统把地区 / 设备 / 账龄 / 习惯喂给模型 | Simon Willison, *ChatGPT's new memory dossier* (2025)（[链接](https://simonwillison.net/2025/May/21/chatgpt-new-memory/)） | 新账户、固定设备与地区、记录 |
+> | H5 | 记忆诱发的迎合（sycophancy） | 用户画像让模型更倾向认同 | Jain et al. 2025（MIT, [arXiv:2509.12517](https://arxiv.org/abs/2509.12517)） | 零上下文基线对照 |
 > | H6 | 出口 IP / 查询语言 | 决定推荐哪个市场的商品 | [arXiv:2608.30052](https://arxiv.org/abs/2608.30052)（登出 ChatGPT vs API） | 固定并作为因子操纵 |
 > | H7 | 接口层差异（UI vs API） | 系统提示 / 审核 / 搜索 / 格式不同 | Kirgis et al. 2026; Encarnación et al. (AIES); Lipphardt et al. (FOCI 2026) | 由研究问题决定接口并报告选择 |
 
