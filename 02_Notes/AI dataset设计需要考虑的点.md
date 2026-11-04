@@ -18,7 +18,7 @@ tags: [方法, AI购物, 数据集设计]
 - **Kroger**：今年年初先给**员工**推 AI 助手，2026-07-28 再推面向**顾客**的购物助手。两个意外发现：（来源：[Grocery Dive《Kroger leans on AI to reshape the shopping experience》, 2026-09-23](https://www.grocerydive.com/news/kroger-ai-technology-groceryshop/831102/)）
   - **普适性**：原以为主要吸引年轻人，实际吸引力是普适的，迅速打破"哪个年龄段更爱用"的固有观念。
   - **产品发现率上升**：购物者获得更精准推荐后反而更多自行探索——"因为简化了一个摩擦点，给了客户时间和信心去拓展到该特定目的之外。"（*it's given time and confidence to the customer to branch out beyond that specific purpose.*）
-- **Albert Heijn（荷兰 Ahold 旗下）**：先推一款主打膳食灵感的助手（建立在 2 万多道菜谱数据库上，解决"晚餐吃什么"），随接受度提高再扩展到客流量更高的购物环节。（来源：[Coresight Research·Groceryshop 2026 Day Two 回顾](https://coresight.com/research/groceryshop-2026-day-two-ai-moves-into-action-as-retailers-redefine-value-and-commerce/) 与 [Grocery Dive《5 takeaways from Groceryshop》, 2026](https://www.grocerydive.com/news/takeaways-groceryshop-conference-2026-las-vegas/831421/)）
+- **Albert Heijn：先推一款主打膳食灵感的助手（建立在 2 万多道菜谱数据库上，解决"晚餐吃什么"），随接受度提高再扩展到客流量更高的购物环节。（来源：[Coresight Research·Groceryshop 2026 Day Two 回顾](https://coresight.com/research/groceryshop-2026-day-two-ai-moves-into-action-as-retailers-redefine-value-and-commerce/) 与 [Grocery Dive《5 takeaways from Groceryshop》, 2026](https://www.grocerydive.com/news/takeaways-groceryshop-conference-2026-las-vegas/831421/)）
 ### 咨询机构 / 调研：消费者采用数据
 
 
@@ -241,17 +241,5 @@ Anchoring（价格锚定）:
 - **模型层（API / 开源权重）**：几乎都靠 **prompt 注入**地理（国家人设、"assume you are from X"、目标语言提问），因为 API 调用本身不带终端用户位置（例：Kamruzzaman et al. 2024 的国家人设；GEO 实验的 California / Shanghai，[arXiv:2606.17443](https://arxiv.org/abs/2606.17443)）。
 - **消费产品审计（ChatGPT 网页、Copilot、Gemini）**：用住宅代理 / VPN / 固定机构 IP + 浏览器语言设置（先例：AI Forensics / AlgorithmWatch 2023，VPN + 瑞士/德国住宅 IP + 语言分组，[报告](https://aiforensics.org/work/bing-chat-elections)；登出 ChatGPT vs API，[arXiv:2608.30052](https://arxiv.org/abs/2608.30052)）。
 - **在 prompt 里声明国家**会把输出拉向本地，但带来**刻板印象**；Kamruzzaman et al.（2024, [ACL](https://aclanthology.org/2024.emnlp-main.707/)）的"country-of-origin effect"——声明用户国家会让模型更偏好该国本地品牌，方向甚至可能反转。
-- **UI 与 API 分叉极大**（推荐来源可能几乎不重叠），所以只在 API 上得到的结论不能外推到真实用户（Kirgis et al. 2026, [arXiv:2604.06188](https://arxiv.org/abs/2604.06188)；Lipphardt et al. FOCI 2026, [Dual Standards](https://petsymposium.org/foci/2026/foci-2026-0004.php)；登出 vs API，[arXiv:2608.30052](https://arxiv.org/abs/2608.30052)）。
+- **UI 与 API 分叉极大**，所以只在 API 上得到的结论不能外推到真实用户（Kirgis et al. 2026, [arXiv:2604.06188](https://arxiv.org/abs/2604.06188)；登出 vs API，[arXiv:2608.30052](https://arxiv.org/abs/2608.30052)）。
 - **可用参数**：OpenAI web-search（[docs](https://developers.openai.com/docs/guides/tools-web-search)）与 Perplexity Sonar API（[docs](https://docs.perplexity.ai/guides/user-location-filter-guide)）都支持 `user_location`（国家、城市、region）。
-
-### 技术隐患清单 H1–H7
-> [!note]- 展开：建库时要显式处理 / 记录的 7 个隐藏状态来源
-> | # | 隐藏状态来源 | 机制 | 证据 | 缓解 |
-> | --- | --- | --- | --- | --- |
-> | H1 | 同线程对话历史 | 前几轮进入上下文 | Laban et al. 2025（[arXiv:2505.06120](https://arxiv.org/abs/2505.06120)）; Tjuatja et al. 2024（[arXiv:2311.04076](https://arxiv.org/abs/2311.04076)） | 一 trial 一请求 |
-> | H2 | 服务端会话状态（Responses API） | `previous_response_id` / `conversation` 在服务端串历史；`store` 默认保存 | [OpenAI conversation-state 文档](https://developers.openai.com/api/docs/guides/conversation-state) | `store=false`、不传串联参数，或用 Chat Completions |
-> | H3 | ChatGPT Memory / 历史引用 | 记忆与蒸馏历史注入后续回答；删对话 ≠ 删记忆 | [OpenAI Memory 公告](https://openai.com/index/memory-and-new-controls-for-chatgpt/)（2024；2025-04/06 更新） | 用 API；若 UI 则登出或新账户关记忆 |
-> | H4 | 账户元数据画像 | 系统把地区 / 设备 / 账龄 / 习惯喂给模型 | Simon Willison, *ChatGPT's new memory dossier* (2025)（[链接](https://simonwillison.net/2025/May/21/chatgpt-new-memory/)） | 新账户、固定设备与地区、记录 |
-> | H5 | 记忆诱发的迎合（sycophancy） | 用户画像让模型更倾向认同 | Jain et al. 2025（MIT, [arXiv:2509.12517](https://arxiv.org/abs/2509.12517)） | 零上下文基线对照 |
-> | H6 | 出口 IP / 查询语言 | 决定推荐哪个市场的商品 | [arXiv:2608.30052](https://arxiv.org/abs/2608.30052)（登出 ChatGPT vs API） | 固定并作为因子操纵 |
-> | H7 | 接口层差异（UI vs API） | 系统提示 / 审核 / 搜索 / 格式不同 | Kirgis et al. 2026（*LLM Spirals of Delusion*, [arXiv:2604.06188](https://arxiv.org/abs/2604.06188)）; Encarnación et al.（AIES, [arXiv:2608.06202](https://arxiv.org/abs/2608.06202)）; Lipphardt et al.（FOCI 2026, [Dual Standards](https://petsymposium.org/foci/2026/foci-2026-0004.php)） | 由研究问题决定接口并报告选择 |

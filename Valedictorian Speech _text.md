@@ -1,0 +1,19 @@
+
+Hi, I am Joanne from BDS.
+
+I would like to begin by thanking our families and friends, both who are here today and those watching online. I know that living with a BDS student is not always easy. We spend too much time studying, and even more time overthinking. Thank you for your patience and your love. Whether our research was going well or not, we always knew someone was standing behind us.
+
+For me, one of those people is my mom, who couldn’t travel here today. Throughout BDS, she and I talked a lot. I told her about the introduction weekend, where people got drank a little too much. I told her about the rainy winter in our first year, when we took the train to Rotterdam for Econometrics and Machine Learning. Those five hours lectures that left us with barely enough energy to back to Amsterdam. I told her about the hours we spent in the Zuid office, crowded around a whiteboard, working through assignments together. And I told her about the budget cuts, asked her whether I should stay in academia at all.
+
+My mom is really talented at math, and I was lucky enough to inherit a bit from her. But honestly, she loves numbers even more than I do, and she’s smarter and more creative, too.
+When I do BDS, I sometimes think that, if she had the chance to study here at my age, she would have made even more of it than I have, and been a much better PhD student than I am. I told her this. I thought she might agree. Instead, she told me not to feel sorry for her. She said, back then, many people far smarter than her never had a chance like mine.
+
+Those words stayed with me. For our parents’ generation, a chance like this was rare, and for women it was even harder. It wasn’t that long ago that women were first allowed into universities at all. Even now, female in research often have to work harder to be taken seriously, and their work is more easily overlooked. I’m standing here because of women who kept going anyway. To the female researchers who came before us, and to those in this room: thank you. Because you are here, more girls like me have the confidence to choose a life in research.
+
+We also had a lot of help along the way, from people who are here with us almost every day. So I’d like to say thank you, for myself and on behalf of my cohort. Thank you to the administrative staff, for always being reachable, even when we were being a bit annoying. Thank you to Francesca and Bas, for taking on enormous workload and responsibility, and for fighting to get us the best resources. Thank you to our professors and supervisors, for not just teaching us, but shaping how we think, and for believing in us enough to expect so much. It pushed us to keep moving forward, and made us so proud to be part of BDS.
+
+And finally to my cohort: thank you for getting each other through the past two years. What I loved most was that whenever anyone got stuck, we would drag each other out for coffee. We needed each other, because research is hard. You’re never sure you’re right, and the value of your work often shows only much later, so we learned to care about the process, not just the result. Many of us also wondered whether there was still a place for us in academia. Some of us decided to stay, others chose different paths, and both choices took courage. Looking around this room, I see a lot of people who will keep going.
+
+For the past two years, we stayed up late working through questions in front of the same whiteboard. From now on, we’ll be in front of different whiteboards, in different offices and campus. As for what comes next, I truly believe there are so many possibilities ahead of us. We’ll keep walking beside each other in the future.
+
+Congratulations, everyone.
