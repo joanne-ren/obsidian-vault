@@ -6,54 +6,50 @@ source: "[[AI dataset设计需要考虑的点]]"
 
 # AI 购物推荐数据集 · 采集提案
 
-> 配套背景见主笔记 [[AI dataset设计需要考虑的点]](四个前置问题 + 全部文献);本提案是可执行的采集设计。
 
 ## 1. 研究对象与目标
 - **对象**:顾客用 AI 助手**搜索产品、获得推荐**这一行为;记录 prompt 与回复。
 - **目标**:**模拟并每日采集,跑 6–12 个月看趋势**,覆盖不同市场;可与 sales 数据结合
-- **测量层**:**API(模型)层**。测的是模型给出的推荐。
+
 
 ### 我们希望观察到什么(观测量)
-- **因变量 = 品牌推荐份额**:在一个固定问题下(产品×功能×市场×模型),模型**最终推荐**哪个品牌;每日跑 N 次 → 得到当天该 cell 的品牌份额。例:UK × ChatGPT × 去屑洗发水,今天 = Head & Shoulders 70% / Nizoral 20% / CeraVe 10%。这个份额就是一个数据点,每天一记。
-- **我们要抓的三种"动"**:
-  1. **缓慢漂移**:某品牌份额稳定还是慢慢移。
+- **因变量 = 品牌推荐份额**:在一个固定问题下(产品×功能×市场×模型),模型**最终推荐**哪个品牌;每日跑 N 次并记录
+- **我们要抓的三种variation:
+  1. **缓慢漂移**:品牌份额稳定还是慢慢移。
   2. **品牌进出**:有没有新品牌突然冒出 / 老品牌掉出。
-  3. **事件冲击(机会型)**:某品牌/零售商宣布 AI 合作、上广告 pilot 后,其份额是否阶跃(event study;每日采集 = 天然的 before/after;优先把已/将接入的品牌,如 CeraVe、La Roche-Posay,放进清单**卡位**提高命中率)。
-- **模型更新 = 不研究,但必须 log**:只记 `system_fingerprint`/snapshot,用来**区分"真实漂移/新品牌"与"模型被悄悄换了"**,本身不作研究对象。
-- **事件日志**:每日数据旁维护一张带日期的事件表(品牌/零售商 AI 合作、广告 pilot、大上新/召回/走红、季节点、模型版本变更),让"漂移 / 进出 / 冲击"能彼此归因。
-- **五个研究问题(= 观察什么的落点)**:① 谁被推、多集中(有无"条件垄断");② 随时间稳定 / 漂移 / 品牌进出;③ 跨市场是否不同(本地 vs 全球品牌);④ 跨模型是否偏各自平台盟友品牌(欧莱雅系 vs P&G 系);⑤ 推荐份额 vs 真实销量的落差与方向(尤其高涉入 vs 低涉入)。
+  3. 事件冲击:如果某品牌/零售商宣布 AI 合作、上广告 pilot 后,其份额是否阶跃
+- **模型更新必须 log**:只记 `system_fingerprint`/snapshot,用来**区分"真实漂移/新品牌"与模型被悄悄换了。
+
+- **五个研究问题(= 观察什么的落点)**:① 谁被推、多集中(有无"条件垄断");② 随时间稳定 / 漂移 / 品牌进出;③ 跨市场区别;④ 模型是否偏平台盟友品牌;⑤ 推荐份额 vs 真实销量的落差与方向。
 
 ## 2. 已锁定的设计决策
 - **界面**:纯 API
 - **prompt**:开放式、不给商品清单、**单一固定问法**
-- **模型**:仅 API 可得的。
 - **市场**:DE / FR / UK / US(两个本地语言国 + 两个英语国)。
 - **测量**:记推荐
 
 ## 3. 市场与语言
-| 市场  | 语言  | 作用                     |
-| --- | --- | ---------------------- |
-| UK  | en  | 与 US 组成"同语言不同国"→ 纯地理效应 |
-| US  | en  | 同上                     |
-| DE  | de  | 不同语言不同国                |
-| FR  | fr  | 不同语言不同国                |
+| 市场  | 语言  |
+| --- | --- |
+| UK  | en  |
+| US  | en  |
+| DE  | de  |
+| FR  | fr  |
 
 - **注入方式**(API 不带终端位置,必须注入,见主笔记 §4②):① 查询语言;② `user_location` 参数 = 市场;③ 文本里的地点/可得性短语(DE/FR 母语化)。
-- **内生局限**:DE 只跑德语、FR 只跑法语 → 对这两国"语言"与"国家"绑定、分不开
+## 4. 品类与产品每个 = 产品 + function
 
-## 4. 品类与产品(候选菜单,供导师挑选;每个 = 产品 + function)
-> 涉入度在这组里天然从高到低,可作为分析维度。注意:PC 偏高涉入、HHC 偏低涉入,**品类与涉入度相关**,解读时别混淆。
 
 **PC(个护)**
 | 产品 | FUNCTION | 涉入度 |
 |---|---|---|
 | 去屑洗发水 | dandruff | 高 |
 | 防脱洗发水 | hair loss | 高 |
-| 护发素 | dry hair / curly hair | 中 |
-| 保湿护肤(面霜) | dry skin | 高 |
+| 护发素 | dry hair | 中 |
+| 保湿护肤 | dry skin | 高 |
 | 面部防晒 | facial sun protection（⚠ 季节性,夏搜冬掉) | 高 |
 | 抗敏牙膏 | sensitive teeth | 中高 |
-| 防蛀牙膏 | cavity protection | 中 |
+| 防蛀牙膏 | cavity  | 中 |
 
 **HHC(家清)**
 | 产品 | FUNCTION | 涉入度 |
@@ -74,62 +70,19 @@ I'm in {LOCATION}, which {PRODUCT} should I get for {FUNCTION}?
 - EN 例:`I'm in the UK, which shampoo should I get for dandruff?`
 - DE 例(母语化):`Welches Shampoo gegen Schuppen sollte ich kaufen?`（+ user_location=DE、语言=de）
 
-### 为什么固定一句(而不是轮换多种问法)
-- **趋势研究要"除时间外都别动"**:每天换措辞会把"措辞影响"和"时间变化"混在一起,固定一句让时间序列干净可读。
-- **"which … should I get" 是中性问法**,绕开 "best" 自带的大牌/在位偏置(Chu & Hou 的在位优势),又自然、又能逼出品牌。
 
-### 稳健性(一次性,不进日常)
-在**一个子集**上用 2–3 个等价问法(如 "What's a good {P} for {F}?" / "Can you recommend a {P} for {F}?")各跑几次,证明"换个说法、推的牌子大体一样"(LLM 对措辞敏感,Sclar et al., ICLR 2024)。日常 tracker 只用那一句。
 
-### 各产品的英文问法(DE/FR 需母语者校对)
-| 产品 | EN prompt(填 {LOCATION}) |
-|---|---|
-| 去屑洗发水 | I'm in {LOC}, which shampoo should I get for dandruff? |
-| 防脱洗发水 | …which shampoo should I get for hair loss? |
-| 护发素(干发) | …which conditioner should I get for dry hair? |
-| 护发素(卷发) | …which conditioner should I get for curly hair? |
-| 保湿面霜 | …which moisturiser should I get for dry skin? |
-| 面部防晒 | …which facial sunscreen should I get? |
-| 抗敏牙膏 | …which toothpaste should I get for sensitive teeth? |
-| 防蛀牙膏 | …which toothpaste should I get to prevent cavities? |
-| 护色洗衣液 | …which laundry detergent should I get for coloured clothes? |
-| 厨房油污清洁剂 | …which kitchen cleaner should I get for grease? |
-| 管道疏通剂 | …which drain cleaner should I get to unclog a drain? |
-| 去除水垢 | …which descaler should I get to remove limescale? |
-
-（价格默认不写——FMCG 便宜、真实查询也少带预算;若日后想测 premium↔value,把 "a good/affordable {P}" 当一次性因子加回。)
-
-## 6. 独立性协议(技术)
+##  独立性协议
 - **1 trial = 1 次无状态调用**:`store=false`、无记忆、不传 `previous_response_id`;绝不在同一线程串多个 trial(多轮上下文改变行为,Laban et al. 2025, arXiv:2505.06120:多轮比单轮掉约 39%)。
 - **`temperature` 固定但 ≠ 确定性**:输出当分布的样本,每个 cell 重复 N 次,报稳定性(TARr@N / TARa@N,Atil et al. arXiv:2408.04667)。
 - **记录快照**:模型 snapshot、时间戳、`system_fingerprint`、全部参数;同名服务会短期漂移(Chen, Zaharia & Zou, arXiv:2307.09009),版本变(fingerprint 变)**只用来区分"真实漂移"与"模型被换"**,本身不作研究对象(见「我们希望观察到什么」)。
 - **按 prompt/item 聚类**:N 次重复 ≠ N 个独立观测 → cluster-robust SE(Miller 2024, arXiv:2411.00640)。
 - 选 N:Żatuchin 2026(arXiv:2609.04047)D-study——5 次信度 0.58、10 次 0.74、15 次 0.81。
-
-## 7. 抓取与编码(技术)
-- 存 **raw reply** + 结构化字段:`final_recommendation`(排序/首位)、`brands_mentioned`、`sources_cited`、`sponsored_flag`、`price_mentioned`、`refusal`。
-- **关键**:记**最终推荐**而非仅"被提及"(AIVO:品牌出现 95.7% 但最终被选仅 12.7%);既记 mention 又记 recommendation → 可算"出现→被选"存活率。
-- 解析:半结构化 + LLM 抽取 + 人工抽检 + 双源交叉验证。
-
+- 存 **raw reply** + 结构化字段
 ### cell 结构与字段 schema
-一个 **cell** = `product×function × market/language × model`,每次采集重复 **N** 次(trial)。
-每条 trial 记录:`cell_id, trial_id, date, timestamp, product, function, market, language, user_location, model, model_snapshot, system_fingerprint, temperature, prompt_text, raw_response, final_recommendation, brands_mentioned, sources_cited, sponsored_flag, price_mentioned, refusal, parse_status`。
+一个 **cell** = `product×function × market/language × model`,每天分时间（比如早中晚）采集重复 **N** 次(trial)
 
-## 8. 节奏与规模
-- **每日核心 panel**:固定 cell 天天跑(趋势只能从固定 cell 的时间序列看出);另设**更宽的 panel** 每周/每月跑一轮。
-- **单日 run 公式(已简化,无措辞维度)**:
-  `P(产品×功能) × R(市场/语言) × M(模型) × N(重复)`
-- **N 参考**:10–15(日常 10,关键 cell 补到 15)。
-- **预算参考**(粗估,按当前 API 价;R=4、M=1–2):
-
-| 档 | P | ≈ 次/天 | ≈ 次/年 | 粗估花费/年 |
-|---|---|---|---|---|
-| 精简/试点 | ~6 | ~0.5–1k | ~20–36 万 | ~$1k–5k |
-| 中档 | ~12 | ~1–2k | ~40–70 万 | ~$3k–15k |
-| 丰富 | 全部 ~12 产品 × 多 N | ~2–4k | ~70–150 万 | ~$5k–30k |
-
-- 单次购物问答 ≈ 500–2000 token;便宜档(flash/mini/Qwen)≈ $0.002–0.005/次,旗舰/开 web_search ≈ $0.01–0.03/次。
-- **两个主导成本旋钮**:① 是否开 web_search/grounding(更贵 + 引入实时检索漂移,但更接近真实,可只在部分 cell 开);② 模型档位(日常用便宜档、关键复核才上旗舰)。
+这样下来一次需要多少token？比如说我问`I'm in the UK, which shampoo should I get for dandruff?`，with web search
 
 ## 9. 分析
 - 每个 cell 的时间序列:品牌**推荐份额**、top-k 构成、**mention→recommendation 落差**、稳定性 TAR@N、品牌多样性、拒答率。
