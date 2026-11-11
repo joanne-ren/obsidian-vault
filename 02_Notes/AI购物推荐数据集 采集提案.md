@@ -82,39 +82,14 @@ I'm in {LOCATION}, which {PRODUCT} should I get for {FUNCTION}?
 ### cell 结构与字段 schema
 一个 **cell** = `product×function × market/language × model`,每天分时间（比如早中晚）采集重复 **N** 次(trial)
 
-这样下来一次需要多少token？暂时估计5000token每次，不一定会波动
-
+这样下来一次暂时估计5000token每次，不一定会波动
+- 4 产品 × 4 国 = 16 个问题(cell)
+- 每个每天重复 2 次 = 32 次/天
+-  ~5,000 token/次 = ≈ 160,000 token/天
+- 这样算下来还是比较便宜的大概20美元以内一个月
 ## 9. 分析
-- 每个 cell 的时间序列:品牌**推荐份额**、top-k 构成、**mention→recommendation 落差**、稳定性 TAR@N、品牌多样性、拒答率。
-- 对比:市场、**语言 vs 地理分解**、模型(ChatGPT vs Gemini 是否各偏平台盟友品牌)。
-- **事件研究**:品牌/零售商 AI 合作公告前后的份额阶跃(event study,机会型);模型版本更新**仅作干扰排除**,不作研究对象。
-- **与 sales 数据结合**:推荐份额 ↔ 实际销量的落差与方向(尤其高涉入 vs 低涉入)。
-- **涉入度维度**:高涉入(PC)vs 低涉入(HHC)的推荐行为、与 sales 的吻合度是否不同。
+- 每个 cell 的时间序列:品牌**推荐份额**、top-k 构成、稳定性、品牌多样性。
+- **事件研究**:品牌/零售商 AI 合作公告前后的份额阶跃
+- **与 sales 数据结合**:推荐份额 ↔ 实际销量的落差与方向
 
-## 10. 设计依据(文献 + 语料,技术小结)
-- **涉入度当变量**:人只对高涉入品类搜 AI;我们从 ShareChat / Search Arena 真实购物子集提取发现 **PC 查询个位数、HHC ≈ 0**(真实公开用户几乎不问家清)→ 低涉入/HHC 外部效度弱,须写明;也说明这两个语料**无法直接供给 PC/HHC 真实问法**,prompt 需按观察到的 pattern 构造。
-- **真实问法 pattern**:best/which + 功能/价格/渠道/地点约束 → 模板据此(中性 which + 地点)。
-- **在位优势**(Chu & Hou, arXiv:2606.17443):"best" 偏在位大牌 → 改用中性 "which should I get"。
-- **mention ≠ chosen**(AIVO):测最终推荐 + 重复采样。
-- **UI ≠ API**(Kirgis et al. arXiv:2604.06188;Lipphardt FOCI 2026):只测 API 是边界,结论不外推到真人。
-- **平台合作是 representation 混淆**:欧莱雅系把 CeraVe / La Roche-Posay / Garnier / Maybelline 的产品 feed 喂进 ChatGPT,并有 ChatGPT 广告 pilot → 美妆/护肤的推荐**并非完全有机**;且 PC(美妆)偏 **OpenAI**、HHC 大厂(P&G、Unilever)偏 **Google/Gemini** → **ChatGPT vs Gemini 会各自偏向盟友品牌**,选品/解读要留意。
-- **跨市场换名 = 白送的地理实验**:P&G 在四国换名(Flash/Mr Clean/Meister Proper/M. Propre;Fairy/Dawn;Ariel/Tide)→ 同一产品在不同国被推成不同本地名,HHC 这块尤其明显。
 
-## 11. 可选扩展(讨论过,暂不进主干)
-- **Track B 受控实验**:给 10 个产品清单(含**虚构品牌 + 固定属性**),用 GEO 三协议(Top-K / 单选 / 成对)测**干净的品牌偏见**,操纵名气/评分/价格/位置/赞助标签/营销语言(权威·社会证明·锚定)。
-- **多轮 demand-space**:逐轮加约束,看推荐随轮次变化。
-- **UI sock-puppet 季度抽查**:只为量 API 与真实 UI 的差距,不进主干。
-- **价格因子**:加 "affordable" 变体测 premium↔value。
-
-## 12. 边界与已知限制
-- **API ≠ 真人所见**(换可复现 + 可日跑的取舍,须写进每处结论)。
-- 本批市场不含**中国**;地区是**注入信号**(人设/语言/`user_location`),非真实出口 IP。
-- 我们是在**模拟**而非观测真实用户(外部效度)。
-- **健康敏感品类**(护肤靠近此线)可能触发免责/拒答,污染"推哪个牌子";非健康 FMCG 数据更干净。
-
-## 待定项
-- [ ] 导师从 §4 菜单选定最终产品
-- [ ] N(参考 10–15)与每日预算 / panel 宽度
-- [ ] DE/FR 是否加英文臂做语言×地理解耦
-- [ ] web_search 开 / 关
-- [ ] DE/FR prompt 母语者校对
