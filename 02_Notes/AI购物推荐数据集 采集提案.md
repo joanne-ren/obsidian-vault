@@ -82,7 +82,7 @@ I'm in {LOCATION}, which {PRODUCT} should I get for {FUNCTION}?
 ### cell 结构与字段 schema
 一个 **cell** = `product×function × market/language × model`,每天分时间（比如早中晚）采集重复 **N** 次(trial)
 
-这样下来一次需要多少token？比如说我问`I'm in the UK, which shampoo should I get for dandruff?`，with web search
+这样下来一次需要多少token？暂时估计5000token每次，不一定会波动
 
 ## 9. 分析
 - 每个 cell 的时间序列:品牌**推荐份额**、top-k 构成、**mention→recommendation 落差**、稳定性 TAR@N、品牌多样性、拒答率。
