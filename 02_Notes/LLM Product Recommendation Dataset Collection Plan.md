@@ -15,7 +15,7 @@ Our dependent variable is the recommendation (share). For a fixed question (prod
 
 Three kinds of variation are of interest: (i) slow drift, whether a brand's share holds or migrates; (ii) entry and exit, whether a name surfaces or drops out; and (iii) event shocks, whether a brand's share steps up after it, or a retailer, announces an AI partnership or an advertising pilot. 
 
-==Model updates need to be logged== : we keep the `system_fingerprint` and snapshot so that a sudden move can be attributed to the market rather than to a model quietly swapped beneath us. 
+Model updates need to be logged : we keep the `system_fingerprint` and snapshot so that a sudden move can be attributed to the market rather than to a model quietly swapped beneath us. 
 
 Five questions follow: who is recommended and how concentrated the set is; whether the recommendation holds, drifts, or turns over; whether it differs across markets; whether a model tilts toward its own platform's partner brands; and how far, and in which direction, recommendation share departs from actual sales.
 
