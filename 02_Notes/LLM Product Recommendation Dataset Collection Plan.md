@@ -30,6 +30,7 @@ Five questions follow: who is recommended and how concentrated the set is; wheth
 
 Because an API call carries no end-user location, geography must be injected, through (i) the query language, (ii) the `user_location` parameter set to the market, and (iii) an in-text availability phrase.
 
+包含或者不包含
 ## Products and functions
 Each entry pairs a product with a function
 
@@ -60,6 +61,9 @@ A template is used throughout:
 > I'm in {LOCATION}, which {PRODUCT} should I get for {FUNCTION}?
 
 with `user_location` set to the market, the query posed in the local language (German and French phrased natively), and no follow-up turn. For example, `I'm in the UK, which shampoo should I get for dandruff?`.
+
+研究问法的区别
+
 
 A cell is `product × function × market/language × model`, sampled across the day (for instance morning, midday, and evening) with N repeats in each window. As a rough sizing, at about 5,000 tokens per call
 4 products × 4 markets × 2 run/day = 32 calls = around 160,000 tokens a day (20$ a month).
