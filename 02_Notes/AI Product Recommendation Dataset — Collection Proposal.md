@@ -5,48 +5,54 @@ lang: en
 source: "[[AI购物推荐数据集 采集提案]]"
 ---
 
-# Collecting AI Product Recommendations — A Data-Collection Proposal
+# Data-Collection Plan
 
 ## Object and aim
-We study a single behavior: a shopper asks an AI assistant to find a product and return a recommendation, and we record the prompt together with the reply. The aim is to simulate and collect this exchange daily, over six to twelve months and across several markets, so that the resulting series can later be set against sales data. Measurement sits at the API (model) layer: what we record is the recommendation the model returns.
+We study a behavior: a shopper asks a LLM to find a product and return a recommendation, and we record the prompt together with the reply. The aim is to simulate and collect this exchange daily, over 1 year and across several markets, so that the resulting series can later be set against sales data. Measurement sits at the API (model) layer: what we record is the recommendation the model returns.
 
 ## What we hope to observe
-Our dependent variable is the recommendation share — for a fixed question (product × function × market × model), which brand the model ultimately recommends, sampled N times a day and logged. Three kinds of variation are of interest: (i) slow drift, whether a brand's share holds or migrates; (ii) entry and exit, whether a name surfaces or drops out; and (iii) event shocks, whether a brand's share steps up after it, or a retailer, announces an AI partnership or an advertising pilot. Model updates are not themselves an object of study, but they must be logged: we keep the `system_fingerprint` and snapshot so that a sudden move can be attributed to the market rather than to a model quietly swapped beneath us. Five questions follow: who is recommended and how concentrated the set is (whether a conditional monopoly forms); whether the recommendation holds, drifts, or turns over; whether it differs across markets; whether a model tilts toward its own platform's partner brands; and how far, and in which direction, recommendation share departs from actual sales.
+Our dependent variable is the recommendation (share). For a fixed question (product × function × market × model), which brand the model recommends, sampled N times a day and logged. 
 
-## Fixed decisions
-We query through the API only — reproducible, runnable daily, and amenable to fingerprint logging. The prompt is open-ended, supplies no product list, and is held to a single fixed wording. Four markets are in scope — Germany, France, the United Kingdom, and the United States — and the recorded outcome is the recommendation.
+Three kinds of variation are of interest: (i) slow drift, whether a brand's share holds or migrates; (ii) entry and exit, whether a name surfaces or drops out; and (iii) event shocks, whether a brand's share steps up after it, or a retailer, announces an AI partnership or an advertising pilot. 
+
+==Model updates need to be logged== : we keep the `system_fingerprint` and snapshot so that a sudden move can be attributed to the market rather than to a model quietly swapped beneath us. 
+
+Five questions follow: who is recommended and how concentrated the set is; whether the recommendation holds, drifts, or turns over; whether it differs across markets; whether a model tilts toward its own platform's partner brands; and how far, and in which direction, recommendation share departs from actual sales.
+
 
 ## Markets and language
 | Market | Language |
-|---|---|
-| UK | en |
-| US | en |
-| DE | de |
-| FR | fr |
+| ------ | -------- |
+| UK     | en       |
+| US     | en       |
+| DE     | de       |
+| FR     | fr       |
 
-Because an API call carries no end-user location, geography must be injected, through (i) the query language, (ii) the `user_location` parameter set to the market, and (iii) an in-text availability phrase, rendered natively for German and French (see the main note, §4②).
+Because an API call carries no end-user location, geography must be injected, through (i) the query language, (ii) the `user_location` parameter set to the market, and (iii) an in-text availability phrase.
 
 ## Products and functions
 Each entry pairs a product with a function; involvement is noted as a reference dimension.
 
-**Personal care (PC)**
-| Product | Function | Involvement |
-|---|---|---|
-| anti-dandruff shampoo | dandruff | high |
-| anti-hair-loss shampoo | hair loss | high |
-| conditioner | dry hair | medium |
-| facial moisturiser | dry skin | high |
-| facial sunscreen | sun protection (seasonal) | high |
-| sensitivity toothpaste | sensitive teeth | medium-high |
-| cavity toothpaste | cavity protection | medium |
+**Personal care**
 
-**Home & household care (HHC)**
-| Product | Function | Involvement |
-|---|---|---|
-| colour-protect detergent | coloured clothes | low |
-| kitchen cleaner | grease | low |
-| drain cleaner | a clogged drain | low |
-| descaler | limescale | low |
+| Product                | Function                  | Involvement |
+| ---------------------- | ------------------------- | ----------- |
+| anti-dandruff shampoo  | dandruff                  | high        |
+| anti-hair-loss shampoo | hair loss                 | high        |
+| conditioner            | dry hair                  | medium      |
+| facial moisturiser     | dry skin                  | high        |
+| facial sunscreen       | sun protection (seasonal) | high        |
+| sensitivity toothpaste | sensitive teeth           | medium-high |
+| cavity toothpaste      | cavity protection         | medium      |
+
+**Home & household care**
+
+| Product                  | Function        | Involvement |
+| ------------------------ | --------------- | ----------- |
+| colour-protect detergent | coloured clothes | low         |
+| kitchen cleaner          | grease          | low         |
+| drain cleaner            | a clogged drain | low         |
+| descaler                 | limescale       | low         |
 
 ## The prompt
 A single fixed template is used throughout:
