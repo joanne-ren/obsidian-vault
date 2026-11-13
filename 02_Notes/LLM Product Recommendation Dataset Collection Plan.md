@@ -30,7 +30,7 @@ Five questions follow: who is recommended and how concentrated the set is; wheth
 
 Because an API call carries no end-user location, geography must be injected, through (i) the query language, (ii) the `user_location` parameter set to the market, and (iii) an in-text availability phrase.
 
-包含或者不包含
+==with/without in-text location==
 ## Products and functions
 Each entry pairs a product with a function
 
@@ -67,13 +67,9 @@ with `user_location` set to the market, the query posed in the local language (G
 A cell is `product × function × market/language × model`, sampled across the day (for instance morning, midday, and evening) with N repeats in each window. As a rough sizing, at about 5,000 tokens per call
 4 products × 4 markets × 2 run/day = 32 calls = around 160,000 tokens a day (20$ a month).
 
-==改成3个run / day==
+==3 run / day==
 ## Independence
 Each trial is one stateless API call:
 `store=false`, no memory, no `previous_response_id` — and trials are never chained within a thread, since multi-turn context shifts behavior: Laban et al. (2025) report a drop of roughly 39% relative to single-turn (arXiv:2505.06120). Because `temperature=0` does not deliver determinism, we treat each output as one draw from a distribution: a cell is sampled N times and its stability reported (TARr@N / TARa@N; Atil et al., arXiv:2408.04667). We log the model snapshot, timestamp, `system_fingerprint`, and every parameter, since a same-named service tends to drift over short horizons (Chen, Zaharia & Zou, arXiv:2307.09009); a fingerprint change therefore serves only to separate genuine drift from a model swap, not as an object of study. As N repeats of one prompt are not N independent observations, we cluster by prompt/item (cluster-robust standard errors; Miller 2024, arXiv:2411.00640). 
-
-
-## 1 week 
-
 
 
