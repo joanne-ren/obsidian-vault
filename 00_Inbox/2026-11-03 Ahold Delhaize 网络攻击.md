@@ -19,8 +19,8 @@ tags: [inbox, 案例]
 
 ## 与 ESL / 定价研究直接相关的切面
 
-- **电子价签错价（核心看点）**：停摆期间货架 ESL 卡在「上周促销价」，出现货架价低于收银价的情形；10-13 恢复常规价，10-18 Bonus/促销价在货架上才恢复正确。参见 [[ESL]] 里 competence（货架价=收银价一致性）这条机制，这次是它在现实中被打断的一次自然实验。
-  - Shelf labels stuck on last week's promo prices during the outage, so shelf price could sit below checkout price; regular prices were fixed 13 Oct and Bonus/promo shelf prices only 18 Oct. This is a real-world break in the competence mechanism (shelf = checkout alignment) in [[ESL]].
+- **电子价签错价（核心看点）**：停摆期间货架 ESL 卡在「上周促销价」，出现货架价低于收银价的情形；10-13 恢复常规价，10-18 Bonus/促销价在货架上才恢复正确。参见 [[ESL顾客层面]] 里 competence（货架价=收银价一致性）这条机制，这次是它在现实中被打断的一次自然实验。
+  - Shelf labels stuck on last week's promo prices during the outage, so shelf price could sit below checkout price; regular prices were fixed 13 Oct and Bonus/promo shelf prices only 18 Oct. This is a real-world break in the competence mechanism (shelf = checkout alignment) in [[ESL顾客层面]].
 
 - **个性化与忠诚体系单点失效**：个性化折扣（Mijn Bonus Box）、Koopzegels、Air Miles、AH Premium 10% 全部下线约一到两周；全国性 Bonus 促销在收银端始终有效。说明「个性化/会员」这层比基础零售功能更脆弱。
   - Personalized discounts (Mijn Bonus Box), Koopzegels, Air Miles and the AH Premium 10% were all offline for one to two weeks, while national Bonus offers kept working at checkout, showing the personalization/loyalty layer is more fragile than base retail functions.
@@ -43,8 +43,8 @@ tags: [inbox, 案例]
 
 - 这是一次「价格与会员基础设施整体宕机」的罕见自然实验，可同时检验 ESL 的 competence 与 integrity 两条机制，也暴露个性化/忠诚层作为单点故障的脆弱性。
   - A rare natural experiment where pricing and loyalty infrastructure went down wholesale, letting one test both the competence and integrity mechanisms for ESL and exposing the personalization/loyalty layer as a single point of failure.
-- 日志本身是一份可追溯数据产物（来源分级、冲突标注、官方口径与媒体口径并置），方法上与 [[ESL]] 的 esl-tracker 采集规范同构，可作样例。
+- 日志本身是一份可追溯数据产物（来源分级、冲突标注、官方口径与媒体口径并置），方法上与 [[ESL顾客层面]] 的 esl-tracker 采集规范同构，可作样例。
   - The log itself is a traceable data artifact (source tiers, flagged conflicts, official vs media wording side by side), methodologically of a piece with the esl-tracker collection standard and usable as a template.
 
 ---
-相关：[[ESL]] · [[防备成本 low-effort shopping & cost]] · [[2026-11-03 FTC问询九家监控定价]]
+相关：[[ESL顾客层面]] · [[防备成本 low-effort shopping & cost]] · [[2026-11-03 FTC问询九家监控定价]]
