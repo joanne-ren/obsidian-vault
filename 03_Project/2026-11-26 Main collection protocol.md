@@ -78,9 +78,75 @@ At about $0.06 per reply: about $3.9 a day, $117 a month, about $1,430 over one 
 - **API key.** New key created on 2026-11-26, valid for 365 days; renew before November 2027.
 - **Health check.** A daily automatic check of the previous day's replies against the 64 expected, with a notification when replies are missing or failed.
 - **Trigger.** cron-job.org runs three jobs at 09:05 and 19:05 local time (Europe/London; Europe/Paris for Germany and France; America/New_York). GitHub's own schedule runs as a backup.
-- **Code and data.** GitHub repository `joanne-ren/ai-shopping-pilot` (private). Replies in `main_runs/<YYYY-MM>/` (one folder per month), test replies in `test_runs/`, pilot replies in `pilot_runs/`. The pilot code is archived in `pilot/` and under the tag `pilot-final`.
 - **Weekends.** Both slots also run on weekends; how weekend days are treated is an analysis decision.
 - **Time zones.** Slots follow each market's local time, including the daylight-saving changes in March 2027 (US 14 March, EU 28 March).
+
+## Infrastructure and storage
+Everything runs in the cloud; no local computer is needed for collection or coding. A new computer only needs `git clone` of the repository for local analysis.
+
+### Components
+| Component | Where | What it does |
+|---|---|---|
+| Trigger | cron-job.org, 3 jobs | 09:05 and 19:05 local time in Europe/London, Europe/Paris (Germany and France) and America/New_York; each calls the GitHub workflow `collect` with `mode=auto` |
+| Backup trigger | GitHub Actions schedule | Runs `collect` at :45 in the UTC hours that cover both slots in winter and summer time; finds nothing to do when a slot is already collected |
+| Collector | GitHub Actions, workflow `collect` (`collect.py`) | Asks the 32 questions that are due for the open slot, saves the replies and commits them to the repository |
+| Daily health check | GitHub Actions, workflow `health` (`health.py`), 06:30 UTC | Checks the previous local day (64 replies expected), errors, model name changes and whether `collect` is still enabled; on a problem opens the GitHub issue "Collection health check" and sends an email |
+| Brand coding | Claude Code scheduled cloud task "ai-shopping weekly brand coding", Mondays 05:00 UTC | Builds the monthly tables, codes the new replies with Sonnet subagents, checks them and commits the results |
+| Code and data | GitHub repository `joanne-ren/ai-shopping-pilot` (private), branch `main` | Single place for code, raw data, tables and coding output |
+
+### Accounts and credentials
+| Item | Stored in | Expires |
+|---|---|---|
+| OpenAI API key | GitHub repository secret `OPENAI_API_KEY` | About 2027-11-26 (365 days); renew before |
+| OpenAI credit | OpenAI account (Launch tier) | $100 prepaid on 2026-11-26, enough for about three weeks |
+| GitHub token `cron-job-trigger` | cron-job.org request header | No expiry date |
+| Claude subscription | Claude account, connected to GitHub as `joanne-ren` | Used by the weekly coding task; no API cost |
+
+### Repository layout
+```
+ai-shopping-pilot/
+├── collect.py                  collector (design, prompt texts, slots, start/end date)
+├── health.py                   daily health check
+├── .github/workflows/          collect.yml, health.yml
+├── main_runs/<YYYY-MM>/        raw data, one pair of files per collecting run
+│     <stamp>__index.jsonl      one row per call (metadata, answer text, or the error)
+│     <stamp>__raw.jsonl        full request and full API response (sources, search queries)
+├── tables_main/<YYYY-MM>/      tidy tables, built weekly from main_runs/
+│     responses.csv             one row per reply
+│     answers.jsonl             reply texts without citation links (input for coding)
+│     sources.csv               one row per web page retrieved or cited
+│     mentions.csv              one row per brand named in a reply
+├── coding/                     brand coding: INSTRUCTIONS.md, WEEKLY_TASK.md, scripts,
+│     coded/*.json              the subagents' output (never edited by hand)
+│     brands.csv                brand name -> canonical name; status "new" = to review
+├── test_runs/                  test replies (not part of the data)
+├── pilot_runs/, tables/, analysis/   pilot data, tables and analysis
+└── pilot/                      pilot collector, archived (also tag pilot-final)
+```
+Raw data grow by about 1 MB a day (about 360 MB a year). Months are stored separately, so a weekly update rewrites only the current month's tables.
+
+### Main fields
+- **Index row (raw data):** `utc`, `local` (market-local time), `local_date`, `slot` (09 / 19), `on_time`, `market`, `country`, `language`, `category` (PC / HHC), `product_key`, `product`, `need`, `wording` (w1_which / w3_rec), `prompt`, `request_model`, `resp_model`, `id`, `usage`, `answer`; failed calls carry `error` instead of an answer.
+- **responses.csv:** reply id, time, local date and weekday, market, language, slot, on time, category, product, wording, prompt, model requested and returned, input / cached / output tokens, number of searches, search queries, sources retrieved and cited, answer length.
+- **sources.csv:** reply id, url, domain, title, retrieved by search, cited in answer, number of citations.
+- **mentions.csv:** reply id, market, product, order, brand (canonical), brand as coded, product name, role (recommended / negative / neutral), own label of, explicit top pick, quote, asks questions, coded by.
+
+### Weekly rhythm
+| When (UTC) | What |
+|---|---|
+| Daily, 2 slots per market | Collection (64 replies a day) |
+| Daily 06:30 | Health check; email and issue only when something is wrong |
+| Monday 05:00 | Brand coding of the past week; tables updated |
+| Monday, after coding | Human review of brands with status "new" in `coding/brands.csv` |
+
+### Where to look
+- Collection runs and errors: GitHub → repository → Actions.
+- Problems: email from GitHub, and the issue "Collection health check".
+- Coding runs: claude.ai/code/routines.
+- Trigger history: cron-job.org dashboard.
+- One-screen status: `python3 status.py` in the repository folder.
+- What to do when something goes wrong: `docs/RUNBOOK.md` in the repository (in Chinese).
+- Context for any new Claude session: `CLAUDE.md` in the repository.
 
 ### Pre-launch checklist (from the code review, 2026-11-26)
 - [x] Rewrite the collector for the new design; remove the pilot end date.
@@ -93,6 +159,12 @@ At about $0.06 per reply: about $3.9 a day, $117 a month, about $1,430 over one 
 - [x] Test run of all products in all markets (2026-11-26).
 - [ ] OpenAI account: monthly budget (around $120) and auto-recharge, before the $100 credit runs out (about three weeks after launch).
 
+## Brand coding
+- Every Monday at 05:00 UTC a scheduled Claude Code cloud task (Claude Sonnet) codes the previous week's replies: Sonnet subagents read each reply and list the brands it names, in order, with a verbatim quote. Rules: `coding/INSTRUCTIONS.md`, the pilot's rules extended to conditioner and dishwasher tablets (pilot agreement with a keyword codebook: Cohen's κ = 0.996).
+- A script checks every quote against the reply text and recodes failures; results go to `tables_main/<YYYY-MM>/mentions.csv`.
+- New brand names are listed in `coding/brands.csv` with status "new" for a weekly human review.
+- Runs on the subscription account; no API cost.
+
 ## Deviations log
 - 2026-11-26: Dishwashing liquid ("gentle on hands") replaced by dishwasher tablets ("tough stuck-on food") before any data were collected.
 - 2026-11-26: The stored API key had expired; replaced before launch.
@@ -102,4 +174,3 @@ At about $0.06 per reply: about $3.9 a day, $117 a month, about $1,430 over one 
 - Monthly budget (around $120), to be agreed.
 - Outcome measures for the analysis (supported by literature), given that W3 lists more brands than W1. On hold.
 - How to treat weekend days in the analysis.
-- Brand coding: how to code the replies with an LLM, how often, and how to check it.
