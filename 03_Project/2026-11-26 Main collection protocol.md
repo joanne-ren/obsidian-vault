@@ -29,7 +29,7 @@ This yields **64 replies per day**: 4 per market × product per day, about 120 p
 | PC | Anti-dandruff shampoo | Dandruff |
 | HHC | Laundry detergent | Stain removal |
 | PC | Conditioner | Dry hair |
-| HHC | Dishwashing liquid | Gentle on hands |
+| HHC | Dishwasher tablets | Tough stuck-on food |
 
 ## Prompt texts
 Wording rule: within a wording, the same frame for every product; within a product, the same need phrase in both wordings.
@@ -39,18 +39,21 @@ Wording rule: within a wording, the same frame for every product; within a produ
 | UK, US | Shampoo | Which shampoo should I get for dandruff? | Can you recommend some shampoos for dandruff? |
 | UK, US | Detergent | Which laundry detergent should I get for tough stains? | Can you recommend some laundry detergents for tough stains? |
 | UK, US | Conditioner | Which conditioner should I get for dry hair? | Can you recommend some conditioners for dry hair? |
-| UK | Dishwashing liquid | Which washing-up liquid should I get that's gentle on hands? | Can you recommend some washing-up liquids that are gentle on hands? |
-| US | Dishwashing liquid | Which dish soap should I get that's gentle on hands? | Can you recommend some dish soaps that are gentle on hands? |
+| UK | Dishwasher tablets | Which dishwasher tablets should I get for tough stuck-on food? | Can you recommend some dishwasher tablets for tough stuck-on food? |
+| US | Dishwasher tablets | Which dishwasher pods should I get for tough stuck-on food? | Can you recommend some dishwasher pods for tough stuck-on food? |
 | DE | Shampoo | Welches Shampoo sollte ich gegen Schuppen kaufen? | Kannst du mir ein paar Shampoos gegen Schuppen empfehlen? |
 | DE | Detergent | Welches Waschmittel sollte ich gegen hartnäckige Flecken kaufen? | Kannst du mir ein paar Waschmittel gegen hartnäckige Flecken empfehlen? |
 | DE | Conditioner | Welche Spülung sollte ich für trockenes Haar kaufen? | Kannst du mir ein paar Spülungen für trockenes Haar empfehlen? |
-| DE | Dishwashing liquid | Welches Spülmittel sollte ich kaufen, das schonend zu den Händen ist? | Kannst du mir ein paar Spülmittel empfehlen, die schonend zu den Händen sind? |
+| DE | Dishwasher tablets | Welche Spülmaschinentabs sollte ich gegen hartnäckige Essensreste kaufen? | Kannst du mir ein paar Spülmaschinentabs gegen hartnäckige Essensreste empfehlen? |
 | FR | Shampoo | Quel shampooing contre les pellicules devrais-je acheter ? | Peux-tu me recommander quelques shampooings contre les pellicules ? |
 | FR | Detergent | Quelle lessive contre les taches tenaces devrais-je acheter ? | Peux-tu me recommander quelques lessives contre les taches tenaces ? |
 | FR | Conditioner | Quel après-shampooing pour cheveux secs devrais-je acheter ? | Peux-tu me recommander quelques après-shampooings pour cheveux secs ? |
-| FR | Dishwashing liquid | Quel liquide vaisselle doux pour les mains devrais-je acheter ? | Peux-tu me recommander quelques liquides vaisselle doux pour les mains ? |
+| FR | Dishwasher tablets | Quelles tablettes pour lave-vaisselle contre les résidus alimentaires tenaces devrais-je acheter ? | Peux-tu me recommander quelques tablettes pour lave-vaisselle contre les résidus alimentaires tenaces ? |
 
-Note for analysis: "gentle on hands" echoes a common advertising claim in the category (e.g. Fairy's "kind to hands" in the UK). Brands whose own marketing uses this language may be favoured (cf. Malthouse, Lee & Yang 2026).
+Notes for analysis:
+- "Tough stuck-on food" is also common advertising language in the category (e.g. on Cascade and Finish packs). Brands whose own marketing uses this language may be favoured (cf. Malthouse, Lee & Yang 2026).
+- W3 asks for "some" products and its replies list more brands (often 4 to 6, against 1 to 3 for W1; test run 2026-11-26). Mention rates are therefore not directly comparable across the two wordings; rank-based measures are.
+- Dishwashing liquid ("gentle on hands") was replaced by dishwasher tablets on 2026-11-26, before any data were collected.
 
 ## Setup
 - **Model.** `chat-latest`, OpenAI's alias for the Instant model currently serving ChatGPT. The returned model name and token use are logged on every reply.
