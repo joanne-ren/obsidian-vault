@@ -11,11 +11,15 @@ status: first run live
 Related: [[2026-11-20 Meeting]], [[2026-11-19 AI购物pilot小结]], [[AI购物数据集 - 采集方法 methods]]
 
 ## Status
-- **First run:** two weeks, 2026-11-26 to 2026-12-09 (local dates). Collection stops automatically after the last day.
-- **Duration beyond the first run:** planned as one year; to be confirmed after the first run.
+- **Duration:** one year, 2026-11-26 to 2027-11-25 (local dates), as one continuous collection. Collection stops automatically after the last day.
+- **First two weeks** (to 2026-12-09) are reviewed while collection continues; the decision to carry on is taken then, without restarting or changing the structure.
 
 ## Aim
 Track, over time, which brands an AI assistant recommends when a consumer asks it for a product, across four markets and four everyday categories.
+
+**Why these four categories.** They are mass-market products that most consumers buy, and we have sales data for them.
+
+**Model.** We track `chat-latest` only, with no fixed-version control arm: the aim is to follow what the current ChatGPT model recommends, including its updates.
 
 ## Design
 
@@ -67,14 +71,15 @@ Notes for analysis:
 - **What we log.** Every raw response, its sources, token usage, local collection time and whether the slot was collected on time.
 
 ## Cost
-At about $0.06 per reply: about $3.9 a day, $117 a month, about $1,430 over one year (about 23,400 replies). In the test run (2026-11-26) the two new products used about as many tokens per reply as the pilot products (9,000 to 11,600). First run (two weeks, about 870 replies): about $53; $100 credit added.
+At about $0.06 per reply: about $3.9 a day, $117 a month, about $1,430 over one year (about 23,400 replies). In the test run (2026-11-26) the two new products used about as many tokens per reply as the pilot products (9,000 to 11,600). First two weeks (about 870 replies): about $53; $100 credit added. Monthly budget (around $120) to be agreed and set later.
 
 ## Operations
 - **Credit.** Prepaid credit for the first run, without auto-recharge. The collector stops at the first billing error or invalid API key, switches its schedule off and sends an email.
 - **API key.** New key created on 2026-11-26, valid for 365 days; renew before November 2027.
 - **Health check.** A daily automatic check of the previous day's replies against the 64 expected, with a notification when replies are missing or failed.
 - **Trigger.** cron-job.org runs three jobs at 09:05 and 19:05 local time (Europe/London; Europe/Paris for Germany and France; America/New_York). GitHub's own schedule runs as a backup.
-- **Code and data.** GitHub repository `joanne-ren/ai-shopping-pilot` (private). Replies in `main_runs/`, test replies in `test_runs/`, pilot replies in `pilot_runs/`. The pilot code is archived in `pilot/` and under the tag `pilot-final`.
+- **Code and data.** GitHub repository `joanne-ren/ai-shopping-pilot` (private). Replies in `main_runs/<YYYY-MM>/` (one folder per month), test replies in `test_runs/`, pilot replies in `pilot_runs/`. The pilot code is archived in `pilot/` and under the tag `pilot-final`.
+- **Weekends.** Both slots also run on weekends; how weekend days are treated is an analysis decision.
 - **Time zones.** Slots follow each market's local time, including the daylight-saving changes in March 2027 (US 14 March, EU 28 March).
 
 ### Pre-launch checklist (from the code review, 2026-11-26)
@@ -86,7 +91,7 @@ At about $0.06 per reply: about $3.9 a day, $117 a month, about $1,430 over one 
 - [x] Billing and API-key errors make the run fail visibly (email).
 - [x] Readable reply files built locally, not on every run (raw data about 360 MB over one year).
 - [x] Test run of all products in all markets (2026-11-26).
-- [ ] OpenAI account: monthly budget alert; auto-recharge if collection continues beyond the first run.
+- [ ] OpenAI account: monthly budget (around $120) and auto-recharge, before the $100 credit runs out (about three weeks after launch).
 
 ## Deviations log
 - 2026-11-26: Dishwashing liquid ("gentle on hands") replaced by dishwasher tablets ("tough stuck-on food") before any data were collected.
@@ -94,10 +99,7 @@ At about $0.06 per reply: about $3.9 a day, $117 a month, about $1,430 over one 
 - 2026-11-26 (first day): collection started after the morning slot in the UK, Germany and France, so these three morning slots are missing (24 replies).
 
 ## 待讨论
-- After the first run: continue for one year? On what criteria?
-- A small control arm with a fixed, dated model version, to separate model updates from changes on the web?
-- Monthly budget cap.
-- The rationale for the four categories.
-- Outcome measures for the analysis (e.g. mention rate, top pick, rank, cited sources), given that W3 lists more brands than W1.
-- The 9–11h slot also runs on weekends, when it is not working hours. How do we treat weekend days?
-- Brand coding: extend the codebook to conditioner and dishwasher tablets; how often to code, and how to check it.
+- Monthly budget (around $120), to be agreed.
+- Outcome measures for the analysis (supported by literature), given that W3 lists more brands than W1. On hold.
+- How to treat weekend days in the analysis.
+- Brand coding: how to code the replies with an LLM, how often, and how to check it.
