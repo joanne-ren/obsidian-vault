@@ -3,12 +3,16 @@ created: 2026-11-26
 type: protocol
 tags: [AI购物, 数据集设计, methods, protocol]
 lang: en
-status: draft
+status: first run live
 ---
 
-# Main collection protocol (draft)
+# Main collection protocol
 
 Related: [[2026-11-20 Meeting]], [[2026-11-19 AI购物pilot小结]], [[AI购物数据集 - 采集方法 methods]]
+
+## Status
+- **First run:** two weeks, 2026-11-26 to 2026-12-09 (local dates). Collection stops automatically after the last day.
+- **Duration beyond the first run:** planned as one year; to be confirmed after the first run.
 
 ## Aim
 Track, over time, which brands an AI assistant recommends when a consumer asks it for a product, across four markets and four everyday categories.
@@ -63,29 +67,37 @@ Notes for analysis:
 - **What we log.** Every raw response, its sources, token usage, local collection time and whether the slot was collected on time.
 
 ## Cost
-At about $0.06 per reply (pilot estimate): about $3.9 a day, $117 a month, about $1,430 over one year (about 23,400 replies). To be re-checked after the first week, since the two new products may produce answers of different length.
+At about $0.06 per reply: about $3.9 a day, $117 a month, about $1,430 over one year (about 23,400 replies). In the test run (2026-11-26) the two new products used about as many tokens per reply as the pilot products (9,000 to 11,600). First run (two weeks, about 870 replies): about $53; $100 credit added.
 
 ## Operations
-- **Credit.** Auto-recharge and a monthly budget alert in the OpenAI account. The collector stops at the first billing error and switches its schedule off.
+- **Credit.** Prepaid credit for the first run, without auto-recharge. The collector stops at the first billing error or invalid API key, switches its schedule off and sends an email.
+- **API key.** New key created on 2026-11-26, valid for 365 days; renew before November 2027.
 - **Health check.** A daily automatic check of the previous day's replies against the 64 expected, with a notification when replies are missing or failed.
-- **Trigger.** cron-job.org triggers each market's two slots; GitHub's own schedule runs as a backup.
+- **Trigger.** cron-job.org runs three jobs at 09:05 and 19:05 local time (Europe/London; Europe/Paris for Germany and France; America/New_York). GitHub's own schedule runs as a backup.
+- **Code and data.** GitHub repository `joanne-ren/ai-shopping-pilot` (private). Replies in `main_runs/`, test replies in `test_runs/`, pilot replies in `pilot_runs/`. The pilot code is archived in `pilot/` and under the tag `pilot-final`.
 - **Time zones.** Slots follow each market's local time, including the daylight-saving changes in March 2027 (US 14 March, EU 28 March).
 
 ### Pre-launch checklist (from the code review, 2026-11-26)
-- [ ] Rewrite the collector for the new design (products, wordings, slots, no country in text); remove the pilot end date, which would otherwise switch the schedule off at the first run.
-- [ ] cron-job.org: one job per market and slot in that market's own time zone, always sending `mode=auto`; failure notifications on; access token limited to this repo and valid beyond the end of collection.
-- [ ] Time limits: per call (about 90 s, 2 retries) and per run (20 min).
-- [ ] A missed slot may be made up only within one hour after its window, not hours later.
-- [ ] Separate daily health-check workflow: replies per market × product × slot (expected 64), error rows, returned model names, collector still enabled; opens an issue and sends an email on any shortfall.
-- [ ] Billing errors make the run fail visibly (email), not end silently.
-- [ ] Build the readable reply files locally rather than on every run, to keep the repository small (raw data about 180 MB over six months).
-- [ ] OpenAI account: auto-recharge and a monthly budget alert.
-- [ ] One manual test run per market before launch.
+- [x] Rewrite the collector for the new design; remove the pilot end date.
+- [x] cron-job.org: three jobs in local time zones, sending `mode=auto`, failure notifications on; access token limited to this repo (no expiry date).
+- [x] Time limits: per call (90 s, 2 retries) and per run (20 min).
+- [x] A missed slot may be made up only within one hour after its window.
+- [x] Separate daily health-check workflow (06:30 UTC): opens an issue and sends an email on any shortfall.
+- [x] Billing and API-key errors make the run fail visibly (email).
+- [x] Readable reply files built locally, not on every run (raw data about 360 MB over one year).
+- [x] Test run of all products in all markets (2026-11-26).
+- [ ] OpenAI account: monthly budget alert; auto-recharge if collection continues beyond the first run.
+
+## Deviations log
+- 2026-11-26: Dishwashing liquid ("gentle on hands") replaced by dishwasher tablets ("tough stuck-on food") before any data were collected.
+- 2026-11-26: The stored API key had expired; replaced before launch.
+- 2026-11-26 (first day): collection started after the morning slot in the UK, Germany and France, so these three morning slots are missing (24 replies).
 
 ## 待讨论
-- Prompt texts in English (UK and US), German and French for all four products.
-- w3 with "some" (plural) was not part of the pilot, which used "Can you recommend a …?". Do we run a short test first?
+- After the first run: continue for one year? On what criteria?
 - A small control arm with a fixed, dated model version, to separate model updates from changes on the web?
-- Start date, duration and monthly budget cap.
+- Monthly budget cap.
 - The rationale for the four categories.
-- Brand coding: how often, and how it is checked.
+- Outcome measures for the analysis (e.g. mention rate, top pick, rank, cited sources), given that W3 lists more brands than W1.
+- The 9–11h slot also runs on weekends, when it is not working hours. How do we treat weekend days?
+- Brand coding: extend the codebook to conditioner and dishwasher tablets; how often to code, and how to check it.
