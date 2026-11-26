@@ -31,6 +31,27 @@ This yields **64 replies per day**: 4 per market × product per day, about 120 p
 | PC | Conditioner | Dry hair |
 | HHC | Dishwashing liquid | Gentle on hands |
 
+## Prompt texts
+Wording rule: within a wording, the same frame for every product; within a product, the same need phrase in both wordings.
+
+| Market | Product | W1 (main) | W3 (robustness) |
+|---|---|---|---|
+| UK, US | Shampoo | Which shampoo should I get for dandruff? | Can you recommend some shampoos for dandruff? |
+| UK, US | Detergent | Which laundry detergent should I get for tough stains? | Can you recommend some laundry detergents for tough stains? |
+| UK, US | Conditioner | Which conditioner should I get for dry hair? | Can you recommend some conditioners for dry hair? |
+| UK | Dishwashing liquid | Which washing-up liquid should I get that's gentle on hands? | Can you recommend some washing-up liquids that are gentle on hands? |
+| US | Dishwashing liquid | Which dish soap should I get that's gentle on hands? | Can you recommend some dish soaps that are gentle on hands? |
+| DE | Shampoo | Welches Shampoo sollte ich gegen Schuppen kaufen? | Kannst du mir ein paar Shampoos gegen Schuppen empfehlen? |
+| DE | Detergent | Welches Waschmittel sollte ich gegen hartnäckige Flecken kaufen? | Kannst du mir ein paar Waschmittel gegen hartnäckige Flecken empfehlen? |
+| DE | Conditioner | Welche Spülung sollte ich für trockenes Haar kaufen? | Kannst du mir ein paar Spülungen für trockenes Haar empfehlen? |
+| DE | Dishwashing liquid | Welches Spülmittel sollte ich kaufen, das schonend zu den Händen ist? | Kannst du mir ein paar Spülmittel empfehlen, die schonend zu den Händen sind? |
+| FR | Shampoo | Quel shampooing contre les pellicules devrais-je acheter ? | Peux-tu me recommander quelques shampooings contre les pellicules ? |
+| FR | Detergent | Quelle lessive contre les taches tenaces devrais-je acheter ? | Peux-tu me recommander quelques lessives contre les taches tenaces ? |
+| FR | Conditioner | Quel après-shampooing pour cheveux secs devrais-je acheter ? | Peux-tu me recommander quelques après-shampooings pour cheveux secs ? |
+| FR | Dishwashing liquid | Quel liquide vaisselle doux pour les mains devrais-je acheter ? | Peux-tu me recommander quelques liquides vaisselle doux pour les mains ? |
+
+Note for analysis: "gentle on hands" echoes a common advertising claim in the category (e.g. Fairy's "kind to hands" in the UK). Brands whose own marketing uses this language may be favoured (cf. Malthouse, Lee & Yang 2026).
+
 ## Setup
 - **Model.** `chat-latest`, OpenAI's alias for the Instant model currently serving ChatGPT. The returned model name and token use are logged on every reply.
 - **Location.** The country is never stated in the question text. Country and time zone are passed only through the API's `user_location`.
@@ -39,7 +60,7 @@ This yields **64 replies per day**: 4 per market × product per day, about 120 p
 - **What we log.** Every raw response, its sources, token usage, local collection time and whether the slot was collected on time.
 
 ## Cost
-At about $0.06 per reply (pilot estimate): about $3.9 a day, $117 a month, $710 over six months. To be re-checked after the first week, since the two new products may produce answers of different length.
+At about $0.06 per reply (pilot estimate): about $3.9 a day, $117 a month, about $1,430 over one year (about 23,400 replies). To be re-checked after the first week, since the two new products may produce answers of different length.
 
 ## Operations
 - **Credit.** Auto-recharge and a monthly budget alert in the OpenAI account. The collector stops at the first billing error and switches its schedule off.
