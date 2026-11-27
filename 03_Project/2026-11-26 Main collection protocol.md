@@ -163,6 +163,7 @@ Raw data grow by about 1 MB a day (about 360 MB a year). Months are stored separ
 - Every Monday at 05:00 UTC a scheduled Claude Code cloud task (Claude Sonnet) codes the previous week's replies: Sonnet subagents read each reply and list the brands it names, in order, with a verbatim quote. Rules: `coding/INSTRUCTIONS.md`, the pilot's rules extended to conditioner and dishwasher tablets (pilot agreement with a keyword codebook: Cohen's κ = 0.996).
 - A script checks every quote against the reply text and recodes failures; results go to `tables_main/<YYYY-MM>/mentions.csv`.
 - New brand names are listed in `coding/brands.csv` with status "new" for a weekly human review.
+- All names are kept: `mentions.csv` stores the verbatim quote, the product name and the brand as coded, next to a unified `brand` column (umbrella level, e.g. Elvive/Elseve -> L'Oréal) used for counting. The brand level for analysis (umbrella brand or product line) will follow the level of our sales data; it can be changed later without recoding.
 - Runs on the subscription account; no API cost.
 
 ## Deviations log
