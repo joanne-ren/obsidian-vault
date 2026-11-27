@@ -91,6 +91,7 @@ Everything runs in the cloud; no local computer is needed for collection or codi
 | Backup trigger | GitHub Actions schedule | Runs `collect` at :45 in the UTC hours that cover both slots in winter and summer time; finds nothing to do when a slot is already collected |
 | Collector | GitHub Actions, workflow `collect` (`collect.py`) | Asks the 32 questions that are due for the open slot, saves the replies and commits them to the repository |
 | Daily health check | GitHub Actions, workflow `health` (`health.py`), triggered by a 4th cron-job.org job at 07:30 Europe/Amsterdam (GitHub's own 06:30 UTC schedule as backup; GitHub schedules proved unreliable on 2026-11-26/27) | Checks the previous local day (64 replies expected), errors, model name changes and whether `collect` is still enabled; on a problem opens the GitHub issue "Collection health check" and sends an email |
+| Page archive | GitHub Actions, workflow `archive` (`archive/archive_pages.py`), after every `collect` run | Fetches the web pages the new replies cite and saves their text (see Cited-page archive) |
 | Brand coding | Claude Code scheduled cloud task "ai-shopping weekly brand coding", Mondays 05:00 UTC | Builds the monthly tables, codes the new replies with Sonnet subagents, checks them and commits the results |
 | Code and data | GitHub repository `joanne-ren/ai-shopping-pilot` (private), branch `main` | Single place for code, raw data, tables and coding output |
 
@@ -119,6 +120,9 @@ ai-shopping-pilot/
 ├── coding/                     brand coding: INSTRUCTIONS.md, WEEKLY_TASK.md, scripts,
 │     coded/*.json              the subagents' output (never edited by hand)
 │     brands.csv                brand name -> canonical name; status "new" = to review
+├── archive/                    cited web pages
+│     pages/<YYYY-MM>/*.jsonl.gz  one line per fetched page (text, title, structured data)
+│     index.csv                 one row per cited URL: first/last cited, last fetch
 ├── test_runs/                  test replies (not part of the data)
 ├── pilot_runs/, tables/, analysis/   pilot data, tables and analysis
 └── pilot/                      pilot collector, archived (also tag pilot-final)
@@ -158,6 +162,20 @@ Raw data grow by about 1 MB a day (about 360 MB a year). Months are stored separ
 - [x] Readable reply files built locally, not on every run (raw data about 360 MB over one year).
 - [x] Test run of all products in all markets (2026-11-26).
 - [ ] OpenAI account: monthly budget (around $120) and auto-recharge, before the $100 credit runs out (about three weeks after launch).
+
+## Cited-page archive
+**Why.** The web pages that ChatGPT cites change over time; a page opened months later may no longer be the version the model read. To study what the cited pages have in common (cf. Aggarwal et al. 2024, GEO: statistics, quotations, sources), we keep a copy of each cited page from the time it was cited.
+
+**What.**
+- After every collection run, the workflow `archive` fetches the pages cited in the new replies (`url_citation` in the answer text). Pages only retrieved by search, not cited, are not archived (about 27 per reply against 1 to 3 cited).
+- A page is fetched when first cited, and again when it is cited again more than 7 days after its last fetch, so that changes over time are captured.
+- Saved per fetch: the main text as Markdown (headings, lists, tables), title, meta description, structured data (JSON-LD, e.g. product ratings and prices), HTTP status, final URL, fetch time and a hash of the HTML (to detect changes).
+- Pages built by JavaScript (e.g. dm.de product pages) are opened in a headless browser; PDFs are read as text.
+- robots.txt is respected. Tracking parameters (utm_, mi_ ...) are removed from URLs for de-duplication; the raw data keep the original URLs.
+
+**Coverage (first run on GitHub, 97 cited pages, 2026-11-27).** 80 archived with text (61 plain HTML, 12 via browser, 7 PDFs); 1 disallowed by robots.txt; 16 not available: 13 blocked by the site (HTTP 403; e.g. carrefour.fr, intermarche.com, sainsburys.co.uk, mayoclinic.org; some of these block cloud servers only, as a test from a home connection reached 85 of 97), 2 no longer online (404), 1 without text. Blocked pages remain identifiable by URL and title in `sources.csv`.
+
+**Storage.** `archive/pages/<YYYY-MM>/*.jsonl.gz` and `archive/index.csv` in the repository; about 4 KB per page, roughly 150 to 200 MB a year. No API cost; GitHub Actions time only.
 
 ## Brand coding
 - Every Monday at 05:00 UTC a scheduled Claude Code cloud task (Claude Sonnet) codes the previous week's replies: Sonnet subagents read each reply and list the brands it names, in order, with a verbatim quote. Rules: `coding/INSTRUCTIONS.md`, the pilot's rules extended to conditioner and dishwasher tablets (pilot agreement with a keyword codebook: Cohen's κ = 0.996).
