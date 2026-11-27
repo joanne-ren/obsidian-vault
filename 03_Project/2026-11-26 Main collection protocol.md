@@ -112,7 +112,7 @@ ai-shopping-pilot/
 ├── main_runs/<YYYY-MM>/        raw data, one pair of files per collecting run
 │     <stamp>__index.jsonl      one row per call (metadata, answer text, or the error)
 │     <stamp>__raw.jsonl        full request and full API response (sources, search queries)
-├── tables_main/<YYYY-MM>/      tidy tables, built weekly from main_runs/
+├── tables_main/<YYYY-Www>/     tidy tables, one folder per ISO week (Mon–Sun), written once
 │     responses.csv             one row per reply
 │     answers.jsonl             reply texts without citation links (input for coding)
 │     sources.csv               one row per web page retrieved or cited
@@ -127,7 +127,12 @@ ai-shopping-pilot/
 ├── pilot_runs/, tables/, analysis/   pilot data, tables and analysis
 └── pilot/                      pilot collector, archived (also tag pilot-final)
 ```
-Raw data grow by about 1 MB a day (about 360 MB a year). Months are stored separately, so a weekly update rewrites only the current month's tables.
+Raw data are stored in monthly folders; tables in weekly folders, written once when the week is complete, so the repository history holds each table only once.
+
+### GitHub limits (checked 2026-11-27)
+- **Actions minutes.** Private repository: 2,000 free minutes a month (3,000 with GitHub Pro). When they are used up, all workflows stop until the next month, including collection. Estimated use: about 1,000 to 1,300 minutes a month (collection about 12 a day, backup schedule 2 to 14, page archive about 15 to 20 after caching, health check 1). Check monthly under GitHub → Settings → Billing and plans → Usage. Weekly brand coding runs in Claude's cloud and uses no Actions minutes.
+- **Repository size.** About 0.6 to 0.8 GB after one year (raw data about 300 MB, page archive 100 to 200 MB, weekly tables about 180 MB). GitHub recommends staying below 1 GB (strongly below 5 GB); no single file comes near the 100 MB file limit.
+- **Runner resources.** 2 CPUs, 7 GB memory, 14 GB disk per run; our scripts use a few hundred MB at most. Job time limits are set to 20 to 25 minutes (GitHub's maximum is 6 hours).
 
 ### Main fields
 - **Index row (raw data):** `utc`, `local` (market-local time), `local_date`, `slot` (09 / 19), `on_time`, `market`, `country`, `language`, `category` (PC / HHC), `product_key`, `product`, `need`, `wording` (w1_which / w3_rec), `prompt`, `request_model`, `resp_model`, `id`, `usage`, `answer`; failed calls carry `error` instead of an answer.
@@ -179,7 +184,7 @@ Raw data grow by about 1 MB a day (about 360 MB a year). Months are stored separ
 
 ## Brand coding
 - Every Monday at 05:00 UTC a scheduled Claude Code cloud task (Claude Sonnet) codes the previous week's replies: Sonnet subagents read each reply and list the brands it names, in order, with a verbatim quote. Rules: `coding/INSTRUCTIONS.md`, the pilot's rules extended to conditioner and dishwasher tablets (pilot agreement with a keyword codebook: Cohen's κ = 0.996).
-- A script checks every quote against the reply text and recodes failures; results go to `tables_main/<YYYY-MM>/mentions.csv`.
+- A script checks every quote against the reply text and recodes failures; results go to `tables_main/<YYYY-Www>/mentions.csv`.
 - New brand names are listed in `coding/brands.csv` with status "new" for a weekly human review.
 - All names are kept: `mentions.csv` stores the verbatim quote, the product name and the brand as coded, next to a unified `brand` column (umbrella level, e.g. Elvive/Elseve -> L'Oréal) used for counting. The brand level for analysis (umbrella brand or product line) will follow the level of our sales data; it can be changed later without recoding.
 - Runs on the subscription account; no API cost.
