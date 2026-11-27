@@ -168,7 +168,7 @@ Raw data grow by about 1 MB a day (about 360 MB a year). Months are stored separ
 ## Deviations log
 - 2026-11-26: Dishwashing liquid ("gentle on hands") replaced by dishwasher tablets ("tough stuck-on food") before any data were collected.
 - 2026-11-26: The stored API key had expired; replaced before launch.
-- 2026-11-26 (first day): collection started after the morning slot in the UK, Germany and France, so these three morning slots are missing (24 replies).
+- 2026-11-26 (first day): collection started after the morning slot in the UK, Germany and France, so these three morning slots are missing (24 replies). The US morning slot is also missing (8 replies): the cron-job.org jobs had not yet been enabled. The Germany and France evening slot was triggered by hand at 18:42 UTC (19:42 local, within the slot). From the UK evening slot on 2026-11-26, collection ran on the cron-job.org triggers.
 
 ## 待讨论
 - Monthly budget (around $120), to be agreed.
