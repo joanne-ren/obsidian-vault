@@ -90,7 +90,7 @@ Everything runs in the cloud; no local computer is needed for collection or codi
 | Trigger | cron-job.org, 3 jobs | 09:05 and 19:05 local time in Europe/London, Europe/Paris (Germany and France) and America/New_York; each calls the GitHub workflow `collect` with `mode=auto` |
 | Backup trigger | GitHub Actions schedule | Runs `collect` at :45 in the UTC hours that cover both slots in winter and summer time; finds nothing to do when a slot is already collected |
 | Collector | GitHub Actions, workflow `collect` (`collect.py`) | Asks the 32 questions that are due for the open slot, saves the replies and commits them to the repository |
-| Daily health check | GitHub Actions, workflow `health` (`health.py`), 06:30 UTC | Checks the previous local day (64 replies expected), errors, model name changes and whether `collect` is still enabled; on a problem opens the GitHub issue "Collection health check" and sends an email |
+| Daily health check | GitHub Actions, workflow `health` (`health.py`), triggered by a 4th cron-job.org job at 07:30 Europe/Amsterdam (GitHub's own 06:30 UTC schedule as backup; GitHub schedules proved unreliable on 2026-11-26/27) | Checks the previous local day (64 replies expected), errors, model name changes and whether `collect` is still enabled; on a problem opens the GitHub issue "Collection health check" and sends an email |
 | Brand coding | Claude Code scheduled cloud task "ai-shopping weekly brand coding", Mondays 05:00 UTC | Builds the monthly tables, codes the new replies with Sonnet subagents, checks them and commits the results |
 | Code and data | GitHub repository `joanne-ren/ai-shopping-pilot` (private), branch `main` | Single place for code, raw data, tables and coding output |
 
@@ -135,7 +135,7 @@ Raw data grow by about 1 MB a day (about 360 MB a year). Months are stored separ
 | When (UTC) | What |
 |---|---|
 | Daily, 2 slots per market | Collection (64 replies a day) |
-| Daily 06:30 | Health check; email and issue only when something is wrong |
+| Daily 06:30 (07:30 Amsterdam) | Health check; email and issue only when something is wrong |
 | Monday 05:00 | Brand coding of the past week; tables updated |
 | Monday, after coding | Human review of brands with status "new" in `coding/brands.csv` |
 
